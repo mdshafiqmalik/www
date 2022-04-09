@@ -1,3 +1,3 @@
 <?php
-include "/src/checkdevice.php";
+include "./src/checkdevice.php";
  ?>
