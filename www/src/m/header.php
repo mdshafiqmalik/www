@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-  <body>
+
     <div class="Header">
       <div class="logoSection">
         <h1>fastreed</h1>
@@ -15,5 +10,3 @@
         <div class="">P</div>
       </div>
     </div>
-  </body>
-</html>
