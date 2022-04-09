@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="src/m/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
   <body>
     <div class="Header">
