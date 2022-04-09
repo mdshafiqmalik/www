@@ -1,4 +1,4 @@
 action "Run tests" {
-  uses = "fastreed/m/index.php@main
+  uses = "fastreed/m@main
   runs = "php7.1 vendor/bin/phpunit"
 }
