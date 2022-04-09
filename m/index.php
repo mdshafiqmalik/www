@@ -1,3 +1,3 @@
 <?php
-require  './conn.php';
+include  './conn.php';
  ?>
