@@ -7,6 +7,6 @@
     <title>FastReed</title>
   </head>
   <body>
-  <?php include "./src/m/header.php"; ?>
+  <?php include "../src/m/header.php"; ?>
   </body>
 </html>
