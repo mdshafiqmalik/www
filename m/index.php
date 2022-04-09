@@ -1,4 +1,4 @@
 <?php
-require  'conn.php';
+require  './conn.php';
 echo isConnected();
  ?>
