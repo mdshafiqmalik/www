@@ -1,4 +1,4 @@
 <?php
-require  'usr/lib/php8.0/../../config/conn.php';
+require  'conn.php';
 echo isConnected();
  ?>
