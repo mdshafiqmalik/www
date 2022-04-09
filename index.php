@@ -8,7 +8,7 @@
   </head>
   <body>
     <?php
-    include "src/checkdevice.php";
+    include "/src/checkdevice.php";
      ?>
   </body>
 </html>
