@@ -4,8 +4,10 @@ $isMob = function() {
 };
 if ($isMob()) {
   header('Location:https://www.shafiqhub.com/m');
+  exit;
 }else {
   header('Location:https://www.shafiqhub.com/d');
+  exit;
 }
-exit;
+
  ?>
