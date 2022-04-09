@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<link rel="stylesheet" href="styles.css">
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
   <body>
     <div class="Header">
       <div class="logoSection">
