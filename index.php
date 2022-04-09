@@ -1,4 +1,8 @@
 <?php
 require "checkdevice.php";
-echo "<pre>$isMobile()</pre>"
+if ($isMobile()) {
+  header('Location:m');
+}else {
+  header('Location:d');
+}
 ?>
