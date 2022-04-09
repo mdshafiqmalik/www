@@ -1,5 +1,6 @@
 <?php
 include "../../config/secrets.php";
+isConnected();
 function isConnected()
 {
   $link = new mysqli($host_name, $user_name, $password, $database);
