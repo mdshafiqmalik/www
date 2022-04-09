@@ -1,4 +1,4 @@
 <?php
-include "checkdevice.php";
+include "src/checkdevice.php";
 
 ?>
