@@ -1,6 +1,6 @@
 <?php
 include "checkdevice.php";
-echo gettype($isMobile());
+echo gettype($isMob);
 // if ($isMobile()) {
 //   header('Location:m');
 // }else {
