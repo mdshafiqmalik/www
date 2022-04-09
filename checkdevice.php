@@ -7,4 +7,5 @@ if ($isMob()) {
 }else {
   header('Location:https://www.shafiqhub.com/d');
 }
+exit;
  ?>
