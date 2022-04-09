@@ -1,2 +1,4 @@
-- name: PHP Runner
-  uses: franzliedke/gh-action-php@0.2.0
+action "Run tests" {
+  uses = "fastreed/m/index.php@main
+  runs = "php7.1 vendor/bin/phpunit"
+}
