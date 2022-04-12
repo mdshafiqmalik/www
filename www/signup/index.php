@@ -57,7 +57,7 @@
         <div class="button">
           <input type="submit" value="Register">
           <div class="loginLink">
-            Already have an Account <a href="#"> Log In</a>
+            Already have an Account <a href="../login"> Log In</a>
           </div>
         </div>
       </form>
