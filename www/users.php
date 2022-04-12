@@ -2,132 +2,71 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-      <link rel="stylesheet" href="user.css?id=1.1.1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="user.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title></title>
     <style media="screen">
 
     </style>
   </head>
   <body>
-    <div id="container" class="container">
-		<!-- FORM SECTION -->
-		<div class="row">
-			<!-- SIGN UP -->
-			<div class="col align-items-center flex-col sign-up">
-				<div class="form-wrapper align-items-center">
-					<div class="form sign-up">
-						<div class="input-group">
-							<i class='bx bxs-user'></i>
-							<input type="text" placeholder="Username">
-						</div>
-						<div class="input-group">
-							<i class='bx bx-mail-send'></i>
-							<input type="email" placeholder="Email">
-						</div>
-						<div class="input-group">
-							<i class='bx bxs-lock-alt'></i>
-							<input type="password" placeholder="Password">
-						</div>
-						<div class="input-group">
-							<i class='bx bxs-lock-alt'></i>
-							<input type="password" placeholder="Confirm password">
-						</div>
-						<button>
-							Sign up
-						</button>
-						<p>
-							<span>
-								Already have an account?
-							</span>
-							<b onclick="toggle()" class="pointer">
-								Sign in here
-							</b>
-						</p>
-					</div>
-				</div>
+    <div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+        <div class="form-header">
+            <h1>Account Login</h1>
+        </div>
+        <div class="form-content">
+            <form>
+                <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required="required" /></div>
+                <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required="required" /></div>
+                <div class="form-group"><label class="form-remember"><input type="checkbox" />Remember Me</label><a class="form-recovery" href="#">Forgot Password?</a></div>
+                <div class="form-group"><button type="submit">Log In</button></div>
+            </form>
+        </div>
+    </div>
+    <div class="form-panel two">
+        <div class="form-header">
+            <h1>Register Account</h1>
+        </div>
+        <div class="form-content">
+            <form>
+                <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required="required" /></div>
+                <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required="required" /></div>
+                <div class="form-group"><label for="cpassword">Confirm Password</label><input type="password" id="cpassword" name="cpassword" required="required" /></div>
+                <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required="required" /></div>
+                <div class="form-group"><button type="submit">Register</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  var panelOne = $('.form-panel.two').height(),
+    panelTwo = $('.form-panel.two')[0].scrollHeight;
 
-			</div>
-			<!-- END SIGN UP -->
-			<!-- SIGN IN -->
-			<div class="col align-items-center flex-col sign-in">
-				<div class="form-wrapper align-items-center">
-					<div class="form sign-in">
-						<div class="input-group">
-							<i class='bx bxs-user'></i>
-							<input type="text" placeholder="Username">
-						</div>
-						<div class="input-group">
-							<i class='bx bxs-lock-alt'></i>
-							<input type="password" placeholder="Password">
-						</div>
-						<button>
-							Sign in
-						</button>
-						<p>
-							<b>
-								Forgot password?
-							</b>
-						</p>
-						<p>
-							<span>
-								Don't have an account?
-							</span>
-							<b onclick="toggle()" class="pointer">
-								Sign up here
-							</b>
-						</p>
-					</div>
-				</div>
-				<div class="form-wrapper">
+  $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
+    e.preventDefault();
 
-				</div>
-			</div>
-			<!-- END SIGN IN -->
-		</div>
-		<!-- END FORM SECTION -->
-		<!-- CONTENT SECTION -->
-		<div class="row content-row">
-			<!-- SIGN IN CONTENT -->
-			<div class="col align-items-center flex-col">
-				<div class="text sign-in">
-					<h2>
-						Welcome
-					</h2>
+    $('.form-toggle').addClass('visible');
+    $('.form-panel.one').addClass('hidden');
+    $('.form-panel.two').addClass('active');
+    $('.form').animate({
+      'height': panelTwo
+    }, 200);
+  });
 
-				</div>
-				<div class="img sign-in">
-
-				</div>
-			</div>
-			<!-- END SIGN IN CONTENT -->
-			<!-- SIGN UP CONTENT -->
-			<div class="col align-items-center flex-col">
-				<div class="img sign-up">
-
-				</div>
-				<div class="text sign-up">
-					<h2>
-						Join with us
-					</h2>
-
-				</div>
-			</div>
-			<!-- END SIGN UP CONTENT -->
-		</div>
-		<!-- END CONTENT SECTION -->
-	</div>
-  <script type="text/javascript">
-  let container = document.getElementById('container')
-
-toggle = () => {
-container.classList.toggle('sign-in')
-container.classList.toggle('sign-up')
-}
-
-setTimeout(() => {
-container.classList.add('sign-in')
-}, 200)
+  $('.form-toggle').on('click', function(e) {
+    e.preventDefault();
+    $(this).removeClass('visible');
+    $('.form-panel.one').removeClass('hidden');
+    $('.form-panel.two').removeClass('active');
+    $('.form').animate({
+      'height': panelOne
+    }, 200);
+  });
+});
   </script>
   </body>
 </html>
