@@ -1,8 +1,8 @@
 <?php
 // api key = 67834gsd634gsa763g
 // header('content-type:application/json');
-include '../../config/secrets.php';
-$link = new mysqli("$host_name","$user_name","$password","$database");
+include '../config/secrets.php';
+$link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if ($link->connect_error) {
   die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
 }

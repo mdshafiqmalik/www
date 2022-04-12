@@ -1,3 +1,0 @@
-order allow,deny
-deny from 74.208.236.108
-allow from all

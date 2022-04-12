@@ -20,30 +20,20 @@ body{
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  height: auto;
 }
 .container .title{
-  text-transform: uppercase;
   font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
   font-weight: 1000;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 1em;
 }
+
 .content form .user-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
-}
-.Message{
-  /* display: none; */
-  min-width: 600px;
-  color: #2dd62d;
-  /* padding: 1em; */
-  border-radius: 5px;
-  font-weight: bold;
-
 }
 form .user-details .input-box{
   margin-bottom: 15px;
@@ -105,17 +95,12 @@ form .input-box span.details{
  form .button{
    height: 45px;
    margin: 35px 0;
-   display:flex;
-   align-items: center;
-   justify-content: center;
  }
- form .button input, form .button #loginLink {
-   display: flex;
-   align-items: center;
-   text-decoration: none;
-   justify-content: center;
+
+ form .button input{
+   display: block;
    height: 100%;
-   margin-left: 1em;
+   max-width: 300px;
    width: 100%;
    border-radius: 5px;
    border: none;
@@ -127,14 +112,19 @@ form .input-box span.details{
    transition: all 0.3s ease;
    background: linear-gradient(135deg, #71b7e6, #9b59b6);
  }
- form .button input:hover, #loginLink:hover{
+ form .button input:hover{
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
   }
-  form .button #loginLink:hover{
-   /* transform: scale(0.99); */
-   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-   }
+  .loginLink{
+    font-weight:800;
+    margin-top:.5em;
+  }
+  .loginLink a{
+    margin-left: .3em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
@@ -147,7 +137,6 @@ form .user-details .input-box{
     width: 100%;
   }
   .content form .user-details{
-    /* max-height: 500px; */
     overflow-y: scroll;
   }
   .user-details::-webkit-scrollbar{
