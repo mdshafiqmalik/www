@@ -1,7 +1,7 @@
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.open("POST","../hidden/index.php");
 xmlhttp.onload = function(){
- winodw.myobj = JSON.parse(this.responseText);
+ window.myobj = JSON.parse(this.responseText);
 }
 xmlhttp.send();
 console.log(window.myobj);
