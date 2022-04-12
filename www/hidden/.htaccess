@@ -1,2 +1,4 @@
 # allow IP range by CIDR number
  allow from 74.208.236.108
+ order deny, allow
+ deny from all
