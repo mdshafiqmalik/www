@@ -7,7 +7,7 @@
   <body>
     <script type="text/javascript">
       const xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST","userdata.php");
+      xmlhttp.open("POST","hidden/userdata.php");
       xmlhttp.send();
       xmlhttp.onload = function(){
         const myobj = JSON.parse(this.responseText);
