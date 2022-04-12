@@ -1,72 +1,69 @@
 <!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="user.css?id=1.1.2">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title></title>
-    <style media="screen">
-
-    </style>
-  </head>
-  <body>
-    <div class="form">
-    <div class="form-toggle"></div>
-    <div class="form-panel one">
-        <div class="form-header">
-            <h1>Account Login</h1>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="user.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
         </div>
-        <div class="form-content">
-            <form>
-                <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required="required" /></div>
-                <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required="required" /></div>
-                <div class="form-group"><label class="form-remember"><input type="checkbox" />Remember Me</label><a class="form-recovery" href="#">Forgot Password?</a></div>
-                <div class="form-group"><button type="submit">Log In</button></div>
-            </form>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
         </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
     </div>
-    <div class="form-panel two">
-        <div class="form-header">
-            <h1>Register Account</h1>
-        </div>
-        <div class="form-content">
-            <form>
-                <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required="required" /></div>
-                <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required="required" /></div>
-                <div class="form-group"><label for="cpassword">Confirm Password</label><input type="password" id="cpassword" name="cpassword" required="required" /></div>
-                <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required="required" /></div>
-                <div class="form-group"><button type="submit">Register</button></div>
-            </form>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function() {
-  var panelOne = $('.form-panel.two').height(),
-    panelTwo = $('.form-panel.two')[0].scrollHeight;
+  </div>
 
-  $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-    e.preventDefault();
-
-    $('.form-toggle').addClass('visible');
-    $('.form-panel.one').addClass('hidden');
-    $('.form-panel.two').addClass('active');
-    $('.form').animate({
-      'height': panelTwo
-    }, 200);
-  });
-
-  $('.form-toggle').on('click', function(e) {
-    e.preventDefault();
-    $(this).removeClass('visible');
-    $('.form-panel.one').removeClass('hidden');
-    $('.form-panel.two').removeClass('active');
-    $('.form').animate({
-      'height': panelOne
-    }, 200);
-  });
-});
-  </script>
-  </body>
+</body>
 </html>
