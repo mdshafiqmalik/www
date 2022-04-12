@@ -18,12 +18,12 @@ body{
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .container .title{
+  color: #9b59b6;
   font-size: 25px;
-  font-weight: 500;
   position: relative;
   text-transform: uppercase;
   font-weight: 1000;
@@ -40,7 +40,6 @@ form .user-details .input-box{
   width: calc(100% / 2 - 20px);
 }
 form .input-box span.details{
-  display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
@@ -93,7 +92,7 @@ form .input-box span.details{
    display: none;
  }
  form .button{
-   height: 65px;
+   height: 45px;
    margin: 35px 0;
    display: flex;
    align-items: center;
@@ -101,7 +100,6 @@ form .input-box span.details{
  }
 
  form .button input{
-
    height: 100%;
    max-width: 300px;
    width: 100%;
@@ -121,16 +119,21 @@ form .input-box span.details{
   }
   .loginLink{
     font-weight:800;
-    margin-top:.5em;
+    margin-top:.3em;
+    margin-bottom: -2em;
   }
   .loginLink a{
     margin-left: .3em;
     text-transform: uppercase;
     text-decoration: none;
   }
+  .alert{
+    font-size: .9em;
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
+  padding:15px 20px;
 }
 form .user-details .input-box{
     margin-bottom: 15px;
