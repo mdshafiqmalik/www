@@ -1,9 +1,10 @@
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.open("POST","../hidden/index.php");
 xmlhttp.onload = function(){
- var myobj = JSON.parse(this.responseText);
+ winodw.myobj = JSON.parse(this.responseText);
 }
 xmlhttp.send();
+console.log(window.myobj);
 function inputAuth(param) {
   switch (param) {
     case nmInput:
