@@ -93,12 +93,15 @@ form .input-box span.details{
    display: none;
  }
  form .button{
-   height: 45px;
+   height: 65px;
    margin: 35px 0;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
  }
 
  form .button input{
-   display: block;
+
    height: 100%;
    max-width: 300px;
    width: 100%;
