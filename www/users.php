@@ -4,12 +4,15 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="user.css?id=1.1.4">
+    <link rel="stylesheet" href="user.css?id=5">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="container">
     <div class="title">Registration</div>
+    <div class="Message">
+      Congratulation you are registered
+    </div>
     <div class="content">
       <form action="#">
         <div class="user-details">
@@ -55,10 +58,12 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Register"><br><br>
+          <a id="loginLink" href="/Login">Log In</a>
         </div>
       </form>
     </div>
+
   </div>
 
 </body>
