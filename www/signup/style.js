@@ -26,19 +26,17 @@ function validateData(value, field){
 $.getJSON('../hidden/',function(data){
   $("#nmInput").keyup(function(){
     let inputValue = $(this).val();
-    let cw = captilizeWords(inputValue);
-    $(this).val(cw);
     if ($(this).val()) {
-      var words = countWords(cw);
-      let numbPresent = ifNumber(cw);
+      var words = countWords(inputValue);
+      let numbPresent = ifNumber(inputValue);
       if (!numbPresent) {
        if (words>=2) {
-         showSuccess("#nmAlert",'(Name Accepted )');
+         showSuccess("#nmAlert",'(Name Accepted &#10003;)');
        }else {
-         showWarning("#nmAlert",'( Two Words Required)');
+         showWarning("#nmAlert",'( Too Short e.g. John Doe)');
        }
       }else {
-       showWarning("#nmAlert",'(Name Dont Have Numbers )');
+       showWarning("#nmAlert",'(Number not allowed )');
       }
     }else {
       showWarning("#nmAlert",'(Required )');
@@ -48,14 +46,11 @@ $.getJSON('../hidden/',function(data){
   $("#unInput").keyup(function(){
 
     let inputValue = $(this).val();
-
-    let toUp = inputValue.toUpperCase();
-    $(this).val(toUp);
-    if (toUp) {
-      let isDataValidated = validateData(toUp, "username");
+    if (inputValue) {
+      let isDataValidated = validateData(inputValue, "username");
       if (isDataValidated) {
         for (var i = 0; i < data.length; i++) {
-          if (toUp == data[i].fastUsername ) {
+          if (inputValue == data[i].fastUsername ) {
             showWarning("#unAlert",`( Username is not available  &#x2716;)`);
           }else {
             showSuccess("#unAlert",`( Username is available &#10003;)`);
@@ -81,7 +76,7 @@ $.getJSON('../hidden/',function(data){
           if (inputValue == data[i].userEmail ) {
             showWarning("#emAlert",'( Already registered &#x2716; )');
           }else {
-            showSuccess("#emAlert",'( e-mail is available &#10003;)');
+            showSuccess("#emAlert",'( E-mail Accepted &#10003;)');
           }
         }
       }else {
@@ -96,20 +91,20 @@ $.getJSON('../hidden/',function(data){
   });
 
 });
-function captilizeWords(input){
-  var CapitalizeWords = input[0].toUpperCase();
-   for (var i = 1; i <= input.length - 1; i++) {
-       let currentCharacter,
-           previousCharacter = input[i - 1];
-       if (previousCharacter && previousCharacter == ' ') {
-           currentCharacter = input[i].toUpperCase();
-       } else {
-           currentCharacter = input[i];
-       }
-       CapitalizeWords = CapitalizeWords + currentCharacter;
-   }
-   return CapitalizeWords;
-}
+// function captilizeWords(input){
+//   var CapitalizeWords = input[0].toUpperCase();
+//    for (var i = 1; i <= input.length - 1; i++) {
+//        let currentCharacter,
+//            previousCharacter = input[i - 1];
+//        if (previousCharacter && previousCharacter == ' ') {
+//            currentCharacter = input[i].toUpperCase();
+//        } else {
+//            currentCharacter = input[i];
+//        }
+//        CapitalizeWords = CapitalizeWords + currentCharacter;
+//    }
+//    return CapitalizeWords;
+// }
 function ifNumber(val){
   return /\d/.test(val);
 }
