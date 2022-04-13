@@ -10,11 +10,11 @@ $.getJSON('../hidden/',function(data){
     if ($(this).val()) {
       for (var i = 0; i < data.length; i++) {
         if (inputValue == data[i].fastUsername ) {
-           $("#unAlert").html(` ( ${inputValue} is not available )`);
+           $("#unAlert").html(` ( ${inputValue} is not available  &#10060;)`);
            $("#unAlert").addClass("warning");
            $("#unAlert").removeClass("success");
         }else {
-          $("#unAlert").html(`( ${inputValue} is available )`);
+          $("#unAlert").html(`( ${inputValue} is available &#10003;)`);
           $("#unAlert").addClass("success");
           $("#unAlert").removeClass("warning");
         }
@@ -29,7 +29,7 @@ $.getJSON('../hidden/',function(data){
     if ($(this).val()) {
       for (var i = 0; i < data.length; i++) {
         if (inputValue == data[i].userEmail ) {
-           $("#emAlert").html(` ( Already registered )`);
+           $("#emAlert").html(` ( Already registered &#10060; )`);
            $("#emAlert").addClass("warning");
            $("#emAlert").removeClass("success");
         }else {
