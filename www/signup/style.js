@@ -33,7 +33,7 @@ $.getJSON('../hidden/',function(data){
            $("#emAlert").addClass("warning");
            $("#emAlert").removeClass("success");
         }else {
-          $("#emAlert").html(`( Not Registered )`);
+          $("#emAlert").html(`( Not Registered &#10003;)`);
           $("#emAlert").addClass("success");
           $("#emAlert").removeClass("warning");
         }
