@@ -1,54 +1,130 @@
+function validateData(value, field){
+  switch (field) {
+    case "username":
+      if (value.length<6) {
+        return false;
+      }else if (value.length>16) {
+        return false;
+      }else {
+        return true;
+      }
+      break;
+
+
+    case "email":
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
+    {
+    return true;
+    }else {
+    return false;
+    }
+      break;
+  }
+}
+
 
 $.getJSON('../hidden/',function(data){
-  console.log(data);
   $("#nmInput").keyup(function(){
-
+    let inputValue = $(this).val();
+    let cw = captilizeWords(inputValue);
+    $(this).val(cw);
+    if ($(this).val()) {
+      var words = countWords(cw);
+      let numbPresent = ifNumber(cw);
+      if (!numbPresent) {
+       if (words>=2) {
+         showSuccess("#nmAlert",'(Name Accepted )');
+       }else {
+         showWarning("#nmAlert",'( Two Words Required)');
+       }
+      }else {
+       showWarning("#nmAlert",'(Name Dont Have Numbers )');
+      }
+    }else {
+      showWarning("#nmAlert",'(Required )');
+    }
   });
 
   $("#unInput").keyup(function(){
-    let inputValue = this.value;
-    if ($(this).val()) {
-      for (var i = 0; i < data.length; i++) {
-        if (inputValue == data[i].fastUsername ) {
-           $("#unAlert").html(` ( ${inputValue} is not available  &#x2716;)`);
-           $("#unAlert").addClass("warning");
-           $("#unAlert").removeClass("success");
-        }else {
-          $("#unAlert").html(`( ${inputValue} is available &#10003;)`);
-          $("#unAlert").addClass("success");
-          $("#unAlert").removeClass("warning");
+
+    let inputValue = $(this).val();
+
+    let toUp = inputValue.toUpperCase();
+    $(this).val(toUp);
+    if (toUp) {
+      let isDataValidated = validateData(toUp, "username");
+      if (isDataValidated) {
+        for (var i = 0; i < data.length; i++) {
+          if (toUp == data[i].fastUsername ) {
+            showWarning("#unAlert",`( Username is not available  &#x2716;)`);
+          }else {
+            showSuccess("#unAlert",`( Username is available &#10003;)`);
+          }
         }
+      }else {
+        showWarning("#unAlert",'(Range 6 - 20 letters )',"" );
       }
-    }else {
-      $("#unAlert").html('');
+    }
+    else {
+      showWarning("#unAlert",'(Required )',"" );
     }
   });
 
   $("#emInput").keyup(function(){
-    let inputValue = this.value;
+    let toLow = $(this).val();
+    let inputValue = toLow.toLowerCase();
+    $(this).val(inputValue);
     if ($(this).val()) {
-      for (var i = 0; i < data.length; i++) {
-        if (inputValue == data[i].userEmail ) {
-           $("#emAlert").html(` ( Already registered &#x2716; )`);
-           $("#emAlert").addClass("warning");
-           $("#emAlert").removeClass("success");
-        }else {
-          $("#emAlert").html(`( Not Registered &#10003;)`);
-          $("#emAlert").addClass("success");
-          $("#emAlert").removeClass("warning");
+      let isDataValidated = validateData(inputValue, "email");
+      if (isDataValidated) {
+        for (var i = 0; i < data.length; i++) {
+          if (inputValue == data[i].userEmail ) {
+            showWarning("#emAlert",'( Already registered &#x2716; )');
+          }else {
+            showSuccess("#emAlert",'( e-mail is available &#10003;)');
+          }
         }
+      }else {
+        showWarning("#emAlert",'(Invalid Email )');
       }
     }else {
-      $("#emAlert").html('');
+      showWarning("#emAlert",'(Required )');
     }
   });
 
   $("#psInput").keyup(function(){
-    let dbValue = data.fastUsername;
-    let inputValue = this.value;
-    if (inputValue == dbValue ) {
-
-    }
   });
 
 });
+function captilizeWords(input){
+  var CapitalizeWords = input[0].toUpperCase();
+   for (var i = 1; i <= input.length - 1; i++) {
+       let currentCharacter,
+           previousCharacter = input[i - 1];
+       if (previousCharacter && previousCharacter == ' ') {
+           currentCharacter = input[i].toUpperCase();
+       } else {
+           currentCharacter = input[i];
+       }
+       CapitalizeWords = CapitalizeWords + currentCharacter;
+   }
+   return CapitalizeWords;
+}
+function ifNumber(val){
+  return /\d/.test(val);
+}
+function countWords(x){
+  let rmChar = x.replace(/[^A-Za-z]\s+/g);
+  let nwWord = rmChar.trim().split(" ");
+  return nwWord.length;
+}
+function showSuccess(id, message){
+  $(id).html(message);
+  $(id).addClass("success");
+  $(id).removeClass("warning");
+}
+function showWarning(id, message){
+  $(id).html(message);
+  $(id).addClass("warning");
+  $(id).removeClass("success");
+}

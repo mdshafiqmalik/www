@@ -127,19 +127,24 @@ form .input-box span.details{
     text-transform: uppercase;
     text-decoration: none;
   }
-  .alert{
-    font-size: .9em;
-  }
+
   .warning{
     color: red;
   }
   .success{
     color: #0ddf0d;
   }
+  .alert{
+     font-size: .7rem;
+     font-weight: 600;
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
   padding:15px 20px;
+}
+.alert{
+  font-size: .9em;
 }
 form .user-details .input-box{
     margin-bottom: 15px;

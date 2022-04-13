@@ -4,37 +4,38 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.1.8">
+    <link rel="stylesheet" href="style.css?id=1.2.0">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
    </head>
 <body>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="../login">
+      <form id="#registerFrom" onsubmit="" action="../login">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name </span><span id="nmAlert" class="alert"></span>
-            <input id="nmInput" class="fields" type="text" placeholder="Enter your name" required>
+            <input id="nmInput"  name="fullname"class="fields" type="text" placeholder="Enter your name" autocomplete="off" required>
           </div>
           <div class="input-box">
             <span class="details">Username </span><span id="unAlert" class="alert"></span>
-            <input id="unInput" class="fields"  type="text" placeholder="Enter your username" required><br>
+            <input id="unInput" name="username" class="fields"  type="text" placeholder="Enter your username" autocomplete="off" required><br>
 
           </div>
           <div class="input-box">
             <span class="details">Email </span><span id="emAlert" class="alert"></span>
-            <input id="emInput"  class="fields" type="text" placeholder="Enter your email" required>
+            <input id="emInput" name="email" class="fields" type="email" placeholder="Enter your email" autocomplete="off" required>
 
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="text" placeholder="Enter your password" autocomplete="off" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password </span><span id="psAlert" class="alert"></span>
-            <input id="psInput"  class="fields" type="text" placeholder="Confirm your password" required>
+            <input id="psInput"  name="password" class="fields" type="text" placeholder="Confirm your password" autocomplete="off" required>
 
           </div>
         </div>
