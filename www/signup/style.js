@@ -53,7 +53,7 @@ $.getJSON('../hidden/',function(data){
           if (inputValue == data[i].fastUsername ) {
             showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
           }else {
-            showSuccess("#unAlert",`( Username is available &#10003 ;)`);
+            showSuccess("#unAlert",`( Username is available &#10003; )`);
           }
         }
       }else {
@@ -80,10 +80,10 @@ $.getJSON('../hidden/',function(data){
           }
         }
       }else {
-        showWarning("#emAlert",'(Invalid Email )');
+        showWarning("#emAlert",'( Invalid Email )');
       }
     }else {
-      showWarning("#emAlert",'(Required )');
+      showWarning("#emAlert",'( Required )');
     }
   });
 
