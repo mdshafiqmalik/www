@@ -31,12 +31,12 @@ $.getJSON('../hidden/',function(data){
       let numbPresent = ifNumber(inputValue);
       if (!numbPresent) {
        if (words>=2) {
-         showSuccess("#nmAlert",'(Name Accepted &#10003;)');
+         showSuccess("#nmAlert",'( Name Accepted &#10003; )');
        }else {
-         showWarning("#nmAlert",'( Too Short e.g. John Doe)');
+         showWarning("#nmAlert",'( Too Short e.g. John Doe )');
        }
       }else {
-       showWarning("#nmAlert",'(Number not allowed )');
+       showWarning("#nmAlert",'( Number not allowed &#x2716; )');
       }
     }else {
       showWarning("#nmAlert",'(Required )');
@@ -51,17 +51,17 @@ $.getJSON('../hidden/',function(data){
       if (isDataValidated) {
         for (var i = 0; i < data.length; i++) {
           if (inputValue == data[i].fastUsername ) {
-            showWarning("#unAlert",`( Username is already taken  &#x2716;)`);
+            showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
           }else {
-            showSuccess("#unAlert",`( Username is available &#10003;)`);
+            showSuccess("#unAlert",`( Username is available &#10003 ;)`);
           }
         }
       }else {
-        showWarning("#unAlert",'(Range 6 - 20 letters )',"" );
+        showWarning("#unAlert",'( Range 6 - 20 letters )',"" );
       }
     }
     else {
-      showWarning("#unAlert",'(Required )',"" );
+      showWarning("#unAlert",'( Required )',"" );
     }
   });
 
@@ -76,7 +76,7 @@ $.getJSON('../hidden/',function(data){
           if (inputValue == data[i].userEmail ) {
             showWarning("#emAlert",'( Already registered &#x2716; )');
           }else {
-            showSuccess("#emAlert",'( E-mail Accepted &#10003;)');
+            showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
           }
         }
       }else {
