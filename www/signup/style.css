@@ -130,6 +130,12 @@ form .input-box span.details{
   .alert{
     font-size: .9em;
   }
+  .warning{
+    color: red;
+  }
+  .success{
+    color: #0ddf0d;
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;

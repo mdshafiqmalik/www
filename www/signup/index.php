@@ -4,9 +4,9 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.1.3">
+    <link rel="stylesheet" href="style.css?id=1.1.4">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    </head>
 <body>
   <div class="container">
@@ -16,16 +16,16 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name </span><span id="nmAlert" class="alert"></span>
-            <input id="nmInput" onkeydown='inputAuth(nmInput)' type="text" placeholder="Enter your name" required>
+            <input id="nmInput" class="fields" type="text" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
             <span class="details">Username </span><span id="unAlert" class="alert"></span>
-            <input id="unInput" onkeyup="inputAuth(unInput)" type="text" placeholder="Enter your username" required><br>
+            <input id="unInput" class="fields"  type="text" placeholder="Enter your username" required><br>
 
           </div>
           <div class="input-box">
             <span class="details">Email </span><span id="emAlert" class="alert"></span>
-            <input id="emInput" onkeyup="inputAuth(emInput)" type="text" placeholder="Enter your email" required>
+            <input id="emInput"  class="fields" type="text" placeholder="Enter your email" required>
 
           </div>
           <div class="input-box">
@@ -34,7 +34,7 @@
           </div>
           <div class="input-box">
             <span class="details">Confirm Password </span><span id="psAlert" class="alert"></span>
-            <input id="psInput" onkeyup="inputAuth(psInput)" type="text" placeholder="Confirm your password" required>
+            <input id="psInput"  class="fields" type="text" placeholder="Confirm your password" required>
 
           </div>
         </div>
@@ -66,6 +66,6 @@
       </form>
     </div>
   </div>
-<script src="style.js"></script>
+<script src="style.js?v=0.0.1"></script>
 </body>
 </html>

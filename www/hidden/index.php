@@ -16,9 +16,9 @@ if ($link->connect_error) {
            $userArray[] = $row;
          }
            $DataDecode = json_encode($userArray);
-           $data[] = json_decode($DataDecode, true);
-           $jason_merge = json_encode($data);
-           echo $jason_merge;
+           // $data[] = json_decode($DataDecode, true);
+           // $jason_merge = json_encode($data);
+           echo $DataDecode;
 
        }else {
          $noData = array("Result"=>"No Data Found");
