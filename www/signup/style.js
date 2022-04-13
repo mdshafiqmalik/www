@@ -16,6 +16,7 @@ $.getJSON('../hidden/',function(data){
         }else {
           $("#unAlert").html(`( ${inputValue} is available )`);
           $("#unAlert").addClass("success");
+          $("#unAlert").removeClass("warning");
         }
       }
     }else {
@@ -30,9 +31,11 @@ $.getJSON('../hidden/',function(data){
         if (inputValue == data[i].userEmail ) {
            $("#emAlert").html(` ( Already registered )`);
            $("#emAlert").addClass("warning");
+           $("#emAlert").removeClass("success");
         }else {
           $("#emAlert").html(`( Not Registered )`);
           $("#emAlert").addClass("success");
+          $("#emAlert").removeClass("warning");
         }
       }
     }else {
