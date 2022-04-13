@@ -51,7 +51,7 @@ $.getJSON('../hidden/',function(data){
       if (isDataValidated) {
         for (var i = 0; i < data.length; i++) {
           if (inputValue == data[i].fastUsername ) {
-            showWarning("#unAlert",`( Username is not available  &#x2716;)`);
+            showWarning("#unAlert",`( Username is already taken  &#x2716;)`);
           }else {
             showSuccess("#unAlert",`( Username is available &#10003;)`);
           }
