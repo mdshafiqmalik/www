@@ -10,7 +10,7 @@ $.getJSON('../hidden/',function(data){
     if ($(this).val()) {
       for (var i = 0; i < data.length; i++) {
         if (inputValue == data[i].fastUsername ) {
-           $("#unAlert").html(` ( ${inputValue} is not available  &#10060;)`);
+           $("#unAlert").html(` ( ${inputValue} is not available  &#x2716;)`);
            $("#unAlert").addClass("warning");
            $("#unAlert").removeClass("success");
         }else {
@@ -29,7 +29,7 @@ $.getJSON('../hidden/',function(data){
     if ($(this).val()) {
       for (var i = 0; i < data.length; i++) {
         if (inputValue == data[i].userEmail ) {
-           $("#emAlert").html(` ( Already registered &#10060; )`);
+           $("#emAlert").html(` ( Already registered &#x2716; )`);
            $("#emAlert").addClass("warning");
            $("#emAlert").removeClass("success");
         }else {
