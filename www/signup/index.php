@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.2.2">
+    <link rel="stylesheet" href="style.css?id=1.2.3">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -30,12 +30,12 @@
 
           </div>
           <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" autocomplete="off" required>
+            <span class="details">Password </span><span id="psAlert" class="alert"></span>
+            <input id="psInput" type="text" placeholder="Enter your password" autocomplete="off" required>
           </div>
           <div class="input-box">
-            <span class="details">Confirm Password </span><span id="psAlert" class="alert"></span>
-            <input id="psInput"  name="password" class="fields" type="text" placeholder="Confirm your password" autocomplete="off" required>
+            <span class="details">Confirm Password </span><span id="confirmPassAlert" class="alert"></span>
+            <input id="confirmPassInput"  name="password" class="fields" type="text" placeholder="Confirm your password" autocomplete="off" required>
 
           </div>
         </div>
@@ -67,6 +67,6 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.0.2"></script>
+<script src="style.js?v=0.0.3"></script>
 </body>
 </html>

@@ -1,29 +1,38 @@
 function validateData(value, field){
   switch (field) {
     case "username":
-      if (value.length<6) {
-        return false;
-      }else if (value.length>16) {
-        return false;
-      }else {
-        return true;
-      }
-      break;
-
-
+    if (value.length<6) {
+      return false;
+    }else if (value.length>16) {
+      return false;
+    }else {
+      return true;
+    }
+    break;
     case "email":
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
-    {
-    return true;
+     {
+     return true;
     }else {
-    return false;
+     return false;
     }
+     break;
+
+    case "password":
+    if (value.length<8) {
+      return true;
       break;
+    }else {
+      return false;
+      break;
+    }
   }
 }
 
 
 $.getJSON('../hidden/',function(data){
+
+
   $("#nmInput").keyup(function(){
     let inputValue = $(this).val();
     if ($(this).val()) {
@@ -88,6 +97,42 @@ $.getJSON('../hidden/',function(data){
   });
 
   $("#psInput").keyup(function(){
+    let inputValue = $(this).val();
+    if (inputValue) {
+      let x = validateData(inputValue,"password");
+      if (!x) {
+        let pc = passwordStrengthChecker(inputValue);
+        switch (pc) {
+          case "Weak":
+          showWarning("#psAlert",'( Weak Password )');
+            break;
+
+          case "Strong":
+          showSuccess("#psAlert",'( Strong Paswword &#10003; )');
+            break;
+
+          case "Medium":
+          showWarning("#psAlert",'( Medium Password &#10003; )');
+          $("#psAlert").addClass("medium");
+             break;
+        }
+
+      }else{
+       showWarning("#psAlert",'( Minimum Length 8 Letters )');
+      }
+    }else {
+      showWarning("#psAlert",'( Required )');
+    }
+  });
+
+  $("#confirmPassInput").keyup(function(){
+    let cPassValue = $(this).val();
+    let passValue = $("#psInput").val();
+    if (passValue == cPassValue) {
+       showSuccess("#confirmPassAlert",'( Password Matched &#10003; )');
+    }else {
+      showWarning("#confirmPassAlert",'( Password Not Match )');
+    }
   });
 
 });
@@ -105,6 +150,19 @@ $.getJSON('../hidden/',function(data){
 //    }
 //    return CapitalizeWords;
 // }
+function passwordStrengthChecker(x){
+  let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+  let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
+  let badge;
+  if(strongPassword.test(x)) {
+        badge = 'Strong';
+    } else if(mediumPassword.test(x)) {
+        badge = 'Medium';
+    } else {
+        badge = 'Weak';
+    }
+    return badge;
+}
 function ifNumber(val){
   return /\d/.test(val);
 }

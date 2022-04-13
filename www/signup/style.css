@@ -137,6 +137,9 @@ form .input-box span.details{
   .success{
     color: #0ddf0d;
   }
+  .medium{
+    color: orange;
+  }
   .alert{
      font-size: .7rem;
      font-weight: 600;
