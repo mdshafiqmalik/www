@@ -12,6 +12,7 @@ $.getJSON('../hidden/',function(data){
         if (inputValue == data[i].fastUsername ) {
            $("#unAlert").html(` ( ${inputValue} is not available )`);
            $("#unAlert").addClass("warning");
+           $("#unAlert").removeClass("success");
         }else {
           $("#unAlert").html(`( ${inputValue} is available )`);
           $("#unAlert").addClass("success");
