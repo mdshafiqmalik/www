@@ -41,8 +41,9 @@ function getData(url, callback){
 }
 
 getData('../hidden/', function(data) {
-  console.log(data);
-  data = JSON.parse(data);
+
+  let jsData = JSON.parse(data);
+    console.log(jsData);
 //  For Full Name
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
@@ -80,8 +81,8 @@ getData('../hidden/', function(data) {
       let isDataValidated = validateData(inputValue, "username");
       if (isDataValidated) {
         if (!hasWhiteSpace(inputValue)) {
-            for (var i = 0; i < data.length; i++) {
-              if (inputValue == data[i].fastUsername ) {
+            for (var i = 0; i < jsData.length; i++) {
+              if (inputValue == jsData[i].fastUsername ) {
                 showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
                 j = false;
               }else {
@@ -114,8 +115,8 @@ getData('../hidden/', function(data) {
    if ($("#emInput").val()) {
      let isDataValidated = validateData(inputValue, "email");
      if (isDataValidated) {
-       for (var i = 0; i < data.length; i++) {
-         if (inputValue == data[i].userEmail ) {
+       for (var i = 0; i < jsData.length; i++) {
+         if (inputValue == jsData[i].userEmail ) {
            showWarning("#emAlert",'( Already registered &#x2716; )');
            j = false;
          }else {
