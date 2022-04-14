@@ -1,9 +1,9 @@
 function validateData(value, field){
   switch (field) {
     case "username":
-    if (value.length>6) {
+    if (value.length<6) {
       return false;
-    }else if (value.length<16) {
+    }else if (value.length>16) {
       return false;
     }else {
       return false;
