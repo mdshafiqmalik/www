@@ -4,14 +4,18 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.2.5">
+    <link rel="stylesheet" href="style.css?id=1.3.2">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
    </head>
 <body>
+
   <div class="container">
     <div class="title">Registration</div>
+    <div id="finalMessageDiv">
+      <p id="finalMessage"></p>
+    </div>
     <div class="content">
       <form id="#registerFrom" onsubmit="return finalSubmit()" action="../login">
         <div class="user-details">
@@ -39,10 +43,10 @@
 
           </div>
         </div>
-        <div class="gender-details">
-          <input class="genderSelect" type="radio" name="gender" id="dot-1" >
-          <input class="genderSelect" type="radio" name="gender" id="dot-2" >
-          <input class="genderSelect" type="radio" name="gender" id="dot-3" >
+        <div id="gender" class="gender-details">
+          <input class="genderSelect" type="radio"value="male" name="gender" id="dot-1" >
+          <input class="genderSelect" type="radio"value="female" name="gender" id="dot-2" >
+          <input class="genderSelect" type="radio"value="NA" name="gender" id="dot-3" >
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
@@ -58,9 +62,7 @@
             </label>
           </div>
         </div>
-        <div id="finalMessageDiv">
-          <p id="finalMessage">Please Insert Username</p>
-        </div>
+
         <div class="button">
           <input type="submit" value="Register">
           <div class="loginLink">

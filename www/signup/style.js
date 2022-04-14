@@ -49,7 +49,7 @@ getData('../hidden/', function(data) {
     console.log();
     if ($("#nmInput").val()) {
       var words = countWords(inputValue);
-      let numbPresent = ifNumber(inputValue);
+      let numbPresent = hasNumber(inputValue);
       if (!numbPresent) {
        if (words>=2) {
          showSuccess("#nmAlert",'( Name Accepted &#10003; )');
@@ -66,7 +66,6 @@ getData('../hidden/', function(data) {
       showWarning("#nmAlert",'(Required )');
       j = false;
     }
-      console.log(j);
     return j;
   }
 
@@ -77,27 +76,30 @@ getData('../hidden/', function(data) {
     let j;
     if (inputValue) {
       let isDataValidated = validateData(inputValue, "username");
-      console.log(isDataValidated);
       if (isDataValidated) {
-        for (var i = 0; i < data.length; i++) {
-          if (inputValue == data[i].fastUsername ) {
-            showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
-            j = false;
-          }else {
-            showSuccess("#unAlert",`( Username is available &#10003; )`);
-            j = true;
-          }
+        if (!hasWhiteSpace(inputValue)) {
+            for (var i = 0; i < data.length; i++) {
+              if (inputValue == data[i].fastUsername ) {
+                showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
+                j = false;
+              }else {
+                showSuccess("#unAlert",`( Username is available &#10003; )`);
+                j = true;
+              }
+            }
+        }else {
+          showWarning("#unAlert",'( Spaces not allowed )' );
+          j = false;
         }
       }else {
-        showWarning("#unAlert",'( Range 6 - 16 letters )',"" );
+        showWarning("#unAlert",'( Range 6 - 16 letters )');
         j = false;
       }
     }
     else {
-      showWarning("#unAlert",'( Required )',"" );
+      showWarning("#unAlert",'( Required )');
       j = false;
     }
-
     return j;
   }
 // For Email
@@ -109,7 +111,6 @@ getData('../hidden/', function(data) {
    $("#emInput").val(inputValue);
    if ($("#emInput").val()) {
      let isDataValidated = validateData(inputValue, "email");
-
      if (isDataValidated) {
        for (var i = 0; i < data.length; i++) {
          if (inputValue == data[i].userEmail ) {
@@ -128,36 +129,21 @@ getData('../hidden/', function(data) {
      showWarning("#emAlert",'( Required )');
      j = false;
    }
-
    return j;
  }
 // For password
   $("#psInput").keyup(isPasswordTrue);
   function isPasswordTrue(){
+    isConfirmPasswordTrue();
    let inputValue = $("#psInput").val();
    let i;
    if (inputValue) {
      let x = validateData(inputValue,"password");
      if (x) {
-       let pc = passwordStrengthChecker(inputValue);
-       switch (pc) {
-         case "Weak":
-         $("#psAlert").removeClass("medium");
-         showWarning("#psAlert",'( Weak Password )');
+       if(passwordStrengthChecker(inputValue)){
+         i =  true;
+       }else {
          i = false;
-           break;
-
-         case "Strong":
-         $("#psAlert").removeClass("medium");
-         showSuccess("#psAlert",'( Strong Paswword &#10003; )');
-         i = true;
-           break;
-
-         case "Medium":
-         $("#psAlert").addClass("medium");
-         showWarning("#psAlert",'( Medium Password &#10003; )');
-         i = true;
-           break;
        }
 
      }else{
@@ -171,7 +157,6 @@ getData('../hidden/', function(data) {
      i = false;
 
    }
-
    return i;
  }
 // For Confirm password
@@ -193,14 +178,35 @@ getData('../hidden/', function(data) {
     }
    return i;
   }
+  function atLeastOneRadio() {
+      return ($('input[type=radio]:checked').size() > 0);
+  }
+  function selectedGender(){
+    let i;
+    if ($('input[name=gender]:checked').length > 0) {
+      i = true;
+    }else {
+      i = false;
+      $("#finalMessage").html("Select Gender");
+      $("#finalMessageDiv").css("display:block");
+      $("#finalMessageDiv").addClass("FMD");
+    }
+    return i;
+  }
  window.finalSubmit = function(){
     let i;
+    console.log(selectedGender());
     if (isNameTrue()) {
       if (isUsernameTrue()) {
         if (isEmailTrue()) {
           if (isPasswordTrue()) {
             if (isConfirmPasswordTrue()) {
-              i  = true;
+              if (selectedGender()) {
+                i  = true;
+              }else {
+                i = false;
+              }
+
             }else {
               isConfirmPasswordTrue();
               i = false;
@@ -222,31 +228,61 @@ getData('../hidden/', function(data) {
       isNameTrue();
         i = false;
     }
-    // console.log(i);
+    console.log(i);
     return i;
   }
-  // console.log("Name: ".isNameTrue());
-  // console.log("Username: ".isUsernameTrue());
-  // console.log("Email: ".isEmailTrue());
-  // console.log("Password: ".isPasswordTrue());
-  // console.log("Confirm Password: ".isConfirmPasswordTrue());
 });
 //  Ectra Functions
 function passwordStrengthChecker(x){
-  let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-  let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
-  let badge;
-  if(strongPassword.test(x)) {
-        badge = 'Strong';
-    } else if(mediumPassword.test(x)) {
-        badge = 'Medium';
-    } else {
-        badge = 'Weak';
+  let i;
+  let strength;
+    if (hasUpperCase(x)||hasLowerCase(x)) {
+      $("#psAlert").removeClass("medium");
+      showWarning("#psAlert",'( Weak )');
+        if (hasNumber(x)) {
+          $("#psAlert").addClass("medium");
+          showSuccess("#psAlert",'( Medium &#10003; )');
+          if (hasSpecialChars(x)) {
+            $("#psAlert").removeClass("medium");
+            showSuccess("#psAlert",'( Strong &#10003; )');
+          }else {
+
+          }
+        }else if(hasSpecialChars(x)) {
+          $("#psAlert").addClass("medium");
+          showSuccess("#psAlert",'( Medium &#10003; )');
+        }
+    }else if(hasLowerCase(x)) {
+      $("#psAlert").removeClass("medium");
+      showWarning("#psAlert",'( Weak )');
     }
-    return badge;
+    else {
+      $("#psAlert").removeClass("medium");
+      showWarning("#psAlert",'( Weak )');
+    }
+    return true;
 }
-function ifNumber(val){
+
+
+function hasWhiteSpace(s) {
+  return /\s/g.test(s);
+}
+function hasNumber(val){
   return /\d/.test(val);
+}
+function hasLowerCase(str) {
+    return (/[a-z]/.test(str));
+}
+function hasUpperCase(str) {
+    return (/[A-Z]/.test(str));
+}
+function hasSpecialChars(x){
+  const specialChars = /[`!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/;
+  if(specialChars.test(x)){
+    return true;
+  }else {
+    false;
+  }
 }
 function countWords(x){
   let rmChar = x.replace(/[^A-Za-z]\s+/g);
