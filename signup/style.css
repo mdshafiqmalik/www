@@ -144,6 +144,21 @@ form .input-box span.details{
      font-size: .7rem;
      font-weight: 600;
   }
+  #finalMessageDiv{
+    background-color: #ffd992;
+    padding: .6em;
+    max-width: 700px;
+    width: 100%;
+    border-left: 10px solid orange;
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    margin-top: 3em;
+    /* justify-content: center; */
+  }
+  #finalMessage{
+    font-weight: 600;
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
