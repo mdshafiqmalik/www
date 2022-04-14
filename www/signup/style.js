@@ -71,7 +71,7 @@ getData('../hidden/', function(data) {
 
 //  for Username
   $("#unInput").keyup(isUsernameTrue);
-  function isUsernameTrue(data){
+  function isUsernameTrue(){
     let inputValue = $("#unInput").val();
     let j;
     if (inputValue) {
@@ -104,7 +104,7 @@ getData('../hidden/', function(data) {
   }
 // For Email
   $("#emInput").keyup(isEmailTrue);
-  function isEmailTrue(data){
+  function isEmailTrue(){
    let toLow = $("#emInput").val();
    let inputValue = toLow.toLowerCase();
    let j;
