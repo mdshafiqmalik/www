@@ -6,7 +6,7 @@ function validateData(value, field){
     }else if (value.length>16) {
       return false;
     }else {
-      return false;
+      return true;
     }
     break;
 
