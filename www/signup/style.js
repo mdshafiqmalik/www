@@ -42,6 +42,7 @@ function getData(url, callback){
 
 getData('../hidden/', function(data) {
   console.log(data);
+  data = JSON.parse(data);
 //  For Full Name
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
