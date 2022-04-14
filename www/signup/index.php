@@ -72,6 +72,6 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.0.6"></script>
+<script src="style.js?v=0.0.7"></script>
 </body>
 </html>
