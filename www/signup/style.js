@@ -85,6 +85,7 @@ getData('../hidden/', function(data) {
               if (inputValue == jsData[i].fastUsername ) {
                 showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
                 j = false;
+                break;
               }else {
                 showSuccess("#unAlert",`( Username is available &#10003; )`);
                 j = true;
@@ -119,6 +120,7 @@ getData('../hidden/', function(data) {
          if (inputValue == jsData[i].userEmail ) {
            showWarning("#emAlert",'( Already registered &#x2716; )');
            j = false;
+           break;
          }else {
            showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
            j = true;
