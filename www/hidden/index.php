@@ -3,7 +3,14 @@ header('content-type:application/json');
 include '../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-  if (($_SERVER['HTTP_REFERER'] == "https://www.shafiqhub.com/signup/" )||(($_SERVER['HTTP_REFERER'] == "https://shafiqhub.com/signup/") ) {
+  $httpReferrer1 = "https://www.shafiqhub.com/signup/";
+  $httpReferrer2 = "http://www.shafiqhub.com/signup/";
+  $httpReferrer3 = "https://shafiqhub.com/signup/";
+  $httpReferrer4 = "http://shafiqhub.com/signup/";
+
+  $gethttpRef = $_SERVER['HTTP_REFERER'];
+
+  if ($gethttpRef == $httpReferrer1 || $gethttpRef == $httpReferrer2 || $gethttpRef == $httpReferrer3 || $gethttpRef == $httpReferrer4) {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
