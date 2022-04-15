@@ -1,6 +1,6 @@
 <?php
 header('content-type:application/json');
-include '../../config/secrets.php';
+include '../../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
   $httpReferrer1 = "https://www.shafiqhub.com/signup/";
