@@ -37,7 +37,7 @@ function getData(url, callback){
     type: 'GET',
     url: url
   }).done(callback);
-  // console.log(data);
+  console.log(data);
   return data;
 }
 
