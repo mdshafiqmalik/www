@@ -1,3 +1,19 @@
+function verifyHash(string, hash){
+  function getJSON(url){
+    return JSON.parse($.ajax({
+    type: 'GET',
+    url : url,
+    dataType: 'json',
+    global: true,
+    async:false,
+    success: function (data){
+      return data;
+    }
+  }).responseText);
+  }
+  var mydat = getJSON(`hashAPI.php?hash=${hash}&string=${string}`)
+  console.log("Actual: "+mydat.Result);
+}
 function validateData(value, field){
   switch (field) {
     case "username":
@@ -86,8 +102,11 @@ getData('../api/hidden/test.php', function(data) {
       let isDataValidated = validateData(inputValue, "username");
       if (isDataValidated) {
         if (!hasWhiteSpace(inputValue)) {
+          console.log(jsData.length);
             for (var i = 0; i < jsData.length; i++) {
-              if (inputValue == jsData[i].membUsername ) {
+              let dbData = jsData[i].hashUsername;
+              var vHash = verifyHash(inputValue, dbData);
+              if (Boolean(vHash)) {
                 showWarning("#unAlert",`( Username is taken  &#x2716; )`);
                 j = false;
                 break;  //very Important
@@ -122,7 +141,9 @@ getData('../api/hidden/test.php', function(data) {
      let isDataValidated = validateData(inputValue, "email");
      if (isDataValidated) {
        for (var i = 0; i < jsData.length; i++) {
-         if (inputValue == jsData[i].membEmail ) {
+         let dbData = jsData[i].hashEmail;
+         var vHash = verifyHash(inputValue, dbData);
+         if (Boolean(vHash)) {
            showWarning("#emAlert",'( Email registered &#x2716; )');
            j = false;
            break; //very Important
@@ -141,6 +162,7 @@ getData('../api/hidden/test.php', function(data) {
    }
    return j;
  }
+
 // For password
   $("#psInput").keyup(isPasswordTrue);
   function isPasswordTrue(){
