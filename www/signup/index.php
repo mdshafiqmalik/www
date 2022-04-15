@@ -66,7 +66,7 @@
         <div class="">
           <span id="tc" class="alert"></span>
           <input type="checkbox" name="Terms" value="">
-          By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy agreements</a>
+          By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy Agreements</a>
         </div>
 
         <div class="button">
