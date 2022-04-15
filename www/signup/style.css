@@ -175,6 +175,9 @@ form .input-box span.details{
 .alert{
   font-size: .9em;
 }
+body{
+  background: none;
+}
 form .user-details .input-box{
     margin-bottom: 15px;
     width: 100%;
