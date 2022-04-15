@@ -3,7 +3,7 @@ header('content-type:application/json');
 include '../../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-  if ($_SERVER['HTTP_REFERER'] == "http://www.fastreed.com/signup/") {
+  if ($_SERVER['HTTP_REFERER'] == "http://www.shafiqhub.com/signup/") {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
