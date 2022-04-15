@@ -41,7 +41,7 @@ function getData(url, callback){
   return data;
 }
 
-getData('../api/hidden/', function(data) {
+getData('../api/hidden/register.php', function(data) {
 
   let jsData = data;
 //  For Full Name

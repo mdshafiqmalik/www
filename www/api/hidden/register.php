@@ -4,10 +4,10 @@ include '../../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
   $thisHttp = $_SERVER['HTTP_REFERER'];
-  $url1 = "http://www.shafiqhub.com/signup/";
-  $url2 = "https://www.shafiqhub.com/signup/";
-  $url3 = "http://shafiqhub.com/signup/";
-  $url4 = "https://shafiqhub.com/signup/";
+  $url1 = "http://www.shafiqhub.com/register/";
+  $url2 = "https://www.shafiqhub.com/register/";
+  $url3 = "http://shafiqhub.com/register/";
+  $url4 = "https://shafiqhub.com/register/";
   if ($thisHttp == $url1 || $thisHttp == $url2|| $thisHttp == $url3|| $thisHttp == $url4) {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
