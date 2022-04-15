@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.3.9">
+    <link rel="stylesheet" href="style.css?id=1.4.1">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+     <title>FastReed - Create An Account</title>
    </head>
 <body>
 
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">Create An Account</div>
     <div id="finalMessageDiv">
       <p id="finalMessage"></p>
     </div>
@@ -67,7 +65,7 @@
           <span id="tc" class="alert"></span>
           <br>
           <input type="checkbox" name="Terms" value="">
-          By clicking here, I state that I have read and understood the Privacy and Policy agreements.
+          By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy Agreements</a>
         </div>
 
         <div class="button">
@@ -79,6 +77,6 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.1.2"></script>
+<script src="style.js?v=0.1.3"></script>
 </body>
 </html>

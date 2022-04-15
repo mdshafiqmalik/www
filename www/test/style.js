@@ -37,11 +37,10 @@ function getData(url, callback){
     type: 'GET',
     url: url
   }).done(callback);
-  // console.log(data);
   return data;
 }
 
-getData('hashAPI.php', function(data) {
+getData('../api/hidden/test.php', function(data) {
 
   let jsData = data;
 //  For Full Name
@@ -68,7 +67,7 @@ getData('hashAPI.php', function(data) {
          j = false;
         }
       }else {
-        showWarning("#nmAlert",'(These Chars. Not allowed &#x2716; )');
+        showWarning("#nmAlert",'(Not allowed &#x2716; )');
         j = false;
       }
     }else {
@@ -89,7 +88,7 @@ getData('hashAPI.php', function(data) {
         if (!hasWhiteSpace(inputValue)) {
             for (var i = 0; i < jsData.length; i++) {
               if (inputValue == jsData[i].membUsername ) {
-                showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
+                showWarning("#unAlert",`( Username is taken  &#x2716; )`);
                 j = false;
                 break;  //very Important
               }else {
@@ -124,7 +123,7 @@ getData('hashAPI.php', function(data) {
      if (isDataValidated) {
        for (var i = 0; i < jsData.length; i++) {
          if (inputValue == jsData[i].membEmail ) {
-           showWarning("#emAlert",'( Already registered &#x2716; )');
+           showWarning("#emAlert",'( Email registered &#x2716; )');
            j = false;
            break; //very Important
          }else {
