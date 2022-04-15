@@ -37,6 +37,7 @@ function getData(url, callback){
     type: 'GET',
     url: url
   }).done(callback);
+  // console.log(data);
   return data;
 }
 
@@ -52,17 +53,23 @@ getData('../api/hidden/', function(data) {
     if ($("#nmInput").val()) {
       var words = countWords(inputValue);
       let numbPresent = hasNumber(inputValue);
-      if (!numbPresent) {
-       if (words>=2) {
-         showSuccess("#nmAlert",'( Name Accepted &#10003; )');
-         j = true;
-       }else {
-         showWarning("#nmAlert",'( Too Short e.g. John Doe )');
+      let hasChars = hasSpecialChars(inputValue);
+      if (!hasChars) {
+        if (!numbPresent) {
+         if (words>=2) {
+           showSuccess("#nmAlert",'( Name Accepted &#10003; )');
+           j = true;
+         }else {
+           showWarning("#nmAlert",'( Too Short e.g. John Doe )');
+           j = false;
+         }
+        }else {
+         showWarning("#nmAlert",'( Number not allowed &#x2716; )');
          j = false;
-       }
+        }
       }else {
-       showWarning("#nmAlert",'( Number not allowed &#x2716; )');
-       j = false;
+        showWarning("#nmAlert",'(These Chars. Not allowed &#x2716; )');
+        j = false;
       }
     }else {
       showWarning("#nmAlert",'(Required )');
@@ -84,7 +91,7 @@ getData('../api/hidden/', function(data) {
               if (inputValue == jsData[i].fastUsername ) {
                 showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
                 j = false;
-                break;
+                break;  //very Important
               }else {
                 showSuccess("#unAlert",`( Username is available &#10003; )`);
                 j = true;
@@ -119,7 +126,7 @@ getData('../api/hidden/', function(data) {
          if (inputValue == jsData[i].userEmail ) {
            showWarning("#emAlert",'( Already registered &#x2716; )');
            j = false;
-           break;
+           break; //very Important
          }else {
            showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
            j = true;
@@ -142,18 +149,24 @@ getData('../api/hidden/', function(data) {
    let inputValue = $("#psInput").val();
    let i;
    if (inputValue) {
-     let x = validateData(inputValue,"password");
-     if (x) {
-       if(passwordStrengthChecker(inputValue)){
-         i =  true;
-       }else {
-         i = false;
-       }
+     if (!hasWhiteSpace(inputValue)) {
+       let x = validateData(inputValue,"password");
+       if (x) {
+         if(passwordStrengthChecker(inputValue)){
+           i =  true;
+         }else {
+           i = false;
+         }
 
-     }else{
-       $("#psAlert").removeClass("medium");
-      showWarning("#psAlert",'( Minimum Length 8 Letters )');
-      i = false;
+       }else{
+         $("#psAlert").removeClass("medium");
+        showWarning("#psAlert",'( Minimum Length 8 Letters )');
+        i = false;
+       }
+     }else {
+       $("#psAlert").addClass("medium");
+      showWarning("#psAlert",'(  Avoid Spaces &#10003; )');
+      i = true;
      }
    }else {
      $("#psAlert").removeClass("medium");
@@ -191,12 +204,14 @@ getData('../api/hidden/', function(data) {
       i = true;
     }else {
       i = false;
-      $("#finalMessage").html("Select Gender");
+      $("#finalMessage").html("Please Select Gender");
       $("#finalMessageDiv").css("display:block");
       $("#finalMessageDiv").addClass("FMD");
     }
     return i;
   }
+
+  // Checking all fields on submit
  window.finalSubmit = function(){
     let i;
     console.log(selectedGender());
@@ -206,36 +221,57 @@ getData('../api/hidden/', function(data) {
           if (isPasswordTrue()) {
             if (isConfirmPasswordTrue()) {
               if (selectedGender()) {
-                i  = true;
+                if (isTCchecked()) {
+                  i  = true;
+                }else {
+                  i = false;
+                }
               }else {
                 i = false;
               }
-
             }else {
               isConfirmPasswordTrue();
+              errorMessage("Please Confirm Password");
               i = false;
             }
           }else {
             isPasswordTrue();
+            errorMessage("Please Enter Password");
         i = false;
           }
         }else {
           isEmailTrue();
+          errorMessage("Please Enter Email");
         i = false;
         }
       }else {
-
         isUsernameTrue();
+        errorMessage("Please Enter Username");
         i = false;
       }
     }else {
       isNameTrue();
+      errorMessage("Please Enter Name");
         i = false;
     }
-    console.log(i);
     return i;
   }
 });
+function isTCchecked(){
+  let i;
+  if ($('input[name=Terms]:checked').length > 0){
+     i = true;
+  }else {
+    showWarning("#tc", "( Please check this box )");
+    i = false;
+  }
+  return i;
+}
+function errorMessage(message){
+  $("#finalMessage").html(message);
+  $("#finalMessageDiv").css("display:block");
+  $("#finalMessageDiv").addClass("FMD");
+}
 //  Ectra Functions
 function passwordStrengthChecker(x){
   let i;
@@ -288,6 +324,8 @@ function hasSpecialChars(x){
     false;
   }
 }
+
+//  Function return no of words in a string
 function countWords(x){
   let rmChar = x.replace(/[^A-Za-z]\s+/g);
   let nwWord = rmChar.trim().split(" ");

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css?id=1.3.3">
+    <link rel="stylesheet" href="style.css?id=1.3.6">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -17,7 +17,7 @@
       <p id="finalMessage"></p>
     </div>
     <div class="content">
-      <form id="#registerFrom" onsubmit="return finalSubmit()" action="../login">
+      <form id="#registerFrom" onsubmit="return finalSubmit()" action="registration.php">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name </span><span id="nmAlert" class="alert"></span>
@@ -62,9 +62,16 @@
             </label>
           </div>
         </div>
+        <br>
+        <div class="">
+          <span id="tc" class="alert"></span>
+          <br>
+          <input type="checkbox" name="Terms" value="">
+          By clicking here, I state that I have read and understood the Privacy and Policy agreements.
+        </div>
 
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Create An Account">
           <div class="loginLink">
             Already have an Account <a href="../login"> Log In</a>
           </div>
@@ -72,6 +79,6 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.1.0"></script>
+<script src="style.js?v=0.1.1"></script>
 </body>
 </html>

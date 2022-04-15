@@ -9,19 +9,18 @@
   text-transform: capitalize;
 }
 body{
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(268deg, #71b7e6, #9b59b6);
 }
 .container{
   max-width: 700px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
-  border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .container .title{
@@ -128,7 +127,7 @@ form .input-box span.details{
   .loginLink a{
     margin-left: .3em;
     text-transform: uppercase;
-    text-decoration: none;
+    /* text-decoration: none; */
   }
 
   .warning{
@@ -146,23 +145,28 @@ form .input-box span.details{
   }
   #finalMessageDiv{
     display: none;
-    background-color: #ffd992;
-
-    max-width: 700px;
+    background-color: orange;
+    border-radius: 5px;
+    /* min-width: 500px; */
+    max-width: 300px;
     width: 100%;
-    border-left: 10px solid orange;
     display: flex;
     align-items: center;
     margin-top: .6em;
-    /* justify-content: center; */
   }
   .FMD{
       padding-left: 2em;
       padding: .6em;
   }
   #finalMessage{
+    margin-left: .7em;
     font-weight: 600;
   }
+@media (max-width:1200px) {
+  body{
+    height: 100%;
+  }
+}
  @media(max-width: 584px){
  .container{
   max-width: 100%;
