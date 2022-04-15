@@ -2,8 +2,8 @@
 header('content-type:application/json');
 include '../../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-// if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-//   if ($_SERVER['HTTP_REFERER'] == "http://www.fastreed.com/signup/") {
+if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
+  if ($_SERVER['HTTP_REFERER'] == "http://www.fastreed.com/signup/") {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
@@ -29,16 +29,16 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           echo "$cantReadDecode";
         }
 
-//   }else {
-//     $cantRead = array("Result"=>"Access Denied");
-//     $cantReadDecode = json_encode($cantRead);
-//     echo "$cantReadDecode";
-//   }
-// }else {
-//   $cantRead = array("Result"=>"Access Denied");
-//   $cantReadDecode = json_encode($cantRead);
-//   echo "$cantReadDecode";
-// }
+  }else {
+    $cantRead = array("Result"=>"Access Denied");
+    $cantReadDecode = json_encode($cantRead);
+    echo "$cantReadDecode";
+  }
+}else {
+  $cantRead = array("Result"=>"Access Denied");
+  $cantReadDecode = json_encode($cantRead);
+  echo "$cantReadDecode";
+}
 
 
 
