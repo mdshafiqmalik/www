@@ -186,7 +186,7 @@ getData('../api/hidden/', function(data) {
          showSuccess("#confirmPassAlert",'( Password Matched &#10003; )');
          i = true;
       }else {
-        showWarning("#confirmPassAlert",'( Password Not Match &#x2716; )');
+        showWarning("#confirmPassAlert",'( Password Not Match )');
         i = false;
       }
     }else {
