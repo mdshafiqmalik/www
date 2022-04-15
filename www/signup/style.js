@@ -40,7 +40,7 @@ function getData(url, callback){
   return data;
 }
 
-getData('../hidden/', function(data) {
+getData('../api/hidden/', function(data) {
 
   let jsData = data;
     console.log(jsData);
