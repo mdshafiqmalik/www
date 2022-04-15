@@ -41,7 +41,7 @@ function getData(url, callback){
   return data;
 }
 
-getData('../api/hidden/test.php', function(data) {
+getData('hashAPI.php', function(data) {
 
   let jsData = data;
 //  For Full Name
