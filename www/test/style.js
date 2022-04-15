@@ -12,7 +12,8 @@ function verifyHash(string, hash){
   }).responseText);
   }
   var mydat = getJSON(`hashAPI.php?hash=${hash}&string=${string}`)
-  console.log("Actual: "+mydat.Result);
+  var realdat = Boolean(mydat);
+  return mydat.Result;
 }
 function validateData(value, field){
   switch (field) {
@@ -106,7 +107,8 @@ getData('../api/hidden/test.php', function(data) {
             for (var i = 0; i < jsData.length; i++) {
               let dbData = jsData[i].hashUsername;
               var vHash = verifyHash(inputValue, dbData);
-              if (Boolean(vHash)) {
+              console.log(vHash);
+              if (vHash == true) {
                 showWarning("#unAlert",`( Username is taken  &#x2716; )`);
                 j = false;
                 break;  //very Important
@@ -143,7 +145,8 @@ getData('../api/hidden/test.php', function(data) {
        for (var i = 0; i < jsData.length; i++) {
          let dbData = jsData[i].hashEmail;
          var vHash = verifyHash(inputValue, dbData);
-         if (Boolean(vHash)) {
+         console.log(vHash);
+         if (vHash == true) {
            showWarning("#emAlert",'( Email registered &#x2716; )');
            j = false;
            break; //very Important
