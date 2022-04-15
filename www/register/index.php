@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
     <link rel="stylesheet" href="style.css?id=1.4.1">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+     <title>fastreed - Create An Account</title>
    </head>
 <body>
 
