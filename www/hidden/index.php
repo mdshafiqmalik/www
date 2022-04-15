@@ -7,9 +7,7 @@ if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
   $httpReferrer2 = "http://www.shafiqhub.com/signup/";
   $httpReferrer3 = "https://shafiqhub.com/signup/";
   $httpReferrer4 = "http://shafiqhub.com/signup/";
-
   $gethttpRef = $_SERVER['HTTP_REFERER'];
-
   if ($gethttpRef == $httpReferrer1 || $gethttpRef == $httpReferrer2 || $gethttpRef == $httpReferrer3 || $gethttpRef == $httpReferrer4) {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
