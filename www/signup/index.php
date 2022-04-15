@@ -63,6 +63,7 @@
           </div>
         </div>
         <br>
+        <span id="tc" class="alert"></span>
         <div class="">
           <span id="tc" class="alert"></span>
           <input type="checkbox" name="Terms" value="">
