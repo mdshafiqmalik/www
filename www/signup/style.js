@@ -68,7 +68,7 @@ getData('../api/hidden/', function(data) {
          j = false;
         }
       }else {
-        showWarning("#nmAlert",'(These Chars. Not allowed &#x2716; )');
+        showWarning("#nmAlert",'(Not allowed &#x2716; )');
         j = false;
       }
     }else {
@@ -89,7 +89,7 @@ getData('../api/hidden/', function(data) {
         if (!hasWhiteSpace(inputValue)) {
             for (var i = 0; i < jsData.length; i++) {
               if (inputValue == jsData[i].membUsername ) {
-                showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
+                showWarning("#unAlert",`( Username is taken  &#x2716; )`);
                 j = false;
                 break;  //very Important
               }else {
@@ -124,7 +124,7 @@ getData('../api/hidden/', function(data) {
      if (isDataValidated) {
        for (var i = 0; i < jsData.length; i++) {
          if (inputValue == jsData[i].membEmail ) {
-           showWarning("#emAlert",'( Already registered &#x2716; )');
+           showWarning("#emAlert",'( Email registered &#x2716; )');
            j = false;
            break; //very Important
          }else {
@@ -186,7 +186,7 @@ getData('../api/hidden/', function(data) {
          showSuccess("#confirmPassAlert",'( Password Matched &#10003; )');
          i = true;
       }else {
-        showWarning("#confirmPassAlert",'( Password Not Match )');
+        showWarning("#confirmPassAlert",'( Password Not Match &#x2716; )');
         i = false;
       }
     }else {
