@@ -62,7 +62,6 @@
             </label>
           </div>
         </div>
-        <br>
         <div class="">
           <span id="tc" class="alert"></span>
           <br>
