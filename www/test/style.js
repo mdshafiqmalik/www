@@ -107,7 +107,6 @@ getData('../api/hidden/test.php', function(data) {
             for (var i = 0; i < jsData.length; i++) {
               let dbData = jsData[i].hashUsername;
               var vHash = verifyHash(inputValue, dbData);
-              console.log(vHash);
               if (vHash == true) {
                 showWarning("#unAlert",`( Username is taken  &#x2716; )`);
                 j = false;
@@ -145,7 +144,6 @@ getData('../api/hidden/test.php', function(data) {
        for (var i = 0; i < jsData.length; i++) {
          let dbData = jsData[i].hashEmail;
          var vHash = verifyHash(inputValue, dbData);
-         console.log(vHash);
          if (vHash == true) {
            showWarning("#emAlert",'( Email registered &#x2716; )');
            j = false;
