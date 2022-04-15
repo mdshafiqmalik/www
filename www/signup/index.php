@@ -63,11 +63,11 @@
           </div>
         </div>
         <br>
-        <span id="tc" class="alert"></span>
         <div class="">
           <span id="tc" class="alert"></span>
+          <br>
           <input type="checkbox" name="Terms" value="">
-          By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy Agreements</a>
+          By clicking here, I state that I have read and understood the Privacy and Policy agreements.
         </div>
 
         <div class="button">
@@ -79,6 +79,6 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.1.1"></script>
+<script src="style.js?v=0.1.2"></script>
 </body>
 </html>

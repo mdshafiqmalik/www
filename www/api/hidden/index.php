@@ -2,18 +2,12 @@
 header('content-type:application/json');
 include '../../../config/secrets.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-  $httpReferrer1 = "https://www.shafiqhub.com/signup/";
-  $httpReferrer2 = "http://www.shafiqhub.com/signup/";
-  $httpReferrer3 = "https://shafiqhub.com/signup/";
-  $httpReferrer4 = "http://shafiqhub.com/signup/";
-  $gethttpRef = $_SERVER['HTTP_REFERER'];
-  if ($gethttpRef == $httpReferrer1 || $gethttpRef == $httpReferrer2 || $gethttpRef == $httpReferrer3 || $gethttpRef == $httpReferrer4) {
+// if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
+//   if ($_SERVER['HTTP_REFERER'] == "http://www.fastreed.com/signup/") {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
-
-      $userDataSql =  "SELECT fastUsername, userEmail FROM member_secrets ";
+      $userDataSql =  "SELECT membUsername, membEmail FROM member_details ";
         if (mysqli_query($link, $userDataSql)) {
            $res = mysqli_query($link,$userDataSql);
            if (mysqli_num_rows($res)>0) {
@@ -35,11 +29,17 @@ if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
           echo "$cantReadDecode";
         }
 
-  }else {
-    echo "Access Denied";
-  }
-}else {
-  echo "Access Denied";
-}
+//   }else {
+//     $cantRead = array("Result"=>"Access Denied");
+//     $cantReadDecode = json_encode($cantRead);
+//     echo "$cantReadDecode";
+//   }
+// }else {
+//   $cantRead = array("Result"=>"Access Denied");
+//   $cantReadDecode = json_encode($cantRead);
+//   echo "$cantReadDecode";
+// }
+
+
 
 ?>

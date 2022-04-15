@@ -88,7 +88,7 @@ getData('../api/hidden/', function(data) {
       if (isDataValidated) {
         if (!hasWhiteSpace(inputValue)) {
             for (var i = 0; i < jsData.length; i++) {
-              if (inputValue == jsData[i].fastUsername ) {
+              if (inputValue == jsData[i].membUsername ) {
                 showWarning("#unAlert",`( Username is already taken  &#x2716; )`);
                 j = false;
                 break;  //very Important
@@ -123,7 +123,7 @@ getData('../api/hidden/', function(data) {
      let isDataValidated = validateData(inputValue, "email");
      if (isDataValidated) {
        for (var i = 0; i < jsData.length; i++) {
-         if (inputValue == jsData[i].userEmail ) {
+         if (inputValue == jsData[i].membEmail ) {
            showWarning("#emAlert",'( Already registered &#x2716; )');
            j = false;
            break; //very Important
