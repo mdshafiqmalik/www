@@ -12,7 +12,7 @@
 <body>
 
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">Create An Account</div>
     <div id="finalMessageDiv">
       <p id="finalMessage"></p>
     </div>
