@@ -1,7 +1,6 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if ($_POST['randcheck'] == $_SESSION['rand']) {
     $name = sanitizeData($_POST['fullname']);
     $userName = sanitizeData($_POST['username']);
     $userEmail = sanitizeData($_POST['email']);
@@ -22,14 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sanUserEmail = sanitizeEmail($userEmail);
     $sanGender = filter_var($gender,FILTER_SANITIZE_STRING);
     $sanTerms = filter_var($terms,FILTER_SANITIZE_STRING);
-  }else {
-    header("Location: index.php?message=Register Yourself");
-  }
 
 }else {
   header("Location: index.php?message=Register Yourself");
 }
-
 
 
 function sanitizeData($data){

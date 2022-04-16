@@ -15,6 +15,7 @@
       <p id="finalMessage">
 <?php if (isset($_GET['message'])) {
        echo $_GET['message'];
+
        echo '<script>
          $("#finalMessageDiv").addClass("FMD");
        </script>';
