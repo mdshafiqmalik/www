@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $sanTerms."<br>";
 
 }else {
-  header("Location: https://www.shafiqhub.com/register/index.php?message=Register Yourself");
+  header("Location: https://www.shafiqhub.com/register/index.php?message=RegisterYourself");
 }
 
 
