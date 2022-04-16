@@ -22,6 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sanGender = filter_var($gender,FILTER_SANITIZE_STRING);
     $sanTerms = filter_var($terms,FILTER_SANITIZE_STRING);
 
+    echo $sanName."<br>";
+    echo $sanUserName."<br>";
+    echo $sanUserEmail."<br>";
+    echo $sanGender."<br>";
+    echo $sanTerms."<br>";
+
 }else {
   header("Location: index.php?message=Register Yourself");
 }
