@@ -28,10 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $sanGender."<br>";
     echo $sanTerms."<br>";
 
-}else {
-  header("Location: https://www.shafiqhub.com/register/index.php?message=RegisterYourself");
 }
-
 
 function sanitizeData($data){
   $data = trim($data);
