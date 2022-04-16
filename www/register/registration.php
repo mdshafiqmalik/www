@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }else {
   header("Location: index.php?message=Register Yourself");
 }
-}
+
 
 
 function sanitizeData($data){
