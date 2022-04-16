@@ -1,4 +1,17 @@
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onload = function(){
+        history.replaceState("","","../register/");
+      }
+    </script>
+  </body>
+</html>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = sanitizeData($_POST['fullname']);
