@@ -9,8 +9,6 @@ function validateData(value, field){
       return true;
     }
     break;
-
-
     case "email":
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
      {
@@ -19,19 +17,8 @@ function validateData(value, field){
      return false;
     }
      break;
-    case "password":
-    if (value.length>8) {
-      return true;
-      break;
-    }else {
-      return false;
-      break;
-    }
   }
 }
-
-// let parsed = response.json();
-
 function getData(url, callback){
   var data = $.ajax({
     type: 'GET',
@@ -39,9 +26,7 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-
 getData('../api/hidden/register.php', function(data) {
-
   let jsData = data;
 //  For Full Name
   $("#nmInput").keyup(isNameTrue);
@@ -83,8 +68,7 @@ getData('../api/hidden/register.php', function(data) {
     let inputValue = $("#unInput").val();
     let j;
     if (inputValue) {
-      let isDataValidated = validateData(inputValue, "username");
-      if (isDataValidated) {
+      if (validateData(inputValue, "username")) {
         if (!hasWhiteSpace(inputValue)) {
             for (var i = 0; i < jsData.length; i++) {
               if (inputValue == jsData[i].membUsername ) {
@@ -119,8 +103,7 @@ getData('../api/hidden/register.php', function(data) {
    let j;
    $("#emInput").val(inputValue);
    if ($("#emInput").val()) {
-     let isDataValidated = validateData(inputValue, "email");
-     if (isDataValidated) {
+     if (validateData(inputValue, "email")) {
        for (var i = 0; i < jsData.length; i++) {
          if (inputValue == jsData[i].membEmail ) {
            showWarning("#emAlert",'( Email registered &#x2716; )');
@@ -149,8 +132,7 @@ getData('../api/hidden/register.php', function(data) {
    let i;
    if (inputValue) {
      if (!hasWhiteSpace(inputValue)) {
-       let x = validateData(inputValue,"password");
-       if (x) {
+       if (inputValue.length>8) {
          if(passwordStrengthChecker(inputValue)){
            i =  true;
          }else {
@@ -209,11 +191,9 @@ getData('../api/hidden/register.php', function(data) {
     }
     return i;
   }
-
   // Checking all fields on submit
  window.finalSubmit = function(){
     let i;
-    console.log(selectedGender());
     if (isNameTrue()) {
       if (isUsernameTrue()) {
         if (isEmailTrue()) {
@@ -254,11 +234,13 @@ getData('../api/hidden/register.php', function(data) {
         i = false;
     }
     return i;
+    console.log(i);
   }
 });
+
 function isTCchecked(){
   let i;
-  if ($('input[name=Terms]:checked').length > 0){
+  if ($('input[name=terms]:checked').length > 0){
      i = true;
   }else {
     showWarning("#tc", "( Please check this box )");
@@ -270,73 +252,4 @@ function errorMessage(message){
   $("#finalMessage").html(message);
   $("#finalMessageDiv").css("display:block");
   $("#finalMessageDiv").addClass("FMD");
-}
-//  Ectra Functions
-function passwordStrengthChecker(x){
-  let i;
-  let strength;
-    if (hasUpperCase(x)||hasLowerCase(x)) {
-      $("#psAlert").removeClass("medium");
-      showWarning("#psAlert",'( Weak )');
-        if (hasNumber(x)) {
-          $("#psAlert").addClass("medium");
-          showSuccess("#psAlert",'( Medium &#10003; )');
-          if (hasSpecialChars(x)) {
-            $("#psAlert").removeClass("medium");
-            showSuccess("#psAlert",'( Strong &#10003; )');
-          }else {
-
-          }
-        }else if(hasSpecialChars(x)) {
-          $("#psAlert").addClass("medium");
-          showSuccess("#psAlert",'( Medium &#10003; )');
-        }
-    }else if(hasLowerCase(x)) {
-      $("#psAlert").removeClass("medium");
-      showWarning("#psAlert",'( Weak )');
-    }
-    else {
-      $("#psAlert").removeClass("medium");
-      showWarning("#psAlert",'( Weak )');
-    }
-    return true;
-}
-
-
-function hasWhiteSpace(s) {
-  return /\s/g.test(s);
-}
-function hasNumber(val){
-  return /\d/.test(val);
-}
-function hasLowerCase(str) {
-    return (/[a-z]/.test(str));
-}
-function hasUpperCase(str) {
-    return (/[A-Z]/.test(str));
-}
-function hasSpecialChars(x){
-  const specialChars = /[`!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/;
-  if(specialChars.test(x)){
-    return true;
-  }else {
-    false;
-  }
-}
-
-//  Function return no of words in a string
-function countWords(x){
-  let rmChar = x.replace(/[^A-Za-z]\s+/g);
-  let nwWord = rmChar.trim().split(" ");
-  return nwWord.length;
-}
-function showSuccess(id, message){
-  $(id).html(message);
-  $(id).addClass("success");
-  $(id).removeClass("warning");
-}
-function showWarning(id, message){
-  $(id).html(message);
-  $(id).addClass("warning");
-  $(id).removeClass("success");
 }

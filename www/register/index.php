@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css?id=1.4.1">
+    <link rel="stylesheet" href="style.css?id=1.4.2">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <title>FastReed - Create An Account</title>
@@ -12,10 +12,18 @@
   <div class="container">
     <div class="title">Create An Account</div>
     <div id="finalMessageDiv">
-      <p id="finalMessage"></p>
+      <p id="finalMessage">
+<?php if (isset($_GET['message'])) {
+       echo $_GET['message'];
+       echo '<script>
+         $("#finalMessageDiv").addClass("FMD");
+       </script>';
+} ?>
+
+      </p>
     </div>
     <div class="content">
-      <form id="#registerFrom" onsubmit="return finalSubmit()" action="registration.php">
+      <form method="post" id="#registerFrom" onsubmit="return finalSubmit()" action="registration.php">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name </span><span id="nmAlert" class="alert"></span>
@@ -33,18 +41,18 @@
           </div>
           <div class="input-box">
             <span class="details">Password </span><span id="psAlert" class="alert"></span>
-            <input id="psInput" type="text" placeholder="Enter your password" autocomplete="off" >
+            <input id="psInput" name="password"type="text" placeholder="Enter your password" autocomplete="off" >
           </div>
           <div class="input-box">
             <span class="details">Confirm Password </span><span id="confirmPassAlert" class="alert"></span>
-            <input id="confirmPassInput"  name="password" class="fields" type="text" placeholder="Confirm your password" autocomplete="off" >
+            <input id="confirmPassInput"  name="cPassword" class="fields" type="text" placeholder="Confirm your password" autocomplete="off" >
 
           </div>
         </div>
         <div id="gender" class="gender-details">
           <input class="genderSelect" type="radio"value="male" name="gender" id="dot-1" >
           <input class="genderSelect" type="radio"value="female" name="gender" id="dot-2" >
-          <input class="genderSelect" type="radio"value="NA" name="gender" id="dot-3" >
+          <input class="genderSelect" type="radio"value="other" name="gender" id="dot-3" >
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
@@ -63,7 +71,7 @@
         <div class="">
           <span id="tc" class="alert"></span>
           <br>
-          <input type="checkbox" name="Terms" value="">
+          <input type="checkbox" name="terms" value="true">
           By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy Agreements</a>
         </div>
 
@@ -76,6 +84,7 @@
       </form>
     </div>
   </div>
-<script src="style.js?v=0.1.3"></script>
+  <script src="fun.js?v=0.0.0" charset="utf-8"></script>
+<script src="style.js?v=0.1.2"></script>
 </body>
 </html>
