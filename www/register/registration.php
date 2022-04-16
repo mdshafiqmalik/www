@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $sanTerms."<br>";
 
 }else {
+  echo "string";
   header("Location: index.php?message=Register Yourself");
 }
 
