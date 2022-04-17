@@ -2,3 +2,15 @@
 #RewriteEngine on
 RewriteCond %{HTTP_HOST} ^shafiqhub.com [NC]
 RewriteRule ^(.*)$ https://m.shafiqhub.com/$1 [L,R=301]
+
+
+#error handling
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /404-error.html
+
+ErrorDocument 400 /400.php
+ErrorDocument 401 /401.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
