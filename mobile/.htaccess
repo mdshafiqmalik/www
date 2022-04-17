@@ -1,3 +1,4 @@
 RewriteEngine on
-RewriteCond %{HTTP_USER_AGENT} desktop [NC]
+RewriteCond %{HTTP_USER_AGENT} !iphone|!android|!blackberry [NC]
+
 RewriteRule ^$ https://www.shafiqhub.com
