@@ -4,5 +4,4 @@ RewriteCond %{HTTP_USER_AGENT} iphone|android|blackberry [NC]
 RewriteRule ^(.*) https://m.shafiqhub.com/$1
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^shafiqhub\.com [NC]
-RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://www.shafiqhub.com/$1 [R,L]
