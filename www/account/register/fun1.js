@@ -26,7 +26,7 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-getData('../api/hidden/register.php', function(data) {
+getData('../../server/hidden/register.php', function(data) {
   let jsData = data;
 //  For Full Name
   $("#nmInput").keyup(isNameTrue);
