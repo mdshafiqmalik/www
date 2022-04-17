@@ -2,3 +2,7 @@ Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_USER_AGENT} iphone|android|blackberry [NC]
 RewriteRule ^(.*) https://m.shafiqhub.com/$1
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^yourdomain\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.yourdomain.com/$1 [R,L]
