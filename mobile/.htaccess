@@ -1,3 +1,4 @@
+Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_USER_AGENT} !iphone|!android|!blackberry [NC]
-RewriteRule ^$ https://www.shafiqhub.com
+RewriteRule ^(.*) https://www.shafiqhub.com/$1
