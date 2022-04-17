@@ -5,9 +5,8 @@ RewriteRule ^(.*)$ https://m.shafiqhub.com/$1 [L,R=301]
 
 
 #error handling
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.*) /404-error.html
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
 
 ErrorDocument 400 /400.php
 ErrorDocument 401 /401.php
