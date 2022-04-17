@@ -1,4 +1,4 @@
-# Options +FollowSymLinks
+Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_USER_AGENT} iphone|android|blackberry [NC]
-RewriteRule ^$ https://m.shafiqhub.com/$1 [L, R=301]
+RewriteRule ^(.*) https://m.shafiqhub.com/{REQUEST_URI} 
