@@ -1,6 +1,6 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteCond %{HTTP_HOST} www.shafiqhub.com [NC]
+RewriteCond %{HTTP_HOST} ^www.shafiqhub.com [NC]
 RewriteRule ^(.*)$ https://www.shafiqhub.com/$1 [L,R=301]
 RewriteCond %{HTTP_HOST} ^shafiqhub.com [NC]
 RewriteRule ^(.*)$ https://www.shafiqhub.com/$1 [L,R=301]
