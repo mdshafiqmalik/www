@@ -1,3 +1,3 @@
 RewriteEngine on
-RewriteCond %{HTTP_USER_AGENT} ipad|desktop [NC]
+RewriteCond %{HTTP_USER_AGENT} desktop [NC]
 RewriteRule ^$ https://www.shafiqhub.com
