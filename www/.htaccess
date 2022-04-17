@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteBase /
 RewriteCond %{HTTP_USER_AGENT} iphone|ipad|android|blackberry [NC]
-RewriteRule ^(.*)$ https://m.shafiqhub.com/$1 [R=301, L]
+RewriteRule (.*) https://m.shafiqhub.com/$1 [R=301, L]
