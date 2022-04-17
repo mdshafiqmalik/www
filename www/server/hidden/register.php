@@ -1,14 +1,13 @@
 <?php
+include 'config/info.php';
 header('content-type:application/json');
 include '../../../config/__sec__p.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 $thisHttp = $_SERVER['HTTP_REFERER'];
-$url1 = "http://www.fastreed.com/register/";
-$url2 = "https://www.fastreed.com/register/";
-$url3 = "http://fastreed.com/register/";
-$url4 = "https://fastreed.com/register/";
-if ($thisHttp == $url1 || $thisHttp == $url2|| $thisHttp == $url3|| $thisHttp == $url4) {
+$url1 = "http://"."$domain"."/account/register/";
+$url2 = "https://"."$domain"."/account/register/";
+if ($thisHttp == $url1 || $thisHttp == $url2) {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }

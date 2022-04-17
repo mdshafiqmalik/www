@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css?id=1.4.3">
+    <link rel="stylesheet" href="src/style.css?id=1.4.3">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <title>FastReed - Create An Account</title>
@@ -85,7 +85,7 @@
       </form>
     </div>
   </div>
-  <script src="fun.js?v=0.0.0" charset="utf-8"></script>
-<script src="fun1.js?v=0.1.2"></script>
+  <script src="src/fun.js?v=0.0.0" charset="utf-8"></script>
+<script src="src/fun1.js?v=0.1.2"></script>
 </body>
 </html>

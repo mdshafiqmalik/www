@@ -85,7 +85,7 @@
       </form>
     </div>
   </div>
-  <script src="fun.js?v=0.0.0" charset="utf-8"></script>
-<script src="fun1.js?v=0.1.2"></script>
+  <script src="src/fun.js?v=0.0.0" charset="utf-8"></script>
+<script src="src/fun1.js?v=0.1.2"></script>
 </body>
 </html>
