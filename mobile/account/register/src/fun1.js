@@ -26,9 +26,7 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-getData('../../../server/hidden/register.php', function(data) {
-  let jsData = data;
-//  For Full Name
+
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
     let j;
@@ -70,16 +68,8 @@ getData('../../../server/hidden/register.php', function(data) {
     if (inputValue) {
       if (validateData(inputValue, "username")) {
         if (!hasWhiteSpace(inputValue)) {
-            for (var i = 0; i < jsData.length; i++) {
-              if (inputValue == jsData[i].membUsername ) {
-                showWarning("#unAlert",`( Username is taken  &#x2716; )`);
-                j = false;
-                break;  //very Important
-              }else {
-                showSuccess("#unAlert",`( Username is available &#10003; )`);
-                j = true;
-              }
-            }
+          showSuccess("#unAlert",`( Username is available &#10003; )`);
+          j = true;
         }else {
           showWarning("#unAlert",'( Spaces not allowed )' );
           j = false;
@@ -104,16 +94,8 @@ getData('../../../server/hidden/register.php', function(data) {
    $("#emInput").val(inputValue);
    if ($("#emInput").val()) {
      if (validateData(inputValue, "email")) {
-       for (var i = 0; i < jsData.length; i++) {
-         if (inputValue == jsData[i].membEmail ) {
-           showWarning("#emAlert",'( Email registered &#x2716; )');
-           j = false;
-           break; //very Important
-         }else {
-           showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
-           j = true;
-         }
-       }
+       showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
+       j = true;
      }else {
        showWarning("#emAlert",'( Invalid Email )');
        j = false;
@@ -192,7 +174,7 @@ getData('../../../server/hidden/register.php', function(data) {
     return i;
   }
   // Checking all fields on submit
- window.finalSubmit = function(){
+function finalSubmit(){
     let i;
     if (isNameTrue()) {
       if (isUsernameTrue()) {
@@ -236,7 +218,6 @@ getData('../../../server/hidden/register.php', function(data) {
     return i;
     console.log(i);
   }
-});
 
 function isTCchecked(){
   let i;
