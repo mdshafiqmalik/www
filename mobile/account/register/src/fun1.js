@@ -231,17 +231,17 @@ function finalSubmit(){
           }
         }else {
           checkEmail();
-          errorMessage("Please Enter Email");
+          errorMessage("Please Enter (correct) Email");
         i = false;
         }
       }else {
         checkUsername();
-        errorMessage("Please Enter Username");
+        errorMessage("Please Enter(correct) Username");
         i = false;
       }
     }else {
       isNameTrue();
-      errorMessage("Please Enter Name");
+      errorMessage("Please Enter Full Name");
         i = false;
     }
     return i;
