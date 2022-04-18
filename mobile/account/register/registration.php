@@ -12,7 +12,6 @@
         $userEmail = sanitizeData($_POST['email']);
         $userPass = sanitizeData($_POST['password']);
         $cPass = sanitizeData($_POST['cPassword']);
-        $gender = sanitizeData($_POST['gender']);
         $terms = sanitizeData($_POST['terms']);
         function sanitizeEmail($x){
           if (filter_var($x, FILTER_SANITIZE_EMAIL) == true) {
@@ -25,13 +24,11 @@
         $sanName = filter_var($name,FILTER_SANITIZE_STRING);
         $sanUserName = filter_var($userName,FILTER_SANITIZE_STRING);
         $sanUserEmail = sanitizeEmail($userEmail);
-        $sanGender = filter_var($gender,FILTER_SANITIZE_STRING);
         $sanTerms = filter_var($terms,FILTER_SANITIZE_STRING);
 
         echo $sanName."<br>";
         echo $sanUserName."<br>";
         echo $sanUserEmail."<br>";
-        echo $sanGender."<br>";
         echo $sanTerms."<br>";
 
     }
