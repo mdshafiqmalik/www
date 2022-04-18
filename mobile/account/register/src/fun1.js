@@ -29,11 +29,9 @@ function getData(url, callback){
   $("#unInput").focusout(function(){
     console.log("Focus Out");
   });
-
-  $("#unInput").focusin(function(){
-    console.log("Focus In");
+  $("#emInput").focusout(function(){
+    console.log("Focus Out");
   });
-
 
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
