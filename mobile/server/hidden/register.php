@@ -3,7 +3,7 @@ include 'config/info_m.php';  // Unique
 header('content-type:application/json');
 include '../../../config/__sec__p.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-$inputValue = $_GET["username"];
+
 // if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 // $thisHttp = $_SERVER['HTTP_REFERER'];
 // $url1 = "http://"."$domain"."/account/register/";
@@ -13,8 +13,9 @@ $inputValue = $_GET["username"];
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
     if (isset($_GET["username"])) {
+      $inputValue = $_GET["username"];
       $userDataSql =  "SELECT * FROM member_details Where membUsername = '".$inputValue."' ";
-        if (mysqli_query($lin, $userDataSql)) {
+        if (mysqli_query($link, $userDataSql)) {
           $result = mysqli_query($link, $userDataSql);
           if (mysqli_num_rows($result)) {
             $found = array("Result"=>true);
@@ -31,8 +32,9 @@ $inputValue = $_GET["username"];
           echo "$cantReadDecode";
         }
     }else if(isset($_GET["email"])) {
+        $inputValue = $_GET["email"];
       $userDataSql =  "SELECT * FROM member_details Where membEmail = '".$inputValue."' ";
-        if (mysqli_query($lin, $userDataSql)) {
+        if (mysqli_query($link, $userDataSql)) {
           $result = mysqli_query($link, $userDataSql);
           if (mysqli_num_rows($result)) {
             $found = array("Result"=>true);
