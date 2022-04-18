@@ -26,15 +26,17 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
+$(document).onready(function(){
+  $("unInput").focusout(function(){
+    console.log("Focus Out");
+  });
 
-$("unInput").focusout(cName);
-function cName(){
-  console.log("Focus Out");
-}
-$("unInput").focusin(nName);
-function nName(){
-  console.log("Focus In");
-}
+  $("unInput").focusin(function(){
+    console.log("Focus In");
+  });
+});
+
+
 
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
