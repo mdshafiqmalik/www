@@ -231,12 +231,12 @@ function finalSubmit(){
           }
         }else {
           checkEmail();
-          errorMessage("Please Enter (correct) Email");
+          errorMessage("Please Enter Email(Correct)");
         i = false;
         }
       }else {
         checkUsername();
-        errorMessage("Please Enter(correct) Username");
+        errorMessage("Please Enter Username(Correct)");
         i = false;
       }
     }else {
