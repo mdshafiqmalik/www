@@ -26,45 +26,84 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
+
+// check email on focusout
+
+$("#emInput").focusout(function(){
+  let inputValue = $("#emInput").val();
+  getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
+    if (data.Result == true) {
+      showWarning("#emAlert",'( Email Already Registered )' );
+      console.log(data.Result);
+
+    }else if(data.Result == undefined){
+      errorMessage("Some Problem at our end !");
+    }else {
+      checkEmail();
+      function checkEmail(){
+        let inputValue = $("#emInput").val();
+        let toLow = toLow.toLowerCase();
+        let j;
+        $("#emInput").val(toLow);
+        if ($("#emInput").val()) {
+          if (validateData(toLow, "email")) {
+            showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
+            j = true;
+          }else {
+            showWarning("#emAlert",'( Invalid Email )');
+            j = false;
+          }
+        }else {
+          showWarning("#emAlert",'( Required )');
+          j = false;
+        }
+        return j;
+      }
+    }
+  });
+});
+
+
+// Username Check
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
-      // console.log(typeof(data.Result));
       if (data.Result == true) {
-        console.log(data);
         showWarning("#unAlert",'( Username Taken )' );
         console.log(data.Result);
 
+      }else if(data.Result == undefined){
+
       }else {
-        console.log(data);
         checkUsername();
+        function checkUsername(){
+          let inputValue = $("#unInput").val();
+            if (inputValue) {
+              if (validateData(inputValue, "username")) {
+                if (!hasWhiteSpace(inputValue)) {
+                  showSuccess("#unAlert",`( Username is available &#10003; )`);
+                  j = true;
+                }else {
+                  showWarning("#unAlert",'( Spaces not allowed )' );
+                  j = false;
+                }
+              }else {
+                showWarning("#unAlert",'( Range 6 - 16 letters )');
+                j = false;
+              }
+            }
+            else {
+              showWarning("#unAlert",'( Required )');
+              j = false;
+            }
+            return j;
+          }
       }
     });
   });
 
-function checkUsername(){
-  let inputValue = $("#unInput").val();
-    if (inputValue) {
-      if (validateData(inputValue, "username")) {
-        if (!hasWhiteSpace(inputValue)) {
-          showSuccess("#unAlert",`( Username is available &#10003; )`);
-          j = true;
-        }else {
-          showWarning("#unAlert",'( Spaces not allowed )' );
-          j = false;
-        }
-      }else {
-        showWarning("#unAlert",'( Range 6 - 16 letters )');
-        j = false;
-      }
-    }
-    else {
-      showWarning("#unAlert",'( Required )');
-      j = false;
-    }
-    return j;
-  }
 
+//  Name Check
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
     let j;
@@ -98,27 +137,6 @@ function checkUsername(){
     return j;
   }
 
-// For Email
-  $("#emInput").keyup(isEmailTrue);
-  function isEmailTrue(){
-   let toLow = $("#emInput").val();
-   let inputValue = toLow.toLowerCase();
-   let j;
-   $("#emInput").val(inputValue);
-   if ($("#emInput").val()) {
-     if (validateData(inputValue, "email")) {
-       showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
-       j = true;
-     }else {
-       showWarning("#emAlert",'( Invalid Email )');
-       j = false;
-     }
-   }else {
-     showWarning("#emAlert",'( Required )');
-     j = false;
-   }
-   return j;
- }
 // For password
   $("#psInput").keyup(isPasswordTrue);
   function isPasswordTrue(){

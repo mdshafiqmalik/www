@@ -12,6 +12,7 @@ $inputValue = $_GET["username"];
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
+    if (isset($_GET["username"])) {
       $userDataSql =  "SELECT * FROM member_details Where membUsername = '".$inputValue."' ";
         if (mysqli_query($link, $userDataSql)) {
           $result = mysqli_query($link, $userDataSql);
@@ -25,10 +26,34 @@ $inputValue = $_GET["username"];
             echo "$notFoundJSON";
           }
         }else {
-          $cantRead = array("Result"=>"Cannot Read or connect");
+          $cantRead = array("Result"=>undefined);
           $cantReadDecode = json_encode($cantRead);
           echo "$cantReadDecode";
         }
+    }else if(isset($_GET["email"])) {
+      $userDataSql =  "SELECT * FROM member_details Where membEmail = '".$inputValue."' ";
+        if (mysqli_query($lin, $userDataSql)) {
+          $result = mysqli_query($link, $userDataSql);
+          if (mysqli_num_rows($result)) {
+            $found = array("Result"=>true);
+            $foundJSON = json_encode($found);
+            echo "$foundJSON";
+          }else {
+            $notFound = array("Result"=>false);
+            $notFoundJSON = json_encode($notFound);
+            echo "$notFoundJSON";
+          }
+        }else {
+          $cantRead = array("Result"=>undefined);
+          $cantReadDecode = json_encode($cantRead);
+          echo "$cantReadDecode";
+        }
+    }else {
+      $cantRead = array("Result"=>undefined);
+      $cantReadDecode = json_encode($cantRead);
+      echo "$cantReadDecode";
+    }
+
 
   // }else {
   //   $cantRead = array("Result"=>"Access Denied");
