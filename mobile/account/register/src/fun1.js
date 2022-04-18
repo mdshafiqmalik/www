@@ -27,6 +27,15 @@ function getData(url, callback){
   return data;
 }
 
+$("unInput").focusout(cName);
+function cName(){
+  alert("Focus Out");
+}
+$("unInput").onfocus(nName);
+function nName(){
+  alert("Focus");
+}
+
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
     let j;
