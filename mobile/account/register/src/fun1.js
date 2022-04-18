@@ -29,11 +29,11 @@ function getData(url, callback){
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
-      if (data.result) {
+      if (data.Result) {
         showWarning("#unAlert",'( Username Taken )' );
-        console.log(data.result);
+        console.log(data.Result);
       }else {
-        console.log(data.result);
+        console.log(data.Result);
         showSuccess("#unAlert",`( Username is available &#10003; )`);
       }
     });
