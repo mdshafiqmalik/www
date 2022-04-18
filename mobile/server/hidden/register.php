@@ -6,8 +6,8 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 
 if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 $thisHttp = $_SERVER['HTTP_REFERER'];
-$url1 = "http://"."$domain"."/account/register/src/fun1.js";
-$url2 = "https://"."$domain"."/account/register/src/fun1.js";
+$url1 = "http://"."$domain"."/account/register/src/";
+$url2 = "https://"."$domain"."/account/register/src/";
 if ($thisHttp == $url1 || $thisHttp == $url2) {
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
