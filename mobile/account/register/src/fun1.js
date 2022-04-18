@@ -30,7 +30,7 @@ let em = {};
 // check email on focusout
 $("#emInput").focusout(function(){
   let inputValue = $("#emInput").val();
-  getData(`../../server/hidden/register.php?email=${inputValue}`, function(data){
+  getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
     console.log(data);
     if (data.Result == true) {
       em.res = true;
@@ -73,7 +73,7 @@ function checkEmail(){
 // Username Check
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
-    getData(`../../server/hidden/register.php?username=${inputValue}`, function(data){
+    getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
     console.log(data);
       if (data.Result == true) {
         un.res = true;
