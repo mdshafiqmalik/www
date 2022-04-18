@@ -50,25 +50,6 @@
 
           </div>
         </div>
-        <div id="gender" class="gender-details">
-          <input class="genderSelect" type="radio"value="male" name="gender" id="dot-1" >
-          <input class="genderSelect" type="radio"value="female" name="gender" id="dot-2" >
-          <input class="genderSelect" type="radio"value="other" name="gender" id="dot-3" >
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
         <div class="">
           <span id="tc" class="alert"></span>
           <br>
@@ -85,7 +66,7 @@
       </form>
     </div>
   </div>
-  <script src="src/fun.js?v=0.0.0" charset="utf-8"></script>
-<script src="src/fun1.js?v=0.1.2"></script>
+  <script src="src/fun.js?v=0.0.0.1" charset="utf-8"></script>
+<script src="src/fun1.js?v=0.0.0.1"></script>
 </body>
 </html>

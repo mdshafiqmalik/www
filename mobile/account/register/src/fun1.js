@@ -161,18 +161,6 @@ function getData(url, callback){
   function atLeastOneRadio() {
       return ($('input[type=radio]:checked').size() > 0);
   }
-  function selectedGender(){
-    let i;
-    if ($('input[name=gender]:checked').length > 0) {
-      i = true;
-    }else {
-      i = false;
-      $("#finalMessage").html("Please Select Gender");
-      $("#finalMessageDiv").css("display:block");
-      $("#finalMessageDiv").addClass("FMD");
-    }
-    return i;
-  }
   // Checking all fields on submit
 function finalSubmit(){
     let i;
@@ -181,12 +169,8 @@ function finalSubmit(){
         if (isEmailTrue()) {
           if (isPasswordTrue()) {
             if (isConfirmPasswordTrue()) {
-              if (selectedGender()) {
-                if (isTCchecked()) {
-                  i  = true;
-                }else {
-                  i = false;
-                }
+              if (isTCchecked()) {
+                i  = true;
               }else {
                 i = false;
               }
