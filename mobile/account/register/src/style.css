@@ -162,7 +162,7 @@ form .input-box span.details{
   }
   @media (max-width:800px) {
     body{
-      align-items: none;
+      align-items: normal;
     }
   }
  @media(max-width: 584px){
