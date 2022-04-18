@@ -26,7 +26,7 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-$(document).onready(function(){
+$(document).ready(function(){
   $("unInput").focusout(function(){
     console.log("Focus Out");
   });
