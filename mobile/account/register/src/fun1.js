@@ -27,7 +27,8 @@ function getData(url, callback){
   return data;
 }
   $("#unInput").focusout(function(){
-    getData("../../../server/hidden/register.php", function(data){
+    let inputValue = $("#unInput").val();
+    getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
       console.log(data);
     });
   });

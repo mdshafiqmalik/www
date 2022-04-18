@@ -3,6 +3,7 @@ include 'config/info_m.php';  // Unique
 header('content-type:application/json');
 include '../../../config/__sec__p.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+$inputValue = $_GET["username"];
 // if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 // $thisHttp = $_SERVER['HTTP_REFERER'];
 // $url1 = "http://"."$domain"."/account/register/";
@@ -11,22 +12,17 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
     if ($link->connect_error) {
       die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
     }
-      $userDataSql =  "SELECT membUsername, membEmail FROM member_details ";
+      $userDataSql =  "SELECT * FROM member_details Where membUsername = '".$inputValue."' ";
         if (mysqli_query($link, $userDataSql)) {
-           $res = mysqli_query($link,$userDataSql);
-           if (mysqli_num_rows($res)>0) {
-             $userArray = array();
-             while ($row = mysqli_fetch_assoc($res)) {
-               $userArray[] = $row;
-             }
-               $DataDecode = json_encode($userArray);
-               echo $DataDecode;
-
-           }else {
-             $noData = array("Result"=>"No Data Found");
-             $noDataDecode = json_encode($noData);
-             echo "$noDataDecode";
-           }
+          if (mysqli_num_rows($inputValue)) {
+            $found = array("Result"=>"true");
+            $foundJSON = json_encode($found);
+            echo "$foundJSON";
+          }else {
+            $notFound = array("Result"=>"false");
+            $notFoundJSON = json_encode($notFound);
+            echo "$notFoundJSON";
+          }
         }else {
           $cantRead = array("Result"=>"Cannot Read or connect");
           $cantReadDecode = json_encode($cantRead);
