@@ -31,10 +31,10 @@ let em = {};
 $("#emInput").focusout(function(){
   let inputValue = $("#emInput").val();
   getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
+    console.log(data);
     if (data.Result == true) {
       em.res = true;
       showWarning("#emAlert",'( Email Already Registered )' );
-
     }else if(data.Result == undefined){
       em.res = true;
       errorMessage("Some Problem at our end !");
@@ -74,7 +74,7 @@ function checkEmail(){
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
-
+    console.log(data);
       if (data.Result == true) {
         un.res = true;
         showWarning("#unAlert",'( Username Taken )' );
@@ -97,7 +97,6 @@ function checkEmail(){
               j = false;
             }else {
               showSuccess("#unAlert",`( Username is available &#10003; )`);
-              j = true;
               j = true;
             }
           }else {
