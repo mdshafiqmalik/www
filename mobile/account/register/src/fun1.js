@@ -31,7 +31,7 @@ $("unInput").focusout(cName);
 function cName(){
   alert("Focus Out");
 }
-$("unInput").onfocus(nName);
+$("unInput").focus(nName);
 function nName(){
   alert("Focus");
 }
