@@ -7,8 +7,8 @@ RewriteCond %{HTTP_USER_AGENT} ^(1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a\ 
 RewriteRule ^(.*) https://m.shafiqhub.com/$1 [R,L]
 
 
-ErrorDocument 400 error400.php
-ErrorDocument 401 error401.php
-ErrorDocument 403 error403.php
-ErrorDocument 404 error404.php
-ErrorDocument 500 error500.php
+ErrorDocument 400 /error/error400.php
+ErrorDocument 401 /error/error401.php
+ErrorDocument 403 /error/error403.php
+ErrorDocument 404 /error/error404.php
+ErrorDocument 500 /error/error500.php
