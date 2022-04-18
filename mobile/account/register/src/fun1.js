@@ -34,7 +34,6 @@ $("#emInput").focusout(function(){
     console.log(data);
     if (data.Result == true) {
       showWarning("#emAlert",'( Email Already Registered )' );
-      console.log(data.Result);
 
     }else if(data.Result == undefined){
       errorMessage("Some Problem at our end !");
@@ -70,7 +69,6 @@ $("#emInput").focusout(function(){
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
       if (data.Result == true) {
         showWarning("#unAlert",'( Username Taken )' );
-        console.log(data.Result);
 
       }else if(data.Result == undefined){
         errorMessage("Some Problem at our end !");
