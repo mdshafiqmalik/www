@@ -29,10 +29,14 @@ function getData(url, callback){
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
-      console.log(data);
+      if (data.result) {
+        showWarning("#unAlert",'( Username Taken )' );
+      }else {
+        showSuccess("#unAlert",`( Username is available &#10003; )`);
+      }
     });
   });
-  
+
   $("#emInput").focusout(function(){
     console.log("Focus Out");
   });
