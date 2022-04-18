@@ -29,7 +29,7 @@ function getData(url, callback){
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
-      if (data.Result) {
+      if (data.Result == true) {
         showWarning("#unAlert",'( Username Taken )' );
         console.log(data.Result);
 
