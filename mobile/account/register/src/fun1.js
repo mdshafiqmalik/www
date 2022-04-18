@@ -33,12 +33,33 @@ function getData(url, callback){
         showWarning("#unAlert",'( Username Taken )' );
         console.log(data.Result);
       }else {
-        console.log(data.Result);
-        showSuccess("#unAlert",`( Username is available &#10003; )`);
+        checkUsername();
       }
     });
   });
-
+  
+function checkUsername(){
+  let inputValue = $("#unInput").val();
+    if (inputValue) {
+      if (validateData(inputValue, "username")) {
+        if (!hasWhiteSpace(inputValue)) {
+          showSuccess("#unAlert",`( Username is available &#10003; )`);
+          j = true;
+        }else {
+          showWarning("#unAlert",'( Spaces not allowed )' );
+          j = false;
+        }
+      }else {
+        showWarning("#unAlert",'( Range 6 - 16 letters )');
+        j = false;
+      }
+    }
+    else {
+      showWarning("#unAlert",'( Required )');
+      j = false;
+    }
+    return j;
+  }
 
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
@@ -73,31 +94,6 @@ function getData(url, callback){
     return j;
   }
 
-//  for Username
-  $("#unInput").keyup(isUsernameTrue);
-  function isUsernameTrue(){
-    let inputValue = $("#unInput").val();
-    let j;
-    if (inputValue) {
-      if (validateData(inputValue, "username")) {
-        if (!hasWhiteSpace(inputValue)) {
-          showSuccess("#unAlert",`( Username is available &#10003; )`);
-          j = true;
-        }else {
-          showWarning("#unAlert",'( Spaces not allowed )' );
-          j = false;
-        }
-      }else {
-        showWarning("#unAlert",'( Range 6 - 16 letters )');
-        j = false;
-      }
-    }
-    else {
-      showWarning("#unAlert",'( Required )');
-      j = false;
-    }
-    return j;
-  }
 // For Email
   $("#emInput").keyup(isEmailTrue);
   function isEmailTrue(){
