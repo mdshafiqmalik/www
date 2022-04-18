@@ -35,6 +35,7 @@ function getData(url, callback){
         console.log(data.Result);
 
       }else {
+        console.log(data);
         checkUsername();
       }
     });
