@@ -30,7 +30,7 @@ function getData(url, callback){
     console.log("Focus Out");
   });
 
-  $("#unInput").focusoin(function(){
+  $("#unInput").focusin(function(){
     console.log("Focus In");
   });
 
