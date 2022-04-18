@@ -26,17 +26,20 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-
+let em = {};
 // check email on focusout
 $("#emInput").focusout(function(){
   let inputValue = $("#emInput").val();
   getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
     if (data.Result == true) {
+      em.res = true;
       showWarning("#emAlert",'( Email Already Registered )' );
 
     }else if(data.Result == undefined){
+      em.res = true;
       errorMessage("Some Problem at our end !");
     }else {
+      em.res = false;
       checkEmail();
     }
   });
@@ -48,8 +51,13 @@ function checkEmail(){
   $("#emInput").val(toLow);
   if ($("#emInput").val()) {
     if (validateData(toLow, "email")) {
-      showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
-      j = true;
+      if (em.res) {
+        showWarning("#emAlert",'( Email Already Registered )' );
+        j = false;
+      }else {
+        showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
+        j = true;
+      }
     }else {
       showWarning("#emAlert",'( Invalid Email )');
       j = false;
@@ -61,15 +69,20 @@ function checkEmail(){
   return j;
 }
 
+    let un = {};
 // Username Check
   $("#unInput").focusout(function(){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
+
       if (data.Result == true) {
+        un.res = true;
         showWarning("#unAlert",'( Username Taken )' );
       }else if(data.Result == undefined){
+        un.res = true;
         errorMessage("Some Problem at our end !");
       }else {
+        un.res = false;
         checkUsername();
       }
     });
@@ -79,6 +92,12 @@ function checkEmail(){
       if (inputValue) {
         if (validateData(inputValue, "username")) {
           if (!hasWhiteSpace(inputValue)) {
+            if (un.res) {
+              showWarning("#unAlert",'( Username Taken )' );
+              j = false;
+            }else {
+              j = true;
+            }
             showSuccess("#unAlert",`( Username is available &#10003; )`);
             j = true;
           }else {
@@ -96,6 +115,8 @@ function checkEmail(){
       }
       return j;
     }
+
+
 
 //  Name Check
   $("#nmInput").keyup(isNameTrue);
