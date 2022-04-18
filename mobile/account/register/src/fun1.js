@@ -30,11 +30,11 @@ function getData(url, callback){
     let inputValue = $("#unInput").val();
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
       if (data.Result) {
-        checkUsername();
-
-      }else {
         showWarning("#unAlert",'( Username Taken )' );
         console.log(data.Result);
+
+      }else {
+        checkUsername();
       }
     });
   });

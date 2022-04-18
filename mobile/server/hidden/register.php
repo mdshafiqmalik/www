@@ -16,11 +16,11 @@ $inputValue = $_GET["username"];
         if (mysqli_query($link, $userDataSql)) {
           $result = mysqli_query($link, $userDataSql);
           if (mysqli_num_rows($result)) {
-            $found = array("Result"=>"false");
+            $found = array("Result"=>"true");
             $foundJSON = json_encode($found);
             echo "$foundJSON";
           }else {
-            $notFound = array("Result"=>"true");
+            $notFound = array("Result"=>"false");
             $notFoundJSON = json_encode($notFound);
             echo "$notFoundJSON";
           }
