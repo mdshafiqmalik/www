@@ -96,10 +96,10 @@ function checkEmail(){
               showWarning("#unAlert",'( Username Taken )' );
               j = false;
             }else {
+              showSuccess("#unAlert",`( Username is available &#10003; )`);
+              j = true;
               j = true;
             }
-            showSuccess("#unAlert",`( Username is available &#10003; )`);
-            j = true;
           }else {
             showWarning("#unAlert",'( Spaces not allowed )' );
             j = false;
