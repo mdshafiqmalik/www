@@ -31,7 +31,6 @@ function getData(url, callback){
 $("#emInput").focusout(function(){
   let inputValue = $("#emInput").val();
   getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
-    console.log(data);
     if (data.Result == true) {
       showWarning("#emAlert",'( Email Already Registered )' );
 
@@ -69,7 +68,6 @@ $("#emInput").focusout(function(){
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
       if (data.Result == true) {
         showWarning("#unAlert",'( Username Taken )' );
-
       }else if(data.Result == undefined){
         errorMessage("Some Problem at our end !");
       }else {
