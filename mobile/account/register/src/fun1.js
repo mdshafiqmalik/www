@@ -26,15 +26,13 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
-$(document).ready(function(){
-  $("unInput").focusout(function(){
+  $("#unInput").focusout(function(){
     console.log("Focus Out");
   });
 
-  $("unInput").focus(function(){
+  $("#unInput").focuson(function(){
     console.log("Focus In");
   });
-});
 
 
   $("#nmInput").keyup(isNameTrue);
