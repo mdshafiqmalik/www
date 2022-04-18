@@ -160,11 +160,11 @@ form .input-box span.details{
     margin-left: .7em;
     font-weight: 600;
   }
-  /* @media (max-width:800px) {
+  @media (max-width:800px) {
     body{
-      height: 100%;
+      align-items: none;
     }
-  } */
+  }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
