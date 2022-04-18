@@ -24,7 +24,7 @@
       </p>
     </div>
     <div class="content">
-      <form method="post" id="#registerFrom" onsubmit="return finalSubmit()" action="registration.php">
+      <form method="post" id="#registerFrom" onsubmit="return finalSubmit()" action="/src/registration.php">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name </span><span id="nmAlert" class="alert"></span>
