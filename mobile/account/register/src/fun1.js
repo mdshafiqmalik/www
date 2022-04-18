@@ -73,7 +73,7 @@ $("#emInput").focusout(function(){
         console.log(data.Result);
 
       }else if(data.Result == undefined){
-
+        errorMessage("Some Problem at our end !");
       }else {
         checkUsername();
         function checkUsername(){
