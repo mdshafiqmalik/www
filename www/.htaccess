@@ -10,8 +10,8 @@ RewriteRule ^(.*) https://m.shafiqhub.com/$1 [R,L]
 #error handling
 
 
-ErrorDocument 400 /error400.php
-ErrorDocument 401 /error401.php
-ErrorDocument 403 /error403.php
-ErrorDocument 404 /error404.php
-ErrorDocument 500 /error500.php
+ErrorDocument 400 error400.php
+ErrorDocument 401 error401.php
+ErrorDocument 403 error403.php
+ErrorDocument 404 error404.php
+ErrorDocument 500 error500.php

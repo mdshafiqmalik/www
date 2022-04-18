@@ -73,13 +73,13 @@
           <span id="tc" class="alert"></span>
           <br>
           <input type="checkbox" name="terms" value="true">
-          By clicking here, I state that I have read and understood the <a href="../privacy">Privacy and Policy Agreements</a>
+          By clicking here, I state that I have read and understood the <a href="../../privacy">Privacy and Policy Agreements</a>
         </div>
 
         <div class="button">
           <input type="submit" value="Create An Account">
           <div class="loginLink">
-            Already have an Account <a href="../login"> Log In</a>
+            Already have an Account <a href="../"> Log In</a>
           </div>
         </div>
       </form>
