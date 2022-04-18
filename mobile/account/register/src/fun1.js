@@ -27,7 +27,9 @@ function getData(url, callback){
   return data;
 }
   $("#unInput").focusout(function(){
-    console.log("Focus Out");
+    getData("../../../server/hidden/register.php", function(data){
+      console.log(data);
+    });
   });
   $("#emInput").focusout(function(){
     console.log("Focus Out");
