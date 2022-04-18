@@ -51,9 +51,6 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           echo "$cantReadDecode";
         }
     }else {
-      $cantRead = array("Result"=>"Access Denied");
-      $cantReadDecode = json_encode($cantRead);
-      echo "$cantReadDecode";
       header("Location: ../../");
     }
 
