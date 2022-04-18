@@ -42,7 +42,7 @@ $("#emInput").focusout(function(){
       checkEmail();
       function checkEmail(){
         let inputValue = $("#emInput").val();
-        let toLow = toLow.toLowerCase();
+        let toLow = inputValue.toLowerCase();
         let j;
         $("#emInput").val(toLow);
         if ($("#emInput").val()) {
