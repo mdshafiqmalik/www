@@ -29,11 +29,11 @@ function getData(url, callback){
 
 $("unInput").focusout(cName);
 function cName(){
-  alert("Focus Out");
+  console.log("Focus Out");
 }
 $("unInput").focusin(nName);
 function nName(){
-  alert("Focus");
+  console.log("Focus In");
 }
 
   $("#nmInput").keyup(isNameTrue);
