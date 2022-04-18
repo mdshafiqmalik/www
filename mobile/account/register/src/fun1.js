@@ -32,6 +32,7 @@ function getData(url, callback){
       console.log(data);
     });
   });
+  
   $("#emInput").focusout(function(){
     console.log("Focus Out");
   });

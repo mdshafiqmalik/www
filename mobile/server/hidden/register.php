@@ -14,7 +14,8 @@ $inputValue = $_GET["username"];
     }
       $userDataSql =  "SELECT * FROM member_details Where membUsername = '".$inputValue."' ";
         if (mysqli_query($link, $userDataSql)) {
-          if (mysqli_num_rows($inputValue)) {
+          let $result = mysqli_query($link, $userDataSql)
+          if (mysqli_num_rows($result)) {
             $found = array("Result"=>"true");
             $foundJSON = json_encode($found);
             echo "$foundJSON";
