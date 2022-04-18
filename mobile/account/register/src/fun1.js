@@ -31,15 +31,13 @@ function getData(url, callback){
     getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
       if (data.result) {
         showWarning("#unAlert",'( Username Taken )' );
+        console.log(data.result);
       }else {
         showSuccess("#unAlert",`( Username is available &#10003; )`);
       }
     });
   });
 
-  $("#emInput").focusout(function(){
-    console.log("Focus Out");
-  });
 
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
