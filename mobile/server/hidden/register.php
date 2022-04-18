@@ -4,7 +4,7 @@ header('content-type:application/json');
 include '../../../config/__sec__p.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 
-if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
+// if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 $thisHttp = $_SERVER['HTTP_REFERER'];
 $url1 = "http://"."$domain"."/account/register/";
 $url2 = "https://"."$domain"."/account/register/";
@@ -62,11 +62,11 @@ if ($thisHttp == $url1 || $thisHttp == $url2) {
     $cantReadDecode = json_encode($cantRead);
     echo "$cantReadDecode";
   }
-}else {
-  $cantRead = array("Result"=>"Access Denied");
-  $cantReadDecode = json_encode($cantRead);
-  echo "$cantReadDecode";
-}
+// }else {
+//   $cantRead = array("Result"=>"Access Denied");
+//   $cantReadDecode = json_encode($cantRead);
+//   echo "$cantReadDecode";
+// }
 
 
 
