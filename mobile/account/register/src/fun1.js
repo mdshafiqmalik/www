@@ -33,6 +33,7 @@ function getData(url, callback){
         showWarning("#unAlert",'( Username Taken )' );
         console.log(data.result);
       }else {
+        console.log(data.result);
         showSuccess("#unAlert",`( Username is available &#10003; )`);
       }
     });
