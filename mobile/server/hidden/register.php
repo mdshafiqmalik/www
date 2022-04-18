@@ -54,7 +54,7 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
       $cantRead = array("Result"=>"Access Denied");
       $cantReadDecode = json_encode($cantRead);
       echo "$cantReadDecode";
-      header("Location: /");
+      header("Location: ../../index.php");
     }
 
 
