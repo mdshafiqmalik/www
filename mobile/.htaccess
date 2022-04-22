@@ -1,7 +1,7 @@
 #Options +FollowSymLinks
 #RewriteEngine on
 RewriteCond %{HTTP_HOST} ^shafiqhub.com [NC]
-RewriteRule ^(.*)$ https://m.shafiqhub.com/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.shafiqhub.com/$1 [L,R=301]
 
 
 #error handling

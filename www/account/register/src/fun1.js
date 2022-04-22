@@ -26,7 +26,98 @@ function getData(url, callback){
   }).done(callback);
   return data;
 }
+let em = {};
+// check email on focusout
+$("#emInput").focusout(function(){
+  let inputValue = $("#emInput").val();
+  getData(`../../../server/hidden/register.php?email=${inputValue}`, function(data){
+    console.log(data);
+    if (data.Result == true) {
+      em.res = true;
+      showWarning("#emAlert",'( Email Already Registered )' );
+    }else if(data.Result == undefined){
+      em.res = true;
+      errorMessage("Some Problem at our end !");
+    }else {
+      em.res = false;
+      checkEmail();
+    }
+  });
+});
+function checkEmail(){
+  let inputValue = $("#emInput").val();
+  let toLow = inputValue.toLowerCase();
+  let j;
+  $("#emInput").val(toLow);
+  if ($("#emInput").val()) {
+    if (validateData(toLow, "email")) {
+      if (em.res) {
+        showWarning("#emAlert",'( Email Already Registered )' );
+        j = false;
+      }else {
+        showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
+        j = true;
+      }
+    }else {
+      showWarning("#emAlert",'( Invalid Email )');
+      j = false;
+    }
+  }else {
+    showWarning("#emAlert",'( Required )');
+    j = false;
+  }
+  return j;
+}
 
+    let un = {};
+// Username Check
+  $("#unInput").focusout(function(){
+    let inputValue = $("#unInput").val();
+    getData(`../../../server/hidden/register.php?username=${inputValue}`, function(data){
+    console.log(data);
+      if (data.Result == true) {
+        un.res = true;
+        showWarning("#unAlert",'( Username Taken )' );
+      }else if(data.Result == undefined){
+        un.res = true;
+        errorMessage("Some Problem at our end !");
+      }else {
+        un.res = false;
+        checkUsername();
+      }
+    });
+  });
+  function checkUsername(){
+    let inputValue = $("#unInput").val();
+      if (inputValue) {
+        if (validateData(inputValue, "username")) {
+          if (!hasWhiteSpace(inputValue)) {
+            if (un.res) {
+              showWarning("#unAlert",'( Username Taken )' );
+              j = false;
+            }else {
+              showSuccess("#unAlert",`( Username is available &#10003; )`);
+              j = true;
+            }
+          }else {
+            showWarning("#unAlert",'( Spaces not allowed )' );
+            j = false;
+          }
+        }else {
+          showWarning("#unAlert",'( Range 6 - 16 letters )');
+          j = false;
+        }
+      }
+      else {
+        showWarning("#unAlert",'( Required )');
+        j = false;
+      }
+      return j;
+    }
+
+
+
+//  Name Check
   $("#nmInput").keyup(isNameTrue);
   function isNameTrue(){
     let j;
@@ -60,52 +151,6 @@ function getData(url, callback){
     return j;
   }
 
-//  for Username
-  $("#unInput").keyup(isUsernameTrue);
-  function isUsernameTrue(){
-    let inputValue = $("#unInput").val();
-    let j;
-    if (inputValue) {
-      if (validateData(inputValue, "username")) {
-        if (!hasWhiteSpace(inputValue)) {
-          showSuccess("#unAlert",`( Username is available &#10003; )`);
-          j = true;
-        }else {
-          showWarning("#unAlert",'( Spaces not allowed )' );
-          j = false;
-        }
-      }else {
-        showWarning("#unAlert",'( Range 6 - 16 letters )');
-        j = false;
-      }
-    }
-    else {
-      showWarning("#unAlert",'( Required )');
-      j = false;
-    }
-    return j;
-  }
-// For Email
-  $("#emInput").keyup(isEmailTrue);
-  function isEmailTrue(){
-   let toLow = $("#emInput").val();
-   let inputValue = toLow.toLowerCase();
-   let j;
-   $("#emInput").val(inputValue);
-   if ($("#emInput").val()) {
-     if (validateData(inputValue, "email")) {
-       showSuccess("#emAlert",'( E-mail Accepted &#10003; )');
-       j = true;
-     }else {
-       showWarning("#emAlert",'( Invalid Email )');
-       j = false;
-     }
-   }else {
-     showWarning("#emAlert",'( Required )');
-     j = false;
-   }
-   return j;
- }
 // For password
   $("#psInput").keyup(isPasswordTrue);
   function isPasswordTrue(){
@@ -161,32 +206,16 @@ function getData(url, callback){
   function atLeastOneRadio() {
       return ($('input[type=radio]:checked').size() > 0);
   }
-  function selectedGender(){
-    let i;
-    if ($('input[name=gender]:checked').length > 0) {
-      i = true;
-    }else {
-      i = false;
-      $("#finalMessage").html("Please Select Gender");
-      $("#finalMessageDiv").css("display:block");
-      $("#finalMessageDiv").addClass("FMD");
-    }
-    return i;
-  }
   // Checking all fields on submit
 function finalSubmit(){
     let i;
     if (isNameTrue()) {
-      if (isUsernameTrue()) {
-        if (isEmailTrue()) {
+      if (checkUsername()) {
+        if (checkEmail()) {
           if (isPasswordTrue()) {
             if (isConfirmPasswordTrue()) {
-              if (selectedGender()) {
-                if (isTCchecked()) {
-                  i  = true;
-                }else {
-                  i = false;
-                }
+              if (isTCchecked()) {
+                i  = true;
               }else {
                 i = false;
               }
@@ -201,18 +230,18 @@ function finalSubmit(){
         i = false;
           }
         }else {
-          isEmailTrue();
-          errorMessage("Please Enter Email");
+          checkEmail();
+          errorMessage("Please Enter Email(Correct)");
         i = false;
         }
       }else {
-        isUsernameTrue();
-        errorMessage("Please Enter Username");
+        checkUsername();
+        errorMessage("Please Enter Username(Correct)");
         i = false;
       }
     }else {
       isNameTrue();
-      errorMessage("Please Enter Name");
+      errorMessage("Please Enter Full Name");
         i = false;
     }
     return i;

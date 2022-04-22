@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="src/style.css?id=1.4.3">
+    <link rel="stylesheet" href="scr/style.css?id=1.4.8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <title>FastReed - Create An Account</title>
@@ -50,25 +50,6 @@
 
           </div>
         </div>
-        <div id="gender" class="gender-details">
-          <input class="genderSelect" type="radio"value="male" name="gender" id="dot-1" >
-          <input class="genderSelect" type="radio"value="female" name="gender" id="dot-2" >
-          <input class="genderSelect" type="radio"value="other" name="gender" id="dot-3" >
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
         <div class="">
           <span id="tc" class="alert"></span>
           <br>
@@ -85,7 +66,7 @@
       </form>
     </div>
   </div>
-  <script src="src/fun.js?v=0.0.0" charset="utf-8"></script>
-<script src="src/fun1.js?v=0.1.2"></script>
+  <script src="src/fun.js?v=0.0.0.1" charset="utf-8"></script>
+<script src="src/fun1.js?v=0.0.0.0.5"></script>
 </body>
 </html>
