@@ -56,73 +56,8 @@
           </div>
         </div>
         <div class="writerDetail">
-          <span id="channelName">Dashing Blog</span>
-          <span id="name">Raqib Malik</span>
-          <span id="dot">&#x2022;</span>
-          <span id="Subscribe" >Subscribe</span>
-        </div>
-        <div class="options"> <img src="src/svgs/hori_dots.svg" alt=""> </div>
-      </div>
-      <div class="postBody">
-        <div class="postPic"> <img src="image.jpg" alt=""> </div>
-        <div class="postTitle">How to read fast?</div>
-        <div class="extFoot">
-          <span id="date">29, Aug 2022</span>
-        </div>
-      </div>
-      <div class="postFooter">
-        <div class="footItems" class="react">
-          <div id="up" class="react"><img  src="src/svgs/up-arrow.svg" alt=""></div>
-          <div id="down" class="react"><img  src="src/svgs/up-arrow.svg" alt=""></div>
-
-
-        </div>
-        <div class="footItems" id="comment"></div>
-        <div class="footItems" id="share"></div>
-      </div>
-    </div>
-
-
-    <div class="posts">
-      <div class="postMeta">
-        <div class="writerPic">
-          <div class="pic">
-            <img src="src/author.jpgf" onerror="this.src='src/wt.jpg'";>
-          </div>
-        </div>
-        <div class="writerDetail">
-          <span id="channelName">Tips Official</span>
-          <span id="name">Joe Hidden</span>
-          <span id="dot">&#x2022;</span>
-          <span id="Subscribe" >Subscribe</span>
-        </div>
-        <div class="options"> <img src="src/svgs/hori_dots.svg" alt=""> </div>
-      </div>
-      <div class="postBody">
-        <div class="postPic"> <img src="propose.jpg" alt=""> </div>
-        <div class="postTitle">How to effectively propse your girl?</div>
-        <div class="extFoot">
-          <span id="date">29, Aug 2022</span>
-        </div>
-      </div>
-      <div class="postFooter">
-        <div class="footItems" id="like"><i id="like" style="color:red;" class="far fa-regular fa-thumbs-up fa-xl"></i> </div>
-        <div class="footItems" id="comment"></div>
-        <div class="footItems" id="share"></div>
-      </div>
-    </div>
-
-
-    <div class="posts">
-      <div class="postMeta">
-        <div class="writerPic">
-          <div class="pic">
-            <img src="src/author.jpgf" onerror="this.src='src/wt.jpg'";>
-          </div>
-        </div>
-        <div class="writerDetail">
           <span id="channelName">Writing Blogs</span>
-          <span id="name">Williams Cathey</span>
+          <span id="name">William Cathey</span>
           <span id="dot">&#x2022;</span>
           <span id="Subscribe" >Subscribe</span>
         </div>
@@ -136,7 +71,10 @@
         </div>
       </div>
       <div class="postFooter">
-        <div class="footItems" id="like"></div>
+        <div class="footItems" class="react">
+          <div id="up" class="react"><img  src="src/svgs/up-arrow.svg" alt=""></div>
+          <div id="down" class="react"><img  src="src/svgs/up-arrow.svg" alt=""></div>
+        </div>
         <div class="footItems" id="comment"></div>
         <div class="footItems" id="share"></div>
       </div>
