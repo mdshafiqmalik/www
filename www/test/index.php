@@ -66,7 +66,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3";
       <div class="postMeta">
         <div class="writerPic">
           <div class="pic">
-            <img src="src/author.jpgf" onerror="this.src='<?php echo $source ?>/wt.jpg'";>
+            <img src="<?php echo $source ?>/author.jpg" onerror="this.src='<?php echo $source ?>/wt.jpg'";>
           </div>
         </div>
         <div class="writerDetail">
@@ -78,7 +78,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3";
         <div class="options"> <img src="<?php echo $svgFolder ?>/hori_dots.svg" alt=""> </div>
       </div>
       <div class="postBody">
-        <div class="postPic"> <img src="propose.jpg" alt=""> </div>
+        <div class="postPic"> <img src="happy.jpg" alt=""> </div>
         <div class="postTitle">How to write a eye catching letter to anyone?</div>
         <div class="extFoot">
           <span id="date">29, Aug 2022</span>
