@@ -39,13 +39,19 @@
       </div>
       <div class="tags">
         <span>All</span>
+        <span>how to?</span>
         <span>health</span>
         <span>blogging</span>
-        <span>tarding</span>
+        <span>trading</span>
         <span>investment</span>
         <span>coding</span>
-        <span>new apps</span>
+        <span>apps</span>
         <span>sports</span>
+        <span>mobile</span>
+        <span>desktop</span>
+        <span>science</span>
+        <span>technology</span>
+        <span>software</span>
       </div>
     </div>
     <div class="posts">
