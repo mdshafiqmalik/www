@@ -15,13 +15,36 @@ html, body{
  --svgblue: invert(8%) sepia(100%) saturate(7075%) hue-rotate(247deg) brightness(105%) contrast(142%);
  --svgred: invert(27%) sepia(95%) saturate(6682%) hue-rotate(355deg) brightness(95%) contrast(119%);
  --svgblack:invert(0%) sepia(4%) saturate(13%) hue-rotate(107deg) brightness(96%) contrast(100%);
-}
-#home::before{
-  content: "\f164";
+ --color_666:invert(39%) sepia(16%) saturate(6%) hue-rotate(316deg) brightness(97%) contrast(94%);
+ --color_555: invert(34%) sepia(2%) saturate(15%) hue-rotate(7deg) brightness(93%) contrast(90%);
 }
 *{
   margin:0;
   padding: 0;
+}
+.ml_d4em{
+  margin-left: .4em;
+}
+.ml_d2em{
+  margin-left: .2em;
+}
+.b{
+  font-weight: bold;
+}
+.fontFam{
+  font-family: var(--fontfam);
+}
+.extSm{
+  font-size: .7em;
+}
+.sm{
+  font-size: .9em;
+}
+.md{
+  font-size: 1em;
+}
+.lg{
+  font-size: 2em;
 }
 .hd{
   width: 100%;
@@ -157,9 +180,6 @@ html, body{
 #name{
   margin-left: .7em;
 }
-#dot{
-  color:#666;
-}
 #Subscribe{
   border: 1px solid #ccc;
   padding: .1em .2em;
@@ -199,7 +219,7 @@ html, body{
 .options img{
   width: 35px;
   height: 20px;
-  filter: invert(31%) sepia(7%) saturate(16%) hue-rotate(327deg) brightness(86%) contrast(73%);
+  filter: var(--color_555);
 }
 .postBody{
   width: 90%;
@@ -213,12 +233,12 @@ html, body{
 }
 .postBody .postPic{
   background-color: #eee;
-  height: 200px;
+  max-height: 500px;
   border-radius: 10px;
   width: 100%;
 }
 .postBody .postPic img{
-  height: 200px;
+  /* height: 200px; */
   border-radius: 10px;
   width: 100%;
   opacity: .9;
@@ -231,6 +251,28 @@ html, body{
   text-transform: capitalize;
   padding: .4em .1em;
 }
+
+.extFoot{
+  display: flex;
+  flex-direction: row;
+}
+.extFoot span, #name, #Subscribe{
+  font-family: var(--fontfam);
+  font-size: .9em;
+  font-weight: bold;
+  color: #666;
+  width: 50%;
+}
+
+#Subscribe{
+  color: blue;
+  text-align: center;
+}
+#date{
+  margin-left: .3em;
+}
+
+
 .postFooter{
   display: flex;
   flex-direction: row;
@@ -244,40 +286,21 @@ html, body{
   border-radius: 22px;
   background-color: var(--insCol);
   display: flex;
-  /* justify-content: center; */
-  align-items: center;
-}
-.footItems img{
-  width: 1.3em;
-  height: 1.3em;
-}
-#up{
-  border-right: 1px solid #888;
-}
-.footItems .react{
-  width: 50%;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
-#down{
-  transform: rotate(180deg);
+.footItems img{
+  width: 1.4em;
+  height: 1.4em;
 }
-.extFoot{
+.footItems{
+  padding: .3em;
+}
+.postFooter .footImages{
+  filter: var(--color_666);
+}
+.footItems .react{
   display: flex;
-  flex-direction: row;
-}
-.extFoot span, #name, #Subscribe{
-  font-family: var(--fontfam);
-  font-size: .9em;
-  font-weight: bold;
-  color: #666;
-  width: 50%;
-}
-#Subscribe{
-  color: blue;
-  text-align: center;
-}
-#date{
-  margin-left: .3em;
+  justify-content: center;
+  align-items: center;
 }
