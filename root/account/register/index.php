@@ -67,6 +67,6 @@
     </div>
   </div>
   <script src="src/fun.js?v=0.0.0.1" charset="utf-8"></script>
-<script src="src/fun1.js?v=0.0.0.0.5"></script>
+<script src="src/fun1.js?v=0.0.0.0.8"></script>
 </body>
 </html>

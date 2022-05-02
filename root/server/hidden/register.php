@@ -1,5 +1,5 @@
 <?php
-include '/config/info_m.php';  // Unique
+include '../../../config/info.php';  // Unique
 header('content-type:application/json');
 include '../../../config/__sec__p.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
@@ -50,9 +50,10 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           $cantReadDecode = json_encode($cantRead);
           echo "$cantReadDecode";
         }
-    }else {
-      header("Location: ../../");
     }
+    // else {
+    //   header("Location: ../../");
+    // }
 
 
 //   }else {
