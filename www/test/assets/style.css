@@ -200,7 +200,7 @@ html, body{
   min-height: 140px;
   border-radius: 10px;
   width: 100%;
-  opacity: .9;
+  opacity: .95;
 }
 .postBody .postTitle{
   font-family: var(--fontfam);
