@@ -181,7 +181,7 @@ html, body{
   display: flex;
   flex-direction: column;
   min-height: 200px;
-  /* border: 1px solid #ccc; */
+  border: 1px solid #ccc;
   border-radius: 10px;
   margin-top: .3em;
   padding: .4em;
