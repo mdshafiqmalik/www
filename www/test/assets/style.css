@@ -9,6 +9,9 @@ html, body{
   align-items: center;
   background-color: #ccc;
 }
+.cont500{
+  max-width: 500px;
+}
 :root {
  --fontfam: 'Roboto', sans-serif;
  --insCol: rgba(240,242,245,1.0);
@@ -61,14 +64,20 @@ html, body{
 
 .header{
   border-bottom: .5px solid;
+  display: flex;
+  justify-content: center;
+}
+.header div{
+  width: 50%;
 }
 .header .menuTop{
-  padding-right: .4em;
   display: flex;
-  position: absolute;
-  right: 2em;
-  top:.6em;
-  align-items:center;
+  justify-content:flex-end;
+  flex-direction: row;
+}
+.menu{
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .header .menuTop .menu img{
@@ -93,6 +102,9 @@ html, body{
   justify-content: center;
   padding: .2em 0em;
   height: 50px;
+}
+.submenu:hover{
+  filter: var(--svgblue);
 }
 .subheader div{
   display: flex;
@@ -158,8 +170,8 @@ html, body{
   display: flex;
   flex-direction:column;
   min-height: 350px;
-  min-width: 99%;
-  padding: .4em;
+  min-width: 100%;
+  /* padding: .1em; */
   margin-top: .19em;
   align-items: center;
   background-color: #fff;
