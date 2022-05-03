@@ -176,82 +176,28 @@ html, body{
   align-items: center;
   background-color: #fff;
 }
-.postMeta{
-  width: 98%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.writerDetail #channelName{
-  font-family: var(--fontfam);
-  font-size: 1.3em;
-  font-weight: bold;
-  display: block;
-  margin: 0em .3em .3em .4em;
-}
-#name{
-  margin-left: .7em;
-}
-#Subscribe{
-  border: 1px solid #ccc;
-  padding: .1em .2em;
-  border-radius: .27em;
-}
-.writerDetail{
-  width: 85%;
-}
-.writerPic{
-  margin-left: .3em;
-  background-color: lightblue;
-  display: flex;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-.writerPic .pic{
-  border-radius: 50%;
-  width: 4em;
-  height: 4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.writerPic .pic img{
-  opacity: .7;
-  border: 2px solid white;
-  width: 3.2em;
-  height: 3.2em;
-  border-radius: 50%;
-}
-.options{
-  width: 15%;
-  display: flex;
-
-}
-.options img{
-  width: 35px;
-  height: 20px;
-  filter: var(--color_555);
-}
 .postBody{
   width: 90%;
   display: flex;
   flex-direction: column;
   min-height: 200px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
   margin-top: .3em;
   padding: .4em;
 }
 .postBody .postPic{
+  display: flex;
+  justify-content: center;
   background-color: #eee;
   max-height: 500px;
   border-radius: 10px;
+  border: 0;
   width: 100%;
 }
 .postBody .postPic img{
-  min-height: 150px;
+  border: 1px solid #666;
+  min-height: 140px;
   border-radius: 10px;
   width: 100%;
   opacity: .9;
@@ -269,12 +215,12 @@ html, body{
   display: flex;
   flex-direction: row;
 }
-.extFoot span, #name, #Subscribe{
+.extFoot span{
   font-family: var(--fontfam);
   font-size: .9em;
   font-weight: bold;
   color: #666;
-  width: 50%;
+  /* width: 50%; */
 }
 
 #Subscribe{
@@ -282,7 +228,7 @@ html, body{
   text-align: center;
 }
 #date{
-  margin-left: .3em;
+  /* margin-left: .3em; */
 }
 
 
@@ -316,4 +262,8 @@ html, body{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.dot{
+  filter : var(--color_555);
+  margin: 0em .6em;
 }

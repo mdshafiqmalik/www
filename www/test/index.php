@@ -71,16 +71,23 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
       </div>
     </div>
     <?php
-    $one= 1;
+    $authors = array("Md Shafiq","Md Raqib","William Cathey","Mark Zukerberg","Rohit Sharma");
+    $channels = array("Shafiq Hub","Blogging Tips","Crazy writer","Bloomberg","Rohit Hub");
+    $titles =  array("6 proven way to be happy in your life","How to read and remember with amazing memory","How to write catchy letter to anyone","How to propse your girl romantically?","7 places to visit in kashmir this summer");
+
     for ($i=0; $i < 5; $i++) {
       echo '
       <!--Post: '.$i.' -->
       <div class="posts cont500">
         <div class="postBody">
           <div class="postPic"> <img src="'.$i.'.jpg" alt=""> </div>
-          <div class="postTitle">How to write a eye catching letter to anyone?</div>
+          <div class="postTitle">'.$titles[$i].'</div>
           <div class="extFoot">
-            <span id="date">29, Aug 2022</span>
+            <span class="meta">'.$channels[$i].'</span>
+            <p class="dot">&#x2022;</p>
+            <span class="meta">'.$authors[$i].'</span>
+            <p class="dot">&#x2022;</p>
+            <span class="meta">'.$i.' hrs</span>
           </div>
         </div>
         <div class="postFooter">
