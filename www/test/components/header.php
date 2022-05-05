@@ -13,8 +13,8 @@ echo '
     </div>
   </div>
   <div class="subheader">
-    <div><img id="home" class="submenu" src="./'.$svgFolder.'/home_NF.svg" alt=""></div>
-    <div><img id="channels" class="submenu" src="./'.$svgFolder.'/users_two.svg" alt=""></div>
+    <div><a href="/"><img id="home" class="submenu" src="./'.$svgFolder.'/home_NF.svg" alt=""></a></div>
+    <div><a href="channels.php"><img id="channels" class="submenu" src="./'.$svgFolder.'/users_two.svg" alt=""></a></div>
     <div><img id="" class="submenu" src="./'.$svgFolder.'/bell_NF.svg" alt=""> </div>
     <div><img id="" class="submenu" src="./'.$svgFolder.'/user_notFilled.svg" alt=""> </div>
   </div>
