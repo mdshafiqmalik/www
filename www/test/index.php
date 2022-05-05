@@ -83,11 +83,11 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
           <div class="postPic"> <img src="'.$i.'.jpg" alt=""> </div>
           <div class="postTitle">'.$titles[$i].'</div>
           <div class="extFoot">
-            <span class="meta">'.$channels[$i].'</span>
+            <span id="channelName" class="meta">'.$channels[$i].'</span>
             <p class="dot">&#x2022;</p>
-            <span class="meta">'.$authors[$i].'</span>
+            <span id="authorName" class="meta">'.$authors[$i].'</span>
             <p class="dot">&#x2022;</p>
-            <span class="meta">'.$i.' hrs</span>
+            <span id="pubTime" class="meta">'.$i.' hrs</span>
           </div>
         </div>
         <div class="postFooter">
