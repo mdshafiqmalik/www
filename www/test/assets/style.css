@@ -231,7 +231,7 @@ html, body{
   display: flex;
   flex-direction: row;
   width: 95%;
-  /* min-height: 45px; */
+  min-height: 45px;
   padding: .4em 0em;
 }
 .postFooter .footItems{
