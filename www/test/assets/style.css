@@ -210,6 +210,9 @@ html, body{
   text-decoration:none;
   color:#333;
 }
+#channelName, #authorName{
+  color: #666;
+}
 #postTitle:hover, #channelName:hover, #authorName:hover{
   color:#0165E1;
 }
