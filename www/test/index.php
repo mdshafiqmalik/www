@@ -93,11 +93,11 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
         <div class="postFooter">
           <div class="footItems" id="react">
             <div id="like" class="react"><img  class="footImages"  src="'.$svgFolder.'/thumbs-up.svg" alt=""></div>
-            <div id="likeCount" class="react rt footImages fontFam b extSm ml_d4em">9k</div>
+            <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">9k</div>
           </div>
           <div class="footItems" >
             <img id="comment"class="footImages"  src="'.$svgFolder.'/comment_notFilled_2.svg" alt="">
-            <div id="comentCount" class=" react rt footImages fontFam b extSm ml_d4em">1.2k</div>
+            <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">1.2k</div>
           </div>
           <div class="footItems" id="share">
             <img  class="footImages" src="'.$svgFolder.'/share_en.svg" alt="">
