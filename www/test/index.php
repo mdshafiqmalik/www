@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<?php
-$source = "assets";
-$svgFolder = $source."/svgs";
-$r1= rand(0,10);
+<?php  $r1= rand(0,10);
 $r2= rand(0,10);
 $r3= rand(0,10);
 $r4 = rand(0,10);
-$randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
- ?>
+$randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
+<html lang="en" dir="ltr">
   <head>
-  <meta charset="UTF-8">
-  <meta property="og:type" content="website" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="msapplication-tap-highlight" content="no">
-  <link href='./favicon.ico' rel='icon' sizes="32x32"  type='image/x-icon'/>
-  <link href='./favicon.ico' sizes="16x16" rel='icon' type='image/x-icon'/>
-  <link href='./favicon.ico' sizes="48x48"  rel='icon' type='shortcut icon'/>
-  <link rel='apple-touch-icon' sizes="180x180" type='apple-touch-icon image_src' href=''/>
-  <link rel="stylesheet" href="<?php echo $source ?>/style.css?v=<?php echo($randVersion); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css?v=<?php echo($randVersion); ?>">
+  <link rel="stylesheet" href="assets/root.css?v=<?php echo($randVersion); ?>">
   <title></title>
   <style media="screen">
   #home{
@@ -27,23 +17,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
   </style>
   </head>
   <body>
-    <div class="hd cont500">
-      <div class="header">
-      <div class="">
-        <h1 class="logo">fastreed</h1>
-      </div>
-        <div class="menuTop">
-          <div class="menu"><img src="./<?php echo $source ?>/svgs/menu_NB.svg" alt=""> </div>
-        </div>
-      </div>
-      <div class="subheader">
-        <div><img id="home" class="submenu" src="./<?php echo $svgFolder ?>/home_NF.svg" alt=""></div>
-        <div><img id="" class="submenu" src="./<?php echo $svgFolder ?>/users_two.svg" alt=""></div>
-        <div><img id="" class="submenu" src="./<?php echo $svgFolder ?>/bell_NF.svg" alt=""> </div>
-        <div><img id="" class="submenu" src="./<?php echo $svgFolder ?>/user_notFilled.svg" alt=""> </div>
-      </div>
-    </div>
-
+    <?php include 'components/header.php'; ?>
 
     <div class="tagandSearch cont500 ">
       <div class="search">
@@ -70,6 +44,8 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;
         <span>software</span>
       </div>
     </div>
+
+
     <?php
     $authors = array("Md Shafiq","Md Raqib","William Cathey","Mark Zukerberg","Rohit Sharma");
     $channels = array("Shafiq Hub","Blogging Tips","Crazy writer","Bloomberg","Rohit Hub");
