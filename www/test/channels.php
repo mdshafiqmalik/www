@@ -22,7 +22,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;  ?>
   <?php include 'components/header.php'; ?>
     <div class="top">
       <div class="filterSearch">
-        <span id="sp">Filter :</span>
+        <!-- <span id="sp">Filter :</span> -->
         <select class="filterOpt" name="filterOpt" id="filterOpt">
           <option value="all">All</option>
           <option value="mostActive">Most Active</option>
