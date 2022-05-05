@@ -211,7 +211,7 @@ html, body{
   color:#333;
 }
 #postTitle:hover, #channelName:hover, #authorName:hover{
-  color:darkblue;
+  color:#0165E1;
 }
 .extFoot{
   display: flex;
