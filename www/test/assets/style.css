@@ -209,12 +209,6 @@ html, body{
 .extFoot{
   display: flex;
   flex-direction: row;
-  white-space: nowrap;
-  overflow-x: auto;
-
-}
-.extFoot::-webkit-scrollbar{
-  display: none;
 }
 .extFoot span{
   font-family: var(--fontfam);
@@ -237,7 +231,7 @@ html, body{
   display: flex;
   flex-direction: row;
   width: 95%;
-  min-height: 45px;
+  /* min-height: 45px; */
   padding: .4em 0em;
 }
 .postFooter .footItems{
@@ -250,8 +244,8 @@ html, body{
   align-items: center;
 }
 .footItems img{
-  width: 1.4em;
-  height: 1.4em;
+  width: 1.1em;
+  height: 1.1em;
 }
 .footItems{
   padding: .3em;
@@ -276,5 +270,35 @@ html, body{
   }
   .tags::-webkit-scrollbar {
     display: none;
+  }
+}
+@media (max-width:300px) {
+  .extFoot span{
+    font-size: .7em;
+  }
+  .postBody .postTitle{
+    font-size: 1em;
+  }
+  .footItems img{
+    width: .9em;
+    height: .9em;
+  }
+  .rt{
+    font-size: .8em;
+  }
+}
+@media (max-width:300px) {
+  .extFoot span{
+    font-size: .6em;
+  }
+  .postBody .postTitle{
+    font-size: .8em;
+  }
+  .footItems img{
+    width: .7em;
+    height: .7em;
+  }
+  .rt{
+    font-size: .6em;
   }
 }
