@@ -1,7 +1,7 @@
 :root {
  --fontfam: 'Roboto', sans-serif;
  --insCol: rgba(240,242,245,1.0);
- --svgblue: invert(8%) sepia(100%) saturate(7075%) hue-rotate(247deg) brightness(105%) contrast(142%);
+ --svgblue: invert(29%) sepia(67%) saturate(5911%) hue-rotate(205deg) brightness(94%) contrast(99%);
  --svgred: invert(27%) sepia(95%) saturate(6682%) hue-rotate(355deg) brightness(95%) contrast(119%);
  --svgblack:invert(0%) sepia(4%) saturate(13%) hue-rotate(107deg) brightness(96%) contrast(100%);
  --color_666:invert(39%) sepia(16%) saturate(6%) hue-rotate(316deg) brightness(97%) contrast(94%);
