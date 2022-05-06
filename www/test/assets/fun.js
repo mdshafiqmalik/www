@@ -4,7 +4,7 @@ function goTo(i) {
   document.getElementById('onLoad').style.display= "none";
 }
 function allActive(){
-  window.location.href = 'index.php';
+  window.location.href = '/';
   document.getElementById("all").classList.add("tagActive");
   document.getElementById('onLoad').style.display= "none";
 }
