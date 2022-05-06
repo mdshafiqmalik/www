@@ -29,7 +29,6 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   </head>
 
   <body onload="onLoad()" >
-
    <div id="onLoad">
           <span class="logo">fastreed.com</span>
           <!-- <div class="onloadLogo"> </div> -->
@@ -38,9 +37,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
           </div>
           <div class="mke">
             Make In India
-          </div> 
-
-
+          </div>
     </div>
     <!-- <div class="loader"><div id="loader"></div> </div> -->
     <div class="mainCont">
