@@ -29,18 +29,17 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   </head>
 
   <body onload="onLoad()" >
-    <div id="onLoad">
-      <span class="logo">fastreed.com</span>
-      <!-- <div class="onloadLogo">
 
-      </div> -->
-      <div class="lion">
+   <div id="onLoad">
+          <span class="logo">fastreed.com</span>
+          <!-- <div class="onloadLogo"> </div> -->
+          <div class="lion">
+            <img height="37px" width="65px"src="assets/lion.png" alt="">
+          </div>
+          <div class="mke">
+            Make In India
+          </div> ';
 
-        <img height="37px" width="65px"src="assets/lion.png" alt="">
-      </div>
-      <div class="mke">
-        Make In India
-      </div>
 
     </div>
     <!-- <div class="loader"><div id="loader"></div> </div> -->
