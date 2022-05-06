@@ -133,17 +133,20 @@
 
 .tags span, .tags select{
   font-family: var(--fontfam);
+  background-color: white;
   padding: .4em 1em;
   border: 1px solid #aaa;
   border-radius: 20px;
   margin-right: .4em;
 }
 .tags span:hover{
+  background-color: var(--insCol);
   color: #0165E1;
   border: 1px solid #0165E1;
   cursor: pointer;
 }
 .tags select:hover{
+    background-color: var(--insCol);
   border: 1.5px solid #0165E1;
   outline: 0;
   cursor: pointer;
