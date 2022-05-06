@@ -50,18 +50,19 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
         <span id="health" onclick="goTo('health')">health</span>
         <span id="blogging" onclick="goTo('blogging')">blogging</span>
         <span id="trading" onclick="goTo('trading')">trading</span>
-        <span id="" onclick="goTo('')">investment</span>
-        <span id="" onclick="goTo('')">coding</span>
-        <span id="" onclick="goTo('')">apps</span>
-        <span id="" onclick="goTo('')">sports</span>
-        <span id="" onclick="goTo('')">mobile</span>
-        <span id="" onclick="goTo('')">desktop</span>
-        <span id="" onclick="goTo('')">science</span>
-        <span id="" onclick="goTo('')">technology</span>
-        <span id="" onclick="goTo('')">software</span>
       </div>
     </div>
+    <?php
 
+    if (isset($_GET["tag"])) {
+      $tag = $_GET["tag"];
+      echo '
+      <script type="text/javascript">
+      document.getElementById("'.$tag.'").classList.add("tagActive");
+      document.getElementById("all").classList.remove("tagActive");
+      </script>
+       ';
+    } ?>
 
     <?php
     $authors = array("Md Shafiq","Md Raqib","William Cathey","Mark Zukerberg","Rohit Sharma");
@@ -115,16 +116,6 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
       </div>
       <div class="options"> <img src="<?php //echo $svgFolder ?>/hori_dots.svg" alt=""> </div>
     </div> -->
-    <?php
 
-    if (isset($_GET["tag"])) {
-      $tag = $_GET["tag"];
-      echo '
-      <script type="text/javascript">
-      document.getElementById("'.$tag.'").classList.add("tagActive");
-      document.getElementById("all").classList.remove("tagActive");
-      </script>
-       ';
-    } ?>
   </body>
 </html>
