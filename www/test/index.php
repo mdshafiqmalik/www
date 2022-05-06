@@ -22,12 +22,11 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   }
   </style>
   </head>
+  <div id="onLoad">
+  </div>
   <body>
 
-    <div id="onLoad">
-    </div>
-
-
+    <div class="mainCont">
       <?php include 'components/header.php'; ?>
       <div class="tagandSearch cont500 ">
 
@@ -107,6 +106,8 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
         </div>';
       }
        ?>
+    </div>
+
 
 
 

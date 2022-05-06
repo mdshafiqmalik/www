@@ -7,7 +7,17 @@
  --color_666:invert(39%) sepia(16%) saturate(6%) hue-rotate(316deg) brightness(97%) contrast(94%);
  --color_555: invert(34%) sepia(2%) saturate(15%) hue-rotate(7deg) brightness(93%) contrast(90%);
 }
-html, body{
+body{
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#bbb;
+}
+.mainCont{
   max-width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -17,6 +27,7 @@ html, body{
   justify-content: center;
   align-items: center;
   background-color:#bbb;
+  /* max-width: 500px; */
 }
 .cont500{
   max-width: 500px;

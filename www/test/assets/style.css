@@ -7,11 +7,15 @@
 *{
   margin:0;
   padding: 0;
+
 }
 #onLoad{
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--insCol);
+  width: 100%;
+  height: 100%;
+  background-color:  #0165E1;
+  position: absolute;
+  z-index: 99999;
+
 }
 .ml_d4em{
   margin-left: .4em;
@@ -166,8 +170,7 @@
   flex-direction:column;
   min-height: 200px;
   min-width: 100%;
-  /* padding: .1em; */
-  margin-top: .19em;
+  margin-top: .3em;
   align-items: center;
   background-color: #fff;
 }
