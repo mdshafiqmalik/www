@@ -87,8 +87,8 @@ body{
   justify-content: center;
 }
 .header .menuTop .menu img{
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   font-weight: bolder;
   padding: .2em;
 }
@@ -100,14 +100,14 @@ body{
   margin: 0em .7em 0em .5em;
 }
 .submenu{
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
 }
 .subheader{
   align-items: center;
   justify-content: center;
-  padding: .2em 0em;
-  height: 50px;
+  padding:0em;
+  height: 45px;
 }
 .submenu:hover{
   filter: var(--svgblue);
