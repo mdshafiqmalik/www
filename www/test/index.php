@@ -25,7 +25,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   </style>
   </head>
 
-  <body onload="onLoad()">
+  <body onload="onLoad()" >
     <div id="onLoad">
       <div class="onloadLogo">
 
@@ -153,10 +153,10 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     <script type="text/javascript">
     function onLoad(){
       setTimeout(function(){
-         // document.getElementById('onLoad').style.display= "none";
+         document.getElementById('onLoad').style.display= "none";
          document.getElementsByTagName("body")[0].style.overflowX = "scroll";
          document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-      },800);
+      },1000);
     }
 
     </script>
