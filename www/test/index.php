@@ -19,6 +19,9 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     overflow-x: hidden;
     overflow-y: hidden;
   }
+  #onLoad .logo{
+    font-size: 1.2em;
+  }
   #home{
     filter: var(--svgblue);
   }
@@ -27,11 +30,13 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 
   <body onload="onLoad()" >
     <div id="onLoad">
-      <div class="onloadLogo">
+      <span class="logo">fastreed.com</span>
+      <!-- <div class="onloadLogo">
 
-      </div>
+      </div> -->
       <div class="lion">
-        <img height="40px" width="70px"src="assets/lion.png" alt="">
+
+        <img height="37px" width="65px"src="assets/lion.png" alt="">
       </div>
       <div class="mke">
         Make In India
@@ -153,7 +158,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     <script type="text/javascript">
     function onLoad(){
       setTimeout(function(){
-         document.getElementById('onLoad').style.display= "none";
+         // document.getElementById('onLoad').style.display= "none";
          document.getElementsByTagName("body")[0].style.overflowX = "scroll";
          document.getElementsByTagName("body")[0].style.overflowY = "scroll";
       },1000);
