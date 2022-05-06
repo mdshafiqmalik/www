@@ -34,7 +34,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
             <img height="37px" width="65px"src="assets/lion.png" alt="">
           </div>
           <div class="mke">
-            Make In India
+            proudly Make In India
           </div>
     </div>
     <!-- <div class="loader"><div id="loader"></div> </div> -->
