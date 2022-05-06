@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<?php  $r1= rand(0,10);
+<?php
+
+$r1= rand(0,10);
 $r2= rand(0,10);
 $r3= rand(0,10);
 $r4 = rand(0,10);
 $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 <html lang="en" dir="ltr">
+<script type="text/javascript">
+
+</script>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css?v=<?php echo($randVersion); ?>">
   <link rel="stylesheet" href="assets/root.css?v=<?php echo($randVersion); ?>">
+  <script src="assets/fun.js?v=<?php echo($randVersion); ?>" charset="utf-8"></script>
   <title></title>
   <style media="screen">
   #home{
@@ -38,21 +44,21 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
           <option value="newlyAdded">Newer</option>
           <option value="atoz">A to Z</option>
         </select>
+        <span class="tagActive" id="all">All</span>
 
-        <span>All</span>
-        <span>how to?</span>
-        <span>health</span>
-        <span>blogging</span>
-        <span>trading</span>
-        <span>investment</span>
-        <span>coding</span>
-        <span>apps</span>
-        <span>sports</span>
-        <span>mobile</span>
-        <span>desktop</span>
-        <span>science</span>
-        <span>technology</span>
-        <span>software</span>
+        <span id="how-to" onclick="goTo('how-to')">how to?</span>
+        <span id="health" onclick="goTo('health')">health</span>
+        <span id="blogging" onclick="goTo('blogging')">blogging</span>
+        <span id="trading" onclick="goTo('trading')">trading</span>
+        <span id="" onclick="goTo('')">investment</span>
+        <span id="" onclick="goTo('')">coding</span>
+        <span id="" onclick="goTo('')">apps</span>
+        <span id="" onclick="goTo('')">sports</span>
+        <span id="" onclick="goTo('')">mobile</span>
+        <span id="" onclick="goTo('')">desktop</span>
+        <span id="" onclick="goTo('')">science</span>
+        <span id="" onclick="goTo('')">technology</span>
+        <span id="" onclick="goTo('')">software</span>
       </div>
     </div>
 
@@ -109,5 +115,16 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
       </div>
       <div class="options"> <img src="<?php //echo $svgFolder ?>/hori_dots.svg" alt=""> </div>
     </div> -->
+    <?php
+
+    if (isset($_GET["tag"])) {
+      $tag = $_GET["tag"];
+      echo '
+      <script type="text/javascript">
+      document.getElementById("'.$tag.'").classList.add("tagActive");
+      document.getElementById("all").classList.remove("tagActive");
+      </script>
+       ';
+    } ?>
   </body>
 </html>
