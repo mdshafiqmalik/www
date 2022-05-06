@@ -38,7 +38,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
           </div>
           <div class="mke">
             Make In India
-          </div> ';
+          </div> 
 
 
     </div>
