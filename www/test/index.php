@@ -7,13 +7,7 @@ $r3= rand(0,10);
 $r4 = rand(0,10);
 $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 <html lang="en" dir="ltr">
-<script type="text/javascript">
-setTimeout(function(){
-   // document.getElementById('onLoad').style.display= "none";
-   document.getElementsByTagName("body")[0].style.overflowX = "scroll";
-   document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-},800);
-</script>
+
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css?v=<?php echo($randVersion); ?>">
@@ -21,6 +15,10 @@ setTimeout(function(){
   <script src="assets/fun.js?v=<?php echo($randVersion); ?>" charset="utf-8"></script>
   <title></title>
   <style media="screen">
+  body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
   #home{
     filter: var(--svgblue);
   }
@@ -29,6 +27,12 @@ setTimeout(function(){
 
   <body onload="onLoad()">
     <div id="onLoad">
+      <div class="onloadLogo">
+
+      </div>
+      <div class="mke">
+        Make In India
+      </div>
     </div>
     <!-- <div class="loader"><div id="loader"></div> </div> -->
     <div class="mainCont">
@@ -142,6 +146,15 @@ setTimeout(function(){
       </div>
       <div class="options"> <img src="<?php //echo $svgFolder ?>/hori_dots.svg" alt=""> </div>
     </div> -->
+    <script type="text/javascript">
+    function onLoad(){
+      setTimeout(function(){
+         // document.getElementById('onLoad').style.display= "none";
+         document.getElementsByTagName("body")[0].style.overflowX = "scroll";
+         document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+      },800);
+    }
 
+    </script>
   </body>
 </html>
