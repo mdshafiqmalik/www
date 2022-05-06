@@ -8,7 +8,11 @@ $r4 = rand(0,10);
 $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 <html lang="en" dir="ltr">
 <script type="text/javascript">
-
+setTimeout(function(){
+   // document.getElementById('onLoad').style.display= "none";
+   document.getElementsByTagName("body")[0].style.overflowX = "scroll";
+   document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+},800);
 </script>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +26,28 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   }
   </style>
   </head>
-  <div id="onLoad">
-  </div>
-  <body>
 
+  <body onload="onLoad()">
+    <div id="onLoad">
+    </div>
+    <!-- <div class="loader"><div id="loader"></div> </div> -->
     <div class="mainCont">
-      <?php include 'components/header.php'; ?>
+      <div class="hd cont500">
+        <div class="header">
+        <div class="">
+          <h1 class="logo">fastreed</h1>
+        </div>
+          <div class="menuTop">
+            <div class="menu"><img src="./assets/svgs/menu_NB.svg" alt=""> </div>
+          </div>
+        </div>
+        <div class="subheader">
+          <div><a href="index.php"><img id="home" class="submenu" src="./assets/svgs/home_NF.svg" alt=""></a></div>
+          <div><a href="channels.php"><img id="channels" class="submenu" src="./assets/svgs/users_two.svg" alt=""></a></div>
+          <div><img id="" class="submenu" src="./assets/svgs/bell_NF.svg" alt=""> </div>
+          <div><img id="" class="submenu" src="./assets/svgs/user_notFilled.svg" alt=""> </div>
+        </div>
+      </div>
       <div class="tagandSearch cont500 ">
 
         <div class="search">
@@ -56,6 +76,8 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
         </div>
       </div>
       <?php
+      $source = "assets";
+      $svgFolder = $source."/svgs";
 
       if (isset($_GET["tag"])) {
         $tag = $_GET["tag"];
@@ -67,7 +89,6 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
          ';
       }else {
       }
-
       ?>
 
       <?php
@@ -107,11 +128,6 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
       }
        ?>
     </div>
-
-
-
-
-
     <!-- <div class="postMeta">
       <div class="writerPic">
         <div class="pic">

@@ -1,5 +1,5 @@
 function goTo(i) {
-  window.location.href = `index.php?tag=${i}`;
+  window.location.href = `?tag=${i}`;
   document.getElementById(`${i}`).classList.add("tagActive");
   document.getElementById('onLoad').style.display= "none";
 }
@@ -8,19 +8,15 @@ function allActive(){
   document.getElementById("all").classList.add("tagActive");
   document.getElementById('onLoad').style.display= "none";
 }
-
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'complete') {
-    setTimeout(function(){
-       document.getElementById('interactive');
-       document.getElementById('onLoad').style.display= "none";
-       document.getElementsByTagName("body")[0].style.overflowX = "scroll";
-       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-    },1000);
-  }else {
-    document.getElementById('onLoad').style.display= "block";
-    document.getElementsByTagName("body")[0].style.overflowX = "scroll";
-    document.getElementsByTagName("body")[0].style.overflowY = "hidden";
-  }
-}
+// var w = 10;
+// function onLoad(){
+//   if (w < 499)
+//           {
+//               w = w+5;
+//               document.getElementById('loader').style.width = w + 'px';
+//
+//           } else {
+//              clearInterval(int);
+//          }
+// }
+// var int = setInterval(onLoad, 100);
