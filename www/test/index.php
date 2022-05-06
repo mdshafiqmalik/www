@@ -31,7 +31,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 
       </div>
       <div class="lion">
-        <img height="30px" width="60px"src="assets/lion.png" alt="">
+        <img height="40px" width="70px"src="assets/lion.png" alt="">
       </div>
       <div class="mke">
         Make In India
@@ -153,7 +153,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     <script type="text/javascript">
     function onLoad(){
       setTimeout(function(){
-         document.getElementById('onLoad').style.display= "none";
+         // document.getElementById('onLoad').style.display= "none";
          document.getElementsByTagName("body")[0].style.overflowX = "scroll";
          document.getElementsByTagName("body")[0].style.overflowY = "scroll";
       },800);
