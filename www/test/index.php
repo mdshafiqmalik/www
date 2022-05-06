@@ -20,6 +20,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     <?php include 'components/header.php'; ?>
 
     <div class="tagandSearch cont500 ">
+
       <div class="search">
         <div id="search">
         <span>&#128269;</span>
@@ -28,6 +29,16 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
 
       </div>
       <div class="tags">
+
+        <select class="filterOpt" name="filterOpt" id="filterOpt">
+
+          <option value="" disabled selected>Filter </option>
+          <option value="trending">Trending</option>
+          <option value="mostActive">Channels</option>
+          <option value="newlyAdded">Newer</option>
+          <option value="atoz">A to Z</option>
+        </select>
+
         <span>All</span>
         <span>how to?</span>
         <span>health</span>
