@@ -16,23 +16,26 @@
   position: absolute;
   z-index: 99999;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .onloadLogo{
    width: 100px;
    height: 100px;
    border: 2px solid #bbb;
-   border-radius: 50px;
+   border-radius: 80px;
 }
 .mke{
-  position: absolute;
-  bottom: 3em;
-  margin-top: .9em;
-  border: 1px solid #aaa;
+  margin-top: 0em;
+  font-weight: bold;
   padding: .2em .8em;
   font-family: var(--fontfam);
-
+  color: green;
+  text-transform: uppercase;
+}
+.lion{
+  margin-top: .6em;
 }
 .loader{
   width: 100%;
