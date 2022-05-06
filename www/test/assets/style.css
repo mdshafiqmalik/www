@@ -133,7 +133,7 @@
 
 .tags span, .tags select{
   font-family: var(--fontfam);
- font-weight: 540;
+ font-weight: 600;
   padding: .4em 1em;
   border: 1px solid #aaa;
   border-radius: 20px;
