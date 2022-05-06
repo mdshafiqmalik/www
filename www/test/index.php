@@ -20,7 +20,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
     overflow-y: hidden;
   }
   #onLoad .logo{
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
   }
   #home{
     filter: var(--svgblue);
