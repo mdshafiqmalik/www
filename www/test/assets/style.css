@@ -11,7 +11,7 @@
 #onLoad{
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: var(--insCol);
 }
 .ml_d4em{
   margin-left: .4em;
