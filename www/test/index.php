@@ -23,83 +23,92 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   </style>
   </head>
   <body>
-    <?php include 'components/header.php'; ?>
 
-    <div class="tagandSearch cont500 ">
-
-      <div class="search">
-        <div id="search">
-        <span>&#128269;</span>
-          <input id="" type="search" name="" value="" placeholder=" Search Here....">
-        </div>
-
-      </div>
-      <div class="tags">
-
-        <select class="filterOpt" name="filterOpt" id="filterOpt">
-
-          <option value="" disabled selected>Filter </option>
-          <option value="trending">Trending</option>
-          <option value="mostActive">Channels</option>
-          <option value="newlyAdded">Newer</option>
-          <option value="atoz">A to Z</option>
-        </select>
-        <span class="tagActive" id="all">All</span>
-
-        <span id="how-to" onclick="goTo('how-to')">how to?</span>
-        <span id="health" onclick="goTo('health')">health</span>
-        <span id="blogging" onclick="goTo('blogging')">blogging</span>
-        <span id="trading" onclick="goTo('trading')">trading</span>
-      </div>
+    <div id="onLoad">
     </div>
-    <?php
 
-    if (isset($_GET["tag"])) {
-      $tag = $_GET["tag"];
-      echo '
-      <script type="text/javascript">
-      document.getElementById("'.$tag.'").classList.add("tagActive");
-      document.getElementById("all").classList.remove("tagActive");
-      </script>
-       ';
-    } ?>
 
-    <?php
-    $authors = array("Md Shafiq","Md Raqib","William Cathey","Mark Zukerberg","Rohit Sharma");
-    $channels = array("Shafiq Hub","Blogging Tips","Crazy writer","Bloomberg","Rohit Hub");
-    $titles =  array("6 proven way to be happy in your life","How to read and remember with amazing memory","How to write catchy letter to anyone","How to propse your girl romantically?","7 places to visit in kashmir this summer");
+      <?php include 'components/header.php'; ?>
+      <div class="tagandSearch cont500 ">
 
-    for ($i=0; $i < 5; $i++) {
-      echo '
-      <!--Post: '.$i.' -->
-      <div class="posts cont500">
-        <div class="postBody">
-          <div class="postPic"> <img src="'.$i.'.jpg" alt=""> </div>
-          <div class="postTitle"><a id="postTitle" href=""> '.$titles[$i].'</a></div>
-          <div class="extFoot">
-            <span class="meta"><a id="channelName"  href="">'.$channels[$i].'</a></span>
-            <p class="dot">&#x2022;</p>
-            <span   class="meta"><a id="authorName" href="">'.$authors[$i].'</a></span>
-            <p class="dot">&#x2022;</p>
-            <span id="pubTime" class="meta">'.$i.' hrs</span>
+        <div class="search">
+          <div id="search">
+          <span>&#128269;</span>
+            <input id="" type="search" name="" value="" placeholder=" Search Here....">
           </div>
+
         </div>
-        <div class="postFooter">
-          <div class="footItems" id="react">
-            <div id="like" class="react"><img  class="footImages"  src="'.$svgFolder.'/thumbs-up.svg" alt=""></div>
-            <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">9k</div>
-          </div>
-          <div class="footItems" >
-            <img id="comment"class="footImages"  src="'.$svgFolder.'/comment_notFilled_2.svg" alt="">
-            <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">1.2k</div>
-          </div>
-          <div class="footItems" id="share">
-            <img  class="footImages" src="'.$svgFolder.'/share_en.svg" alt="">
-          </div>
+        <div class="tags">
+
+          <select class="filterOpt" name="filterOpt" id="filterOpt">
+
+            <option value="" disabled selected>Filter </option>
+            <option value="trending">Trending</option>
+            <option value="mostActive">Channels</option>
+            <option value="newlyAdded">Newer</option>
+            <option value="atoz">A to Z</option>
+          </select>
+          <span onclick="allActive()" class="tagActive" id="all">All</span>
+
+          <span class="stags" id="how-to" onclick="goTo('how-to')">how to?</span>
+          <span class="stags" id="health" onclick="goTo('health')">health</span>
+          <span class="stags" id="blogging" onclick="goTo('blogging')">blogging</span>
+          <span class="stags" id="trading" onclick="goTo('trading')">trading</span>
         </div>
-      </div>';
-    }
-     ?>
+      </div>
+      <?php
+
+      if (isset($_GET["tag"])) {
+        $tag = $_GET["tag"];
+        echo '
+        <script type="text/javascript">
+        document.getElementById("'.$tag.'").classList.add("tagActive");
+        document.getElementById("all").classList.remove("tagActive");
+        </script>
+         ';
+      }else {
+      }
+
+      ?>
+
+      <?php
+      $authors = array("Md Shafiq","Md Raqib","William Cathey","Mark Zukerberg","Rohit Sharma");
+      $channels = array("Shafiq Hub","Blogging Tips","Crazy writer","Bloomberg","Rohit Hub");
+      $titles =  array("6 proven way to be happy in your life","How to read and remember with amazing memory","How to write catchy letter to anyone","How to propse your girl romantically?","7 places to visit in kashmir this summer");
+
+      for ($i=0; $i < 5; $i++) {
+        echo '
+        <!--Post: '.$i.' -->
+        <div class="posts cont500">
+          <div class="postBody">
+            <div class="postPic"> <img src="'.$i.'.jpg" alt=""> </div>
+            <div class="postTitle"><a id="postTitle" href=""> '.$titles[$i].'</a></div>
+            <div class="extFoot">
+              <span class="meta"><a id="channelName"  href="">'.$channels[$i].'</a></span>
+              <p class="dot">&#x2022;</p>
+              <span   class="meta"><a id="authorName" href="">'.$authors[$i].'</a></span>
+              <p class="dot">&#x2022;</p>
+              <span id="pubTime" class="meta">'.$i.' hrs</span>
+            </div>
+          </div>
+          <div class="postFooter">
+            <div class="footItems" id="react">
+              <div id="like" class="react"><img  class="footImages"  src="'.$svgFolder.'/thumbs-up.svg" alt=""></div>
+              <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">9k</div>
+            </div>
+            <div class="footItems" >
+              <img id="comment"class="footImages"  src="'.$svgFolder.'/comment_notFilled_2.svg" alt="">
+              <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">1.2k</div>
+            </div>
+            <div class="footItems" id="share">
+              <img  class="footImages" src="'.$svgFolder.'/share_en.svg" alt="">
+            </div>
+          </div>
+        </div>';
+      }
+       ?>
+
+
 
 
     <!-- <div class="postMeta">

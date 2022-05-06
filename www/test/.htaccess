@@ -3,7 +3,6 @@
 RewriteCond %{HTTP_HOST} ^shafiqhub.com [NC]
 RewriteRule ^(.*)$ https://www.shafiqhub.com/$1 [L,R=301]
 
-
 #error handling
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d

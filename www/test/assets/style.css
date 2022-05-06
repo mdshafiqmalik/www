@@ -8,6 +8,11 @@
   margin:0;
   padding: 0;
 }
+#onLoad{
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}
 .ml_d4em{
   margin-left: .4em;
 }
