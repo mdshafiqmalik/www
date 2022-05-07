@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include '../components/rand.php' ?>
+    <?php include 'components/rand.php' ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css?v=<?php echo($randVersion); ?>">
   <link rel="stylesheet" href="assets/root.css?v=<?php echo($randVersion); ?>">
