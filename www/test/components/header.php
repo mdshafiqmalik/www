@@ -10,7 +10,7 @@ echo '
     <h1 class="logo">fastreed</h1>
   </div>
     <div class="menuTop">
-      <div class="menu"><img src="./'.$source.'/svgs/menu_NB.svg" alt=""> </div>
+      <div class="menu"><img src="/'.$source.'/svgs/menu_NB.svg" alt=""> </div>
     </div>
   </div>
   <div class="subheader">
