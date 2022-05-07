@@ -28,6 +28,11 @@
    border: 2px solid #bbb;
    border-radius: 80px;
 }
+.nation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .mke{
   font-weight: bold;
   padding: .2em .8em;

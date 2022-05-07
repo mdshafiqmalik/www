@@ -8,6 +8,14 @@ function allActive(){
   document.getElementById("all").classList.add("tagActive");
   document.getElementById('onLoad').style.display= "none";
 }
+
+function onLoad(){
+  setTimeout(function(){
+     document.getElementById('onLoad').style.display= "none";
+     document.getElementsByTagName("body")[0].style.overflowX = "scroll";
+     document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+  },3000);
+}
 // var w = 10;
 // function onLoad(){
 //   if (w < 499)

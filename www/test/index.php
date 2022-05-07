@@ -27,31 +27,34 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   </style>
   </head>
   <body onload="onLoad()" >
+<!-- On Load -->
    <div id="onLoad">
-          <span class="logo">fastreed.com</span>
-          <!-- <div class="onloadLogo"> </div> -->
-          <div class="lion">
-            <img height="37px" width="65px"src="assets/lion.png" alt="">
-          </div>
-          <div class="mke">
-            proudly Make In India
+          <span class="logo">fR</span>
+          <div class="nation">
+            <div class="lion">
+              <img height="37px" width="65px"src="assets/lion.png" alt="">
+            </div>
+            <div class="mke">
+              proudly Make In India
+            </div>
           </div>
     </div>
+
+
     <!-- <div class="loader"><div id="loader"></div> </div> -->
     <div class="mainCont">
       <?php include 'components/header.php'; ?>
+
+      <!-- Search and Tag -->
       <div class="tagandSearch cont500 ">
         <div class="search">
           <div id="search">
           <span>&#128269;</span>
             <input id="" type="search" name="" value="" placeholder=" Search Here....">
           </div>
-
         </div>
         <div class="tags">
-
           <select class="filterOpt" name="filterOpt" id="filterOpt">
-
             <option value="" disabled>Filter </option>
             <option value="trending">Trending</option>
             <option value="mostActive">Channels</option>
@@ -59,17 +62,16 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
             <option value="atoz">A to Z</option>
           </select>
           <span onclick="allActive()" class="tagActive" id="all">All</span>
-
           <span class="stags" id="how-to" onclick="goTo('how-to')">how to?</span>
           <span class="stags" id="health" onclick="goTo('health')">health</span>
           <span class="stags" id="blogging" onclick="goTo('blogging')">blogging</span>
           <span class="stags" id="trading" onclick="goTo('trading')">trading</span>
         </div>
       </div>
+
       <?php
       $source = "assets";
       $svgFolder = $source."/svgs";
-
       if (isset($_GET["tag"])) {
         $tag = $_GET["tag"];
         echo '
@@ -82,16 +84,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
       }
       ?>
       <?php include 'posts.php'; ?>
-    </div>
-    <script type="text/javascript">
-    function onLoad(){
-      setTimeout(function(){
-         document.getElementById('onLoad').style.display= "none";
-         document.getElementsByTagName("body")[0].style.overflowX = "scroll";
-         document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-      },3000);
-    }
 
-    </script>
+    </div>
   </body>
 </html>
