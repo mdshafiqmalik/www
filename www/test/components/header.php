@@ -16,8 +16,8 @@ echo '
   <div class="subheader">
     <div><a href="/"><img id="home" class="submenu" src="/'.$svgFolder.'/home_NF.svg" alt=""></a></div>
     <!--<div><a href="channels.php"><img id="subscribe" class="submenu" src="/'.$svgFolder.'/subscribe.svg" alt=""></a></div>-->
-    <div><a href="/"><img id="" class="submenu" src="/'.$svgFolder.'/bell_NF.svg" alt=""></a> </div>
-    <div><a href="users"><img id="" class="submenu" src="/'.$svgFolder.'/user_notFilled.svg" alt=""></a> </div>
+    <div><a href="/notifications"><img id="notification" class="submenu" src="/'.$svgFolder.'/bell_NF.svg" alt=""></a> </div>
+    <div><a href="/users"><img id="user" class="submenu" src="/'.$svgFolder.'/user_notFilled.svg" alt=""></a> </div>
   </div>
 </div>
 '; ?>
