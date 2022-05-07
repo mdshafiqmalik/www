@@ -84,7 +84,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
       }else {
       }
       ?>
-      <?php include 'posts.php'; ?>
+      <?php include 'components/posts.php'; ?>
 
     </div>
   </body>
