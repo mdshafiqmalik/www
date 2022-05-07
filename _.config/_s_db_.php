@@ -12,12 +12,4 @@ if ($_SERVER["HTTP_HOST"] == "m.shafiqhub.com") {
   $passWord = '';
 }else {
 }
-
-$link = new mysqli("$hostName","$userName","$passWord","$dbName");
-if ($link->connect_error) {
-
-  die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
-}else {
-  echo "Connected";
-}
 ?>

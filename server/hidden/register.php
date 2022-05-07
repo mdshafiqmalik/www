@@ -1,7 +1,6 @@
 <?php
-include '../../../config/info.php';  // Unique
 header('content-type:application/json');
-include '../../../config/__sec__p.php';
+include '../../_.config/_s_db_.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 
 // if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
