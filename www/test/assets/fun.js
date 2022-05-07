@@ -14,7 +14,7 @@ function onLoad(){
      document.getElementById('onLoad').style.display= "none";
      document.getElementsByTagName("body")[0].style.overflowX = "scroll";
      document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-  },1000);
+  },0);
 }
 // var w = 10;
 // function onLoad(){
