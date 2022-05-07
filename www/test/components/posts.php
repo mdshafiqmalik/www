@@ -7,7 +7,7 @@ for ($i=0; $i < 5; $i++) {
   <!--Post: '.$i.' -->
   <div class="posts cont500">
     <div class="postBody">
-      <div class="postPic"> <img src="asstes/photos/'.$i.'.jpg" alt=""> </div>
+      <div class="postPic"> <img src="assets/photos/'.$i.'.jpg" alt=""> </div>
       <div class="postTitle"><a id="postTitle" href=""> '.$titles[$i].'</a></div>
       <div class="extFoot">
         <span class="meta"><a id="channelName"  href="">'.$channels[$i].'</a></span>
