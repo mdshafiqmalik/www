@@ -7,7 +7,7 @@ for ($i=0; $i < 5; $i++) {
   <!--Post: '.$i.' -->
   <div class="posts cont500">
     <div class="postBody">
-      <div class="postPic"> <img src="assets/pic/other/'.$i.'.jpg" alt=""> </div>
+      <div class="postPic"> <img src="/assets/pics/other/'.$i.'.jpg" alt=""> </div>
       <div class="postTitle"><a id="postTitle" href=""> '.$titles[$i].'</a></div>
       <div class="extFoot">
         <span class="meta"><a id="channelName"  href="">'.$channels[$i].'</a></span>
@@ -19,15 +19,15 @@ for ($i=0; $i < 5; $i++) {
     </div>
     <div class="postFooter">
       <div class="footItems" id="react">
-        <div id="like" class="react"><img  class="footImages"  src="'.$svgFolder.'/thumbs-up.svg" alt=""></div>
+        <div id="like" class="react"><img  class="footImages"  src="/assets/pics/svgs/thumbs-up.svg" alt=""></div>
         <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">9k</div>
       </div>
       <div class="footItems" >
-        <img id="comment"class="footImages"  src="'.$svgFolder.'/comment_notFilled_2.svg" alt="">
+        <img id="comment"class="footImages"  src="/assets/pics/svgs/comment_notFilled_2.svg" alt="">
         <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">1.2k</div>
       </div>
       <div class="footItems" id="share">
-        <img  class="footImages" src="'.$svgFolder.'/share_en.svg" alt="">
+        <img  class="footImages" src="/assets/pics/svgs/share_en.svg" alt="">
       </div>
     </div>
   </div>';
