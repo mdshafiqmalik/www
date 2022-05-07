@@ -29,13 +29,14 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
   <body onload="onLoad()" >
 <!-- On Load -->
    <div id="onLoad">
-          <span class="logo">fR</span>
+     <div class="onloadLogo">FR</div>
+
           <div class="nation">
             <div class="lion">
               <img height="37px" width="65px"src="assets/lion.png" alt="">
             </div>
             <div class="mke">
-              proudly Make In India
+              Make In India
             </div>
           </div>
     </div>
@@ -55,7 +56,7 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4; ?>
         </div>
         <div class="tags">
           <select class="filterOpt" name="filterOpt" id="filterOpt">
-            <option value="" disabled>Filter </option>
+            <option value="">Filter </option>
             <option value="trending">Trending</option>
             <option value="mostActive">Channels</option>
             <option value="newlyAdded">Newer</option>

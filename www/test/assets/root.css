@@ -92,6 +92,7 @@ body{
   font-weight: bolder;
   padding: .2em;
 }
+
 .logo{
   font-weight:bold;
   font-size: 2.1em;
@@ -102,6 +103,10 @@ body{
 .submenu{
   width: 26px;
   height: 26px;
+}
+#subscribe{
+  width: 35px;
+  height: 35px;
 }
 .subheader{
   align-items: center;

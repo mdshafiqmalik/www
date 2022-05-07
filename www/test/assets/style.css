@@ -22,16 +22,25 @@
   flex-direction: column;
 }
 .onloadLogo{
-  margin-top: -7em;
-   width: 100px;
-   height: 100px;
-   border: 2px solid #bbb;
-   border-radius: 80px;
+  margin-top: -3em;
+  height: 2em;
+  width: 2em;
+   border-radius: 1.5em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 3em;
+   font-family: var(--fontfam);
+   font-weight: bold;
+   background-color: #2a9fcf;
+   color: white;
 }
 .nation{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  bottom: 2em;
 }
 .mke{
   font-weight: bold;
@@ -177,13 +186,28 @@
   overflow-x: auto;
 }
 
-.tags span, .tags select{
+.tags span{
   font-family: var(--fontfam);
  font-weight: 600;
   padding: .4em 1em;
   border: 1px solid #aaa;
   border-radius: 20px;
   margin-right: .4em;
+  display: flex;
+  justify-content: flex-end;
+}
+.tags select{
+  border-radius: 5px;
+  margin-right: .6em;
+  appearance: none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  padding:0 30px 0 12px;
+  outline: 0;
+  background-image: url("down.png");
+  background-repeat: no-repeat;
+  background-position:calc(100% - 7px) center;
+  background-size: 10px;
 }
 .tags select{
     background-color: white;
