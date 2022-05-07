@@ -53,16 +53,7 @@
 .lion{
   margin-top: .6em;
 }
-.loader{
-  width: 100%;
-  max-width: 500px;
-}
-#loader{
-  display: block;
-  height: 2px;
-  background-color: blue;
-  max-width: 500px;
-}
+
 .ml_d4em{
   margin-left: .4em;
 }
@@ -204,7 +195,7 @@
   -webkit-appearance:none;
   padding:0 30px 0 12px;
   outline: 0;
-  background-image: url("down.png");
+  background-image: url("../pics/other/down.png");
   background-repeat: no-repeat;
   background-position:calc(100% - 7px) center;
   background-size: 10px;

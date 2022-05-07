@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include 'components/rand.php' ?>
+    <?php
+    include 'components/rand.php';
+    $style_css ="assets/css/style.css?v=$randVersion";
+    $root_css = "assets/css/root.css?v=$randVersion";
+    $fun_js = "assets/js/fun.js?v=$randVersion";
+     ?>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css?v=<?php echo($randVersion); ?>">
-  <link rel="stylesheet" href="assets/root.css?v=<?php echo($randVersion); ?>">
-  <script src="assets/fun.js?v=<?php echo($randVersion); ?>" charset="utf-8"></script>
+  <link rel="stylesheet" href="<?php echo($style_css); ?>">
+  <link rel="stylesheet" href="<?php echo($root_css); ?>">
+  <script src="<?php echo($fun_js); ?>" charset="utf-8"></script>
   <title></title>
   <style media="screen">
   body{
@@ -27,7 +33,7 @@
 
           <div class="nation">
             <div class="lion">
-              <img height="37px" width="65px"src="assets/lion.png" alt="">
+              <img height="37px" width="65px"src="assets/pics/other/lion.png" alt="">
             </div>
             <div class="mke">
               Make In India

@@ -14,17 +14,5 @@ function onLoad(){
      document.getElementById('onLoad').style.display= "none";
      document.getElementsByTagName("body")[0].style.overflowX = "scroll";
      document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-  },100);
+  },1000);
 }
-// var w = 10;
-// function onLoad(){
-//   if (w < 499)
-//           {
-//               w = w+5;
-//               document.getElementById('loader').style.width = w + 'px';
-//
-//           } else {
-//              clearInterval(int);
-//          }
-// }
-// var int = setInterval(onLoad, 100);

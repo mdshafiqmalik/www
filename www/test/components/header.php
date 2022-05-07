@@ -1,6 +1,6 @@
 <?php
 $source = "assets";
-$svgFolder = $source."/svgs";
+$svgFolder = $source."/pics/svgs";
 if ($_SERVER['REQUEST_URI'] == "/") {
   echo '
 

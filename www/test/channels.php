@@ -9,8 +9,8 @@ $randVersion ="$r1"."."."$r2"."."."$r3".".".$r4;  ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/root.css?id=<?php echo $randVersion; ?>">
-    <link rel="stylesheet" href="assets/channels.css?id=<?php echo $randVersion; ?>">
+    <link rel="stylesheet" href="assets/css/root.css?id=<?php echo $randVersion; ?>">
+    <link rel="stylesheet" href="assets/css/channels.css?id=<?php echo $randVersion; ?>">
     <title></title>
     <style media="screen">
     #channels{
