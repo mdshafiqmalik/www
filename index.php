@@ -84,7 +84,7 @@
       }else {
       }
       ?>
-      <?php include 'components/posts.php'; ?>
+      <?php include 'posts.php'; ?>
 
     </div>
   </body>

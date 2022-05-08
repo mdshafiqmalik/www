@@ -1,0 +1,81 @@
+<?php
+include '_.config/_s_db_.php';
+$link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    if ($link->connect_error) {
+      die('<p>Failed to connect to MySQL: '. $link->connect_error .'</p>');
+    }
+
+    $userDataSql = "SELECT * FROM fast_posts";
+    if (mysqli_query($link, $userDataSql)) {
+      $result = mysqli_query($link, $userDataSql);
+      if ($row = mysqli_num_rows($result)) {
+        while ($data = $result->fetch_assoc()) {
+          $pPicLink = unserialize($data['postPicLink']);
+          $pKeywords = unserialize($data['postKeyword']);
+          $pTags = unserialize($data['postTags']);
+          $postTime = "1 day";
+          echo '
+
+          <div class="posts cont500">
+            <div class="postBody">
+              <div class="postPic"> <img src="/uploads/'.$pPicLink['year'].'/'.$pPicLink['month'].'/'.$pPicLink['id'].'.'.$pPicLink['ext'].'" alt=""> </div>
+              <div class="postTitle"><a href="index.php?posts='.$data['postOgLink'].'.html" id="postTitle" href=""> '.$data['postTitle'].'</a></div>
+              <div class="extFoot">
+                <span class="meta"><a id="channelName"  href="">'.$data['postChannelName'].'</a></span>
+                <p class="dot">&#x2022;</p>
+                <span   class="meta"><a id="authorName" href="">'.$data['postAuthor'].'</a></span>
+                <p class="dot">&#x2022;</p>
+                <span id="pubTime" class="meta">'.$postTime.'</span>
+              </div>
+            </div>
+            <div class="postFooter">
+              <div class="footItems" id="react">
+                <div id="like" class="react"><img  class="footImages"  src="/assets/pics/svgs/thumbs-up.svg" alt=""></div>
+                <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">'.$data['postLikes'].'</div>
+              </div>
+              <div class="footItems" >
+                <img id="comment"class="footImages"  src="/assets/pics/svgs/comment_notFilled_2.svg" alt="">
+                <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">'.$data['postCommentCount'].'</div>
+              </div>
+              <div class="footItems" id="share">
+                <img  class="footImages" src="/assets/pics/svgs/share_en.svg" alt="">
+              </div>
+            </div>
+          </div>
+          ';
+        }
+      }else {
+        for ($i=0; $i <2 ; $i++) {
+          echo '
+          <div class="posts cont500">
+            <div class="postBody">
+              <div class="postPic"> <img src="" alt=""> </div>
+              <div class="postTitle"><a id="postTitle" href=""></a></div>
+              <div class="extFoot">
+                <span class="meta"><a id="channelName"  href=""></a></span>
+                <p class="dot">&#x2022;</p>
+                <span   class="meta"><a id="authorName" href=""></a></span>
+                <p class="dot">&#x2022;</p>
+                <span id="pubTime" class="meta"></span>
+              </div>
+            </div>
+            <div class="postFooter">
+              <div class="footItems" id="react">
+                <div id="like" class="react"><img  class="footImages"  src="/assets/pics/svgs/thumbs-up.svg" alt=""></div>
+                <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em"></div>
+              </div>
+              <div class="footItems" >
+                <img id="comment"class="footImages"  src="/assets/pics/svgs/comment_notFilled_2.svg" alt="">
+                <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em"></div>
+              </div>
+              <div class="footItems" id="share">
+                <img  class="footImages" src="/assets/pics/svgs/share_en.svg" alt="">
+              </div>
+            </div>
+          </div>
+          ';
+        }
+
+      }
+    }
+     ?>
