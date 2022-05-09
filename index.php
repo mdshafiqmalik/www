@@ -29,24 +29,26 @@
   <body onload="onLoad()" >
 <!-- On Load -->
    <div id="onLoad">
-     <div class="onloadLogo">FR</div>
-
-          <div class="nation">
-            <div class="lion">
-              <img height="37px" width="65px"src="assets/pics/other/lion.png" alt="">
-            </div>
-            <div class="mke">
-              Make In India
-            </div>
-          </div>
+     <div class="onloadLogo"> <img width="40px" height="40px"src="assets/pics/other/logo.svg" alt=""> 
+     </div>
+     <div class="nation">
+       <div class="lion">
+         <img height="37px" width="65px"src="assets/pics/other/lion.png" alt="">
+       </div>
+       <div class="mke">
+         Make In India
+       </div>
+     </div>
     </div>
 
 
     <!-- <div class="loader"><div id="loader"></div> </div> -->
     <div class="mainCont">
-      <?php include 'components/header.php'; ?>
-
+    <?php
+    include 'components/header.php';
+    ?>
       <!-- Search and Tag -->
+
       <div class="tagandSearch cont500 ">
         <div class="search">
           <div id="search">

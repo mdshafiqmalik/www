@@ -19,7 +19,7 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           <div class="posts cont500">
             <div class="postBody">
               <div class="postPic"> <img src="/uploads/'.$pPicLink['year'].'/'.$pPicLink['month'].'/'.$pPicLink['id'].'.'.$pPicLink['ext'].'" alt=""> </div>
-              <div class="postTitle"><a href="index.php?posts='.$data['postOgLink'].'.html" id="postTitle" href=""> '.$data['postTitle'].'</a></div>
+              <div class="postTitle"><a href="?posts='.$data['postOgLink'].'.html" id="postTitle" href=""> '.$data['postTitle'].'</a></div>
               <div class="extFoot">
                 <span class="meta"><a id="channelName"  href="">'.$data['postChannelName'].'</a></span>
                 <p class="dot">&#x2022;</p>

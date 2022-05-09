@@ -12,7 +12,7 @@
 #onLoad{
   /* margin-top: -4em; */
   width: 100vw;
-  height: 101%;
+  height: 100%;
   background-color:  white;
   position: absolute;
   z-index: 99999;
@@ -23,17 +23,20 @@
 }
 .onloadLogo{
   margin-top: -3em;
-  height: 2em;
-  width: 2em;
-   border-radius: 1.5em;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 3em;
-   font-family: var(--fontfam);
-   font-weight: bold;
-   background-color: #0165E1;
-   color: white;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-family: var(--fontfam);
+  font-weight: bold;
+  background-color: #0165E1;
+  color: white;
+}
+.onloadLogo img{
+  filter: var(--colorWhite);
 }
 .nation{
   display: flex;

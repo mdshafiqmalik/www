@@ -10,6 +10,7 @@ function allActive(){
 }
 
 function onLoad(){
+  document.body.scrollTop = 0;
   setTimeout(function(){
      document.getElementById('onLoad').style.display= "none";
      document.getElementsByTagName("body")[0].style.overflowX = "scroll";

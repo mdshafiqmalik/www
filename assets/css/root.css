@@ -6,6 +6,7 @@
  --svgblack:invert(0%) sepia(4%) saturate(13%) hue-rotate(107deg) brightness(96%) contrast(100%);
  --color_666:invert(39%) sepia(16%) saturate(6%) hue-rotate(316deg) brightness(97%) contrast(94%);
  --color_555: invert(34%) sepia(2%) saturate(15%) hue-rotate(7deg) brightness(93%) contrast(90%);
+ --colorWhite: invert(97%) sepia(12%) saturate(2%) hue-rotate(343deg) brightness(108%) contrast(101%);
 }
 body{
   max-width: 100%;
