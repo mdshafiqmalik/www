@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="<?php echo($root_css); ?>">
   <script src="<?php echo($fun_js); ?>" charset="utf-8"></script>
   <title></title>
+
   <style media="screen">
   body{
     overflow-x: hidden;
@@ -27,9 +28,17 @@
   </style>
   </head>
   <body onload="onLoad()" >
+    <script type="text/javascript">
+    function preLoadFunc(){
+      document.body.scrollTop = '100px';
+      document.documentElement.scrollTop = '100px';
+    }
+    window.onpaint = preLoadFunc();
+
+    </script>
 <!-- On Load -->
    <div id="onLoad">
-     <div class="onloadLogo"> <img width="40px" height="40px"src="assets/pics/other/logo.svg" alt=""> 
+     <div class="onloadLogo"> <img width="47px" height="47px"src="assets/pics/other/logo.svg" alt="">
      </div>
      <div class="nation">
        <div class="lion">

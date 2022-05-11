@@ -13,7 +13,7 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
     }
     if (isset($_GET["username"])) {
       $inputValue = $_GET["username"];
-      $userDataSql =  "SELECT * FROM member_details Where  BINARY membUsername = '".$inputValue."' ";
+      $userDataSql =  "SELECT * FROM fast_users Where  BINARY userName = '".$inputValue."' ";
         if (mysqli_query($link, $userDataSql)) {
           $result = mysqli_query($link, $userDataSql);
           if (mysqli_num_rows($result)) {
