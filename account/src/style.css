@@ -12,7 +12,6 @@
 #login{
   margin-top: 1em;
   font-weight: bold;
-  color: blue;
   font-size: 1.3em;
 }
 .or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
@@ -59,7 +58,7 @@
 }
 .loginSubmit a{
   font-size: .8em;
-  margin: .4em;
+  margin: .7em;
   text-decoration: none;
 }
 .loginSubmit input{
@@ -75,7 +74,7 @@
 .loginFields input{
   font-size: 1.2em;
   outline: 0;
-  padding: .4em .5em;
+  padding: .5em;
   width: 80%;
   background-color: none;
   border: none;
