@@ -18,7 +18,7 @@ $subheader = '<div class="subheader">
 </div>';
 
 
-$homeOther = ($_SERVER['REQUEST_URI'] == "/users/" || $_SERVER['REQUEST_URI'] == "/notifications/");
+$homeOther = ($_SERVER['REQUEST_URI'] == "/account/" || $_SERVER['REQUEST_URI'] == "/notifications/");
 if ($homeOther) {
   echo '
   <div class="hd cont500">'.$subheader.'
