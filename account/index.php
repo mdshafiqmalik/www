@@ -10,7 +10,7 @@
   </head>
   <body>
   <div class="navigation">
-    <span> <a id="backArrow" href="/">&#171;</a> </span>
+    <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
 
@@ -19,14 +19,17 @@
     <div class="content">
       <span id="login" >Login In</span>
       <br>
-      <div class="loginFields">
-        <input type="text" name="" value="" placeholder="Enter Email"required>
-        <span class="status"></span>
-      </div>
-      <div class="loginFields">
-        <input type="password" name="" value="" placeholder="Enter Password"required>
-        <span class="status"></span>
-      </div>
+      <form class="loginForm" action="" method="post">
+        <div class="loginFields">
+          <input type="text" name="" value="" placeholder="Enter Email"required>
+          <span class="status"></span>
+        </div>
+        <div class="loginFields">
+          <input type="password" name="" value="" placeholder="Enter Password"required>
+          <span class="status"></span>
+        </div>
+      </form>
+
     </div>
       <!-- New Users -->
 
