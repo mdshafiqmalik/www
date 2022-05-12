@@ -15,6 +15,8 @@
   <div id="userDiv" class="cont">
 
     <!-- Logged In -->
+
+
     <!-- Logged Out -->
     <div class="content">
       <span id="login" >Login In</span>
@@ -30,13 +32,22 @@
         </div>
         <div class="loginSubmit">
           <input type="submit" name="" value="LOGIN">
+          <a href="#">Forgotten Password?</a>
+        </div>
+        <div class="or">
+          <span class=''>Or</span>
         </div>
 
       </form>
+      <div class="createAccount">
+        <a href="#">
+          <span>Create An Account </span>
+          <img width="15px" width="15px"src="../assets/pics/svgs/plus.svg" alt=""></a>
 
+      </div>
     </div>
-    <hr>
-      <!-- New Users -->
+
+    <!-- New Users -->
 
   </div>
   </body>

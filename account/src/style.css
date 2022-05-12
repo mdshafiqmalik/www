@@ -1,3 +1,4 @@
+
 #user{
   filter: var(--svgblue);
 }
@@ -8,7 +9,11 @@
   font-size: 1.3em;
 
 }
-
+.or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .navigation{
   max-width: 500px;
   width: 100vw;
@@ -33,28 +38,29 @@
   margin-top: 1px;
   background-color: white;
 }
-.loginFields{
+.loginFields,.loginSubmit{
   border: 1px solid;
   max-width: 400px;
   margin: 1em .5em;
   border-radius: 3px;
   border: 1px solid purple;
   border-bottom: 2px solid purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 }
 .loginSubmit{
-  display: flex;
-  justify-content: center;
-  align-items:center;
+  border:0;
+  flex-direction:column;
+}
+.loginSubmit a{
+  font-size: .8em;
+  margin: .4em;
+  text-decoration: none;
 }
 .loginSubmit input{
-  padding: .5em 1em;
-  border-radius: 24px;
+  width: 100%;
+  padding: .9em 1em;
+  border-radius: 4px;
   margin-top: .2em;
-  /* border:  1px solid; */
+  border:  1px solid;
   background-color: purple;
   color:white;
   font-weight: bold;
@@ -76,10 +82,19 @@
 .loginFields input:hover, .loginFields input:focus{
   outline: 0;
 }
-.status{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.createAccount{
+  margin: .5em;
+  border-radius: 5px;
+  padding: .7em 1em;
+  background-color: lightgreen;
+  font-weight: bold;
+}
+.createAccount a{
+  text-decoration: none;
+  color: black;
+}
+.createAccount span{
+  margin-right: .6em;
 }
 .content{
   display: flex;
