@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: 1.3em;
 }
-.or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
+.cont,.or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
   display: flex;
   align-items: center;
   justify-content: center;
