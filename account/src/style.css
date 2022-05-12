@@ -6,6 +6,7 @@
   font-weight: bold;
   color: blue;
   font-size: 1.3em;
+
 }
 
 .navigation{
@@ -14,7 +15,6 @@
   background-color: white;
   padding: .3em 0em;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 .navigation a span{
@@ -45,8 +45,22 @@
   align-items: center;
 
 }
+.loginSubmit{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.loginSubmit input{
+  padding: .5em 1em;
+  border-radius: 24px;
+  margin-top: .2em;
+  /* border:  1px solid; */
+  background-color: purple;
+  color:white;
+  font-weight: bold;
+}
 .loginFields input{
-  font-size: 1.3em;
+  font-size: 1.2em;
   outline: 0;
   padding: .3em .5em;
   width: 80%;
@@ -61,6 +75,11 @@
 
 .loginFields input:hover, .loginFields input:focus{
   outline: 0;
+}
+.status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .content{
   display: flex;

@@ -26,11 +26,16 @@
         </div>
         <div class="loginFields">
           <input type="password" name="" value="" placeholder="Enter Password"required>
-          <span class="status"></span>
+          <span class="status"><img src="../assets/pics/svgs/eye_closed.svg" alt=""></span>
         </div>
+        <div class="loginSubmit">
+          <input type="submit" name="" value="LOGIN">
+        </div>
+
       </form>
 
     </div>
+    <hr>
       <!-- New Users -->
 
   </div>
