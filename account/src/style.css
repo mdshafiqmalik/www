@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: 1.3em;
 }
-.cont,.or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
+.or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,7 @@
 .cont{
   max-width: 500px;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 97vh;
   margin-top: 1px;
   background-color: white;
 }
