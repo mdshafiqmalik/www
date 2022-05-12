@@ -68,7 +68,7 @@
   border:  1px solid;
   background-color: black;
   color:white;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .loginFields input{
   font-size: 1.2em;
