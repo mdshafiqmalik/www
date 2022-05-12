@@ -20,7 +20,7 @@
       <span id="login" >Login In</span>
       <br>
       <div class="loginFields">
-        <input type="text" name="" value="" placeholder="Enter Your Username"required>
+        <input type="text" name="" value="" placeholder="Enter Email"required>
         <span class="status"></span>
       </div>
       <div class="loginFields">
