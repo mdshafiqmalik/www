@@ -37,6 +37,7 @@
 
 }
 .loginFields input{
+  font-size: 1.3em;
   outline: 0;
   padding: .3em .5em;
   width: 80%;
