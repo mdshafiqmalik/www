@@ -95,6 +95,18 @@
   font-weight: bold;
   border: 1px solid;
 }
+#checkEmail{
+  font-size: 1.4em;
+  color: orange;
+}
+#message{
+  padding: .4em .9em;
+  width: 90%;
+  color: red;
+}
+#emailField{
+  justify-content: left;
+}
 .createAccount img{
   border: 1px solid black;
   filter: var(--colorWhite);

@@ -21,13 +21,18 @@
     <div class="content">
       <span id="login" >Login In</span>
       <br>
+
       <form class="loginForm" action="" method="post">
-        <div class="loginFields">
-          <input type="text" name="" value="" placeholder="Enter Email"required>
-          <span class="status"></span>
+        <div id="message"class="">
+          <span id="">Email/Phone or Password is Wrong </span>
+        </div>
+
+        <div class="loginFields" id="emailField">
+          <input type="text" name="" value="" placeholder="Email or Phone(10 Digits)"required>
+          <!-- <span id="checkEmail"class="status"></span> -->
         </div>
         <div class="loginFields">
-          <input id="password" type="password" name="" value="" placeholder="Enter Password"required>
+          <input id="password" type="password" name="" value="" placeholder="Password"required>
           <span class="status">
             <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
             <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
