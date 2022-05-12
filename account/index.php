@@ -39,12 +39,13 @@
         </div>
 
       </form>
-      <div class="createAccount">
-        <a href="#">
+      <!-- <div class="createAccount"> -->
+        <button class="createAccount">
           <span>Create An Account </span>
-          <img width="15px" width="15px"src="../assets/pics/svgs/plus.svg" alt=""></a>
+          <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
+        </button>
 
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- New Users -->

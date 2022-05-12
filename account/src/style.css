@@ -1,4 +1,11 @@
 
+/* Login Form  */
+.content{
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  margin: .4em;
+}
 #user{
   filter: var(--svgblue);
 }
@@ -7,7 +14,6 @@
   font-weight: bold;
   color: blue;
   font-size: 1.3em;
-
 }
 .or,.flexCenter,.loginFields,.loginSubmit,.status,.content,.createAccount{
   display: flex;
@@ -78,27 +84,31 @@
 .loginFields .status{
   width: 17%;
 }
-
 .loginFields input:hover, .loginFields input:focus{
   outline: 0;
 }
 .createAccount{
+  color:white;
   margin: .5em;
   border-radius: 5px;
   padding: .7em 1em;
-  background-color: lightgreen;
+  background-color: #018279;
   font-weight: bold;
+  border: 1px solid;
 }
-.createAccount a{
-  text-decoration: none;
-  color: black;
+.createAccount img{
+  border: 1px solid black;
+  filter: var(--colorWhite);
+  border-radius: 3px;
+  padding: .08em;
+}
+.createAccount:hover{
+  background-color:#05ebda;
 }
 .createAccount span{
   margin-right: .6em;
 }
-.content{
-  display: flex;
-  align-items: center;
-  flex-direction:column;
-  margin: .4em;
-}
+/* ********* */
+
+
+/* Sign Up Form */
