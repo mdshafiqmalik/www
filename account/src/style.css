@@ -4,6 +4,7 @@
 #login{
   font-weight: bold;
   color: blue;
+  font-size: 1.3em;
 }
 .navigation{
   max-width: 500px;
