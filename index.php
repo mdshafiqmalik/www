@@ -38,7 +38,7 @@
     </script>
 <!-- On Load -->
    <div id="onLoad">
-     <div class="onloadLogo"> <img width="47px" height="47px"src="assets/pics/other/logo.svg" alt="">
+     <div class="onloadLogo"> <img width="47px" height="47px"src="assets/pics/other/R_logo.svg" alt="">
      </div>
      <div class="nation">
        <div class="lion">
