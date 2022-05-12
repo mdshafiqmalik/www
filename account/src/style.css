@@ -1,0 +1,60 @@
+#user{
+  filter: var(--svgblue);
+}
+#login{
+  font-weight: bold;
+  color: blue;
+}
+.navigation{
+  max-width: 500px;
+  width: 100vw;
+  background-color: white;
+  padding: .3em 0em;
+}
+#backArrow{
+  font-weight: bolder;
+  text-decoration: none;
+  margin: 0em .5em;
+}
+.cont{
+  max-width: 500px;
+  width: 100vw;
+  min-height: 100vh;
+  margin-top: 1px;
+  background-color: white;
+}
+.loginFields{
+  border: 1px solid;
+  max-width: 300px;
+  margin: .5em;
+  border-radius: 3px;
+  border: 1px solid purple;
+  border-bottom: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.loginFields input{
+  outline: 0;
+  padding: .3em .5em;
+  width: 80%;
+  background-color: none;
+  border: none;
+  font-size: .8em;
+  font-weight: 600;
+  color: #333;
+}
+.loginFields .status{
+  width: 20%;
+}
+
+.loginFields input:hover, .loginFields input:focus{
+  outline: 0;
+}
+.content{
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  margin: .4em;
+}
