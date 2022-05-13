@@ -17,15 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sanitizeUsername = sanitizeData($Username);
         $myusername = mysqli_real_escape_string($db,$sanitizeUsername);
         $mypassword = mysqli_real_escape_string($db,$sanPassword);
-        $sql = "SELECT userHashPassword FROM fast_users Where userName = '$myusername'";
+        $sql = "SELECT userHashPassword, userID FROM fast_users Where userName = '$myusername'";
         $result = mysqli_query($db,$sql);
         if (mysqli_num_rows($result)) {
           $row = $result->fetch_assoc();
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
-          if ($isPasswordCorrect) {   //password verified
-            session_register("loginUser");
-            $_SESSION['login_user'] = $myphone;
+          if ($isPasswordCorrect) {                     // if password verified
+            $_SESSION['userName'] = $myusername;
+            $_SESSION['userID'] = $row['userID'];
             header("location: ../");
           }else {
             header("Location: /account/?message=Password Incorrect");
@@ -51,15 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $CCPhone = $countryCode.$sanitizePhone;
         $myphone = mysqli_real_escape_string($db,$CCPhone);
         $mypassword = mysqli_real_escape_string($db,$sanPassword);
-        $sql = "SELECT userHashPassword FROM fast_users Where userPhone = '$myphone'";
+        $sql = "SELECT userHashPassword, userID FROM fast_users Where userPhone = '$myphone'";
         $result = mysqli_query($db,$sql);
         if (mysqli_num_rows($result)) {
           $row = $result->fetch_assoc();
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
-          if ($isPasswordCorrect) {   //password verified
-            session_register("myphone");
-            $_SESSION['login_user'] = $myphone;
+          if ($isPasswordCorrect) {                  //if password verified
+            $_SESSION['userID'] = $row['userID'];
+            $_SESSION['userName'] = $row['userName'];
             header("location: ../");
 
           }else {

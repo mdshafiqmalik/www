@@ -18,6 +18,11 @@
 
 
     <!-- Logged Out -->
+    <?php
+
+    ?>
+
+    <?php endif; ?>
     <div class="content">
       <span id="login" >Login In</span>
       <br>
@@ -32,14 +37,11 @@
           }
            ?> </span>
         </div>
-
         <div class="loginFields" id="emailField">
           <select name="countryCode" id="countryCode" style="display:none;">
             <?php include '../components/countryCodes.php'; ?>
 </select>
-
           <input id="emailOrPassword" type="text" onkeyup="changeField()"name="username" value="" placeholder="Username or Phone">
-
         </div>
         <div class="loginFields">
           <input id="password" type="password" name="password" value="" placeholder="Password">
@@ -55,7 +57,6 @@
         <div class="or">
           <span class=''>Or</span>
         </div>
-
       </form>
       <!-- <div class="createAccount"> -->
         <button class="createAccount">
