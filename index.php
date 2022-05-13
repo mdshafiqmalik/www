@@ -2,7 +2,7 @@
 
 <?php
 include 'account/session.php';
-echo $userID;
+echo "$userID";
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
