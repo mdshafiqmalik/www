@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
           if ($isPasswordCorrect) {   //password verified
-            session_register("myusername");
+            session_register("loginUser");
             $_SESSION['login_user'] = $myphone;
-            header("location: /");
+            header("location: ../");
           }else {
             header("Location: /account/?message=Password Incorrect");
           }
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if ($isPasswordCorrect) {   //password verified
             session_register("myphone");
             $_SESSION['login_user'] = $myphone;
-            header("location: /");
+            header("location: ../");
 
           }else {
             header("Location: /account/?message=Password Incorrect");
