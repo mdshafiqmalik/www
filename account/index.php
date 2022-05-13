@@ -19,7 +19,7 @@
 
     <!-- Logged Out -->
     <?php
-
+  
     ?>
 
     <?php endif; ?>
