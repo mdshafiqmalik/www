@@ -1,7 +1,5 @@
-
-
 <?php
-include_once 'account/session.php';
+include 'account/session.php';
 echo "$userID";
  ?>
 <!DOCTYPE html>

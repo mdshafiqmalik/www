@@ -12,4 +12,6 @@ if ($_SERVER["HTTP_HOST"] == "m.shafiqhub.com") {
   $passWord = '';
 }else {
 }
+$db = new mysqli("$hostName","$userName","$passWord","$dbName");
+
 ?>
