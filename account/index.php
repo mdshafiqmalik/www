@@ -22,17 +22,27 @@
       <span id="login" >Login In</span>
       <br>
 
-      <form class="loginForm" action="" method="post">
+      <form class="loginForm" action="login.php" method="post">
         <div id="message"class="">
-          <span id="">Email/Phone or Password is Wrong </span>
+
+          <span id=""> <?php
+          if (isset($_GET['message'])) {
+            $message = $_GET['message'];
+             echo "$message";
+          }
+           ?> </span>
         </div>
 
         <div class="loginFields" id="emailField">
-          <input type="text" name="" value="" placeholder="Email or Phone(10 Digits)"required>
-          <!-- <span id="checkEmail"class="status"></span> -->
+          <select name="countryCode" id="countryCode" style="display:none;">
+            <?php include '../components/countryCodes.php'; ?>
+</select>
+
+          <input id="emailOrPassword" type="text" onkeyup="changeField()"name="Email/Phone" value="" placeholder="Email or Phone(10 Digits)">
+
         </div>
         <div class="loginFields">
-          <input id="password" type="password" name="" value="" placeholder="Password"required>
+          <input id="password" type="password" name="password" value="" placeholder="Password">
           <span class="status">
             <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
             <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
@@ -52,7 +62,6 @@
           <span>Create An Account </span>
           <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
         </button>
-
       <!-- </div> -->
     </div>
 
