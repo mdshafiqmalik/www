@@ -1,5 +1,5 @@
 <?php
-include '_.config/_s_db_.php';
+include_once '_.config/_s_db_.php';
    $db = new mysqli("$hostName","$userName","$passWord","$dbName");
    session_start();
    $userID = $_SESSION['userID'];
