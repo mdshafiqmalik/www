@@ -2,7 +2,7 @@
 
 <?php
 include 'account/session.php';
-var_dump($userID);
+echo $userID;
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
