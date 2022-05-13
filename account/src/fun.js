@@ -24,7 +24,7 @@ function changeField() {
     EPField.style.justifyContent = "center";
   }else {
     EPField.type = "text";
-    EPField.name = "email";
+    EPField.name = "username";
     countryCode.style.display ="none";
     EPField.style.justifyContent = "flex-start";
   }

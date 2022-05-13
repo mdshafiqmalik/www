@@ -38,7 +38,7 @@
             <?php include '../components/countryCodes.php'; ?>
 </select>
 
-          <input id="emailOrPassword" type="text" onkeyup="changeField()"name="Email/Phone" value="" placeholder="Email or Phone(10 Digits)">
+          <input id="emailOrPassword" type="text" onkeyup="changeField()"name="username" value="" placeholder="Username or Phone">
 
         </div>
         <div class="loginFields">
