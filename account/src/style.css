@@ -99,6 +99,7 @@
   font-weight: bold;
   border-right: 2px solid;
   outline: none;
+  background-color: white;
 }
 #countryCode:hover{
   outline: none;
