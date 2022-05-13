@@ -1,8 +1,6 @@
 <?php
 include '../_.config/_s_db_.php';
 session_start();
-$db = new mysqli("$hostName","$userName","$passWord","$dbName");
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
   if (mailOrPhone() == "username") { // If User Entered Username
