@@ -19,10 +19,9 @@
 
     <!-- Logged Out -->
     <?php
-  
+
     ?>
 
-    <?php endif; ?>
     <div class="content">
       <span id="login" >Login In</span>
       <br>
