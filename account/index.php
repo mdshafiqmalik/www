@@ -1,3 +1,5 @@
+
+<?php session_start();   ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -17,55 +19,32 @@
     <!-- Logged In -->
 
 
-    <!-- Logged Out -->
+    <!-- Login  Section -->
     <?php
-
-    ?>
-
-    <div class="content">
-      <span id="login" >Login In</span>
-      <br>
-
-      <form class="loginForm" action="login.php" method="post">
-        <div id="message"class="">
-
-          <span id=""> <?php
-          if (isset($_GET['message'])) {
-            $message = $_GET['message'];
-             echo "$message";
-          }
-           ?> </span>
-        </div>
-        <div class="loginFields" id="emailField">
-          <select name="countryCode" id="countryCode" style="display:none;">
-            <?php include '../components/countryCodes.php'; ?>
-</select>
-          <input id="emailOrPassword" type="text" onkeyup="changeField()"name="username" value="" placeholder="Username or Phone">
-        </div>
-        <div class="loginFields">
-          <input id="password" type="password" name="password" value="" placeholder="Password">
-          <span class="status">
-            <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
-            <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
-          </span>
-        </div>
-        <div class="loginSubmit">
-          <input type="submit" name="" value="LOGIN">
-          <a href="#">Forgotten Password?</a>
-        </div>
-        <div class="or">
-          <span class=''>Or</span>
-        </div>
-      </form>
-      <!-- <div class="createAccount"> -->
-        <button class="createAccount">
-          <span>Create An Account </span>
-          <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
-        </button>
-      <!-- </div> -->
-    </div>
+    // if (isset($_SESSION['userID'])) {
+      // code...
+    // }else {
+      // include '../components/login.php';
+    // }
+ ?>
 
     <!-- New Users -->
+<div class="content">
+  <span id="signUp" >Create An Account</span>
+  <br>
+  <form class="loginForm" action="" method="post">
+    <div class="loginFields">
+      <input id=""onkeyup="" type="email" name="" value="" placeholder="Full Name">
+    </div>
+    <div class="loginFields">
+      <input id=""onkeyup="" type="email" name="" value="" placeholder="Enter Email Or Phone">
+    </div>
+    <div class="loginSubmit">
+      <input type="submit" name="" value="SEND OTP">
+    </div>
+  </form>
+</div>
+
 
   </div>
 

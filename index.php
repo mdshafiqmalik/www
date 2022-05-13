@@ -1,6 +1,5 @@
 <?php
 include 'account/session.php';
-echo "$userID";
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
