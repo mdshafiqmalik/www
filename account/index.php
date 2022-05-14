@@ -33,8 +33,6 @@
       <a href="../logout.php?redirect=/account">Logout</a>
       <div class="content">
         <div class="">
-          <img src="<?php  ?>" alt="">
-
         </div>
       </div>
       <?php
