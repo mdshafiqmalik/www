@@ -24,7 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if ($isPasswordCorrect) {                     // if password verified
             $_SESSION['userName'] = $myusername;
             $_SESSION['userID'] = $row['userID'];
-            header("location: ../");
+            if (isset($_GET['redirect'])) {
+              $redirectLink = $_GET['redirect'];
+              header("Location: $redirectLink");
+            }else {
+              header("location: ../account");
+            }
           }else {
             header("Location: /account/?message=Password Incorrect");
           }
@@ -58,7 +63,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if ($isPasswordCorrect) {                  //if password verified
             $_SESSION['userID'] = $row['userID'];
             $_SESSION['userName'] = $row['userName'];
-            header("location: ../");
+            if (isset($_GET['redirect'])) {
+              $redirectLink = $_GET['redirect'];
+              header("Location: $redirectLink");
+            }else {
+              header("location: ../account");
+            }
+
 
           }else {
             header("Location: /account/?message=Password Incorrect");

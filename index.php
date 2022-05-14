@@ -98,6 +98,7 @@ include 'account/session.php';
       }else {
       }
       ?>
+      <a href="account/?redirect=../">Login</a>
       <?php include 'posts.php'; ?>
 
     </div>

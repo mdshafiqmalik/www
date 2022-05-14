@@ -22,10 +22,20 @@
     <!-- Login  Section -->
     <?php
     if (isset($_SESSION['userID'])) {
-      $userID = isset($_SESSION['userID']);
+      include '../_.config/_s_db_.php';
+      $userID = $_SESSION['userID'];
+      $sql = "SELECT userProfile from user_data where userID = '$userID'";
+      $user_data = mysqli_query($db,$sql);
+      $row = $user_data->fetch_assoc();
+      $userPicArray = unserialize($row['userProfile']);
+      echo '<img src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
       ?>
+      <a href="../logout.php?redirect=/account">Logout</a>
       <div class="content">
+        <div class="">
+          <img src="<?php  ?>" alt="">
 
+        </div>
       </div>
       <?php
     }else {
