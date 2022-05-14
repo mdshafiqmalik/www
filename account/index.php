@@ -44,7 +44,7 @@
  ?>
 
     <!-- New Users -->
-<!-- <div class="content">
+<div class="content">
   <span id="signUp" >Create An Account</span>
   <br>
   <form class="loginForm" action="" method="post">
@@ -58,7 +58,7 @@
       <input type="submit" name="" value="SEND OTP">
     </div>
   </form>
-</div> -->
+</div>
 
 
   </div>
