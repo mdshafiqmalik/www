@@ -21,15 +21,20 @@
 
     <!-- Login  Section -->
     <?php
-    // if (isset($_SESSION['userID'])) {
-      // code...
-    // }else {
-      // include '../components/login.php';
-    // }
+    if (isset($_SESSION['userID'])) {
+      $userID = isset($_SESSION['userID']);
+      ?>
+      <div class="content">
+
+      </div>
+      <?php
+    }else {
+      include '../components/login.php';
+    }
  ?>
 
     <!-- New Users -->
-<div class="content">
+<!-- <div class="content">
   <span id="signUp" >Create An Account</span>
   <br>
   <form class="loginForm" action="" method="post">
@@ -43,7 +48,7 @@
       <input type="submit" name="" value="SEND OTP">
     </div>
   </form>
-</div>
+</div> -->
 
 
   </div>
