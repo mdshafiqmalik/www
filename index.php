@@ -31,14 +31,7 @@ include 'account/session.php';
   </style>
   </head>
   <body onload="onLoad()" >
-    <script type="text/javascript">
-    function preLoadFunc(){
-      document.body.scrollTop = '100px';
-      document.documentElement.scrollTop = '100px';
-    }
-    window.onpaint = preLoadFunc();
 
-    </script>
 <!-- On Load -->
    <div id="onLoad">
      <div class="onloadLogo"> <img width="47px" height="47px"src="assets/pics/other/R_logo.svg" alt="">
