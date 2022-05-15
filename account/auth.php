@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $redirectLink = $_GET['redirect'];
               header("Location: $redirectLink");
             }else {
-              header("location: /account");
+              header("location: /");
             }
           }else {
             header("Location: /account/?message=Password Incorrect");
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        }
     }
   }
-  else{ // If User Entered Phone Number
+}else{ // If User Entered Phone Number
     $phone = $_POST['phone'];
     $countryCode = $_POST['countryCode'];
     if (empty($phone)||ctype_space($phone)) {
@@ -60,29 +60,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $row = $result->fetch_assoc();
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
-
-          if ($isPasswordCorrect) {                  //if password verified
+          if ($isPasswordCorrect) {
+            $_SESSION['userName'] = $myusername;
             $_SESSION['userID'] = $row['userID'];
-            $_SESSION['userName'] = $row['userName'];
             if (isset($_GET['redirect'])) {
               $redirectLink = $_GET['redirect'];
               header("Location: $redirectLink");
             }else {
               header("location: /account");
+            }
           }else {
-            header("Location: /account/?message=Password Incorrect");
+            header("Location: /account/?message=Incorrect Password");
           }
         }else {
-          header("Location: /account/?message=Incorrect Phone Number"); // Check if Phone is empty
+          header("Location: /account/?message=Incorrect Phone");
         }
-       }
-    }
   }
-}else {
-  header("Location: /account");
 }
-function mailOrPhone()
-{
+}
+
+function mailOrPhone(){
   if (isset($_POST['username'])) {
     return "username";
   }else {
