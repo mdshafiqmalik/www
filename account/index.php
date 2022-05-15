@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 
 
@@ -12,9 +14,7 @@
     <title></title>
   </head>
   <body>
-    <?php
-    var_dump(session_start());
-     ?>
+
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
@@ -25,7 +25,7 @@
 
     <!-- LogedIn  Section -->
     <?php
-    session_start();
+    var_dump(session_status());
     if (isset($_SESSION['userID'])) {
       include '../_.config/_s_db_.php';
       $userID = $_SESSION['userID'];
