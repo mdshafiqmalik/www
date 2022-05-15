@@ -1,5 +1,4 @@
 
-<?php session_start();   ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -21,6 +20,7 @@
 
     <!-- LogedIn  Section -->
     <?php
+    session_start();
     if (isset($_SESSION['userID'])) {
       include '../_.config/_s_db_.php';
       $userID = $_SESSION['userID'];
@@ -38,6 +38,7 @@
       <?php
     }else {
       include '../components/login.php';
+
     }
  ?>
 
