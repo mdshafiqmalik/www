@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $redirectLink = $_GET['redirect'];
               header("Location: $redirectLink");
             }else {
-              header("location: ../account");
+              header("location: /account");
             }
           }else {
             header("Location: /account/?message=Password Incorrect");
@@ -36,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }else {
           header("Location: /account/?message=Incorrect Username"); // Check if Phone is empty
         }
-
        }
     }
-  }else{ // If User Entered Phone Number
+  }
+  else{ // If User Entered Phone Number
     $phone = $_POST['phone'];
     $countryCode = $_POST['countryCode'];
     if (empty($phone)||ctype_space($phone)) {
@@ -54,12 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $CCPhone = $countryCode.$sanitizePhone;
         $myphone = mysqli_real_escape_string($db,$CCPhone);
         $mypassword = mysqli_real_escape_string($db,$sanPassword);
-        $sql = "SELECT userHashPassword, userID FROM fast_users Where userPhone = '$myphone'";
+        $sql = "SELECT * FROM fast_users Where userPhone = '$myphone'";
         $result = mysqli_query($db,$sql);
         if (mysqli_num_rows($result)) {
           $row = $result->fetch_assoc();
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
+
           if ($isPasswordCorrect) {                  //if password verified
             $_SESSION['userID'] = $row['userID'];
             $_SESSION['userName'] = $row['userName'];
@@ -67,10 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $redirectLink = $_GET['redirect'];
               header("Location: $redirectLink");
             }else {
-              header("location: ../account");
-            }
-
-
+              header("location: /account");
           }else {
             header("Location: /account/?message=Password Incorrect");
           }
@@ -83,8 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }else {
   header("Location: /account");
 }
-
-
 function mailOrPhone()
 {
   if (isset($_POST['username'])) {
@@ -93,7 +89,6 @@ function mailOrPhone()
     return "phone";
   }
 }
-
 function sanitizeData($data) {
   $data = trim($data);
   $data = stripslashes($data);

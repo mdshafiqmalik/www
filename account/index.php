@@ -19,9 +19,8 @@
     <!-- Logged In -->
 
 
-    <!-- Login  Section -->
+    <!-- LogedIn  Section -->
     <?php
-    var_dump($_SESSION['userID']);
     if (isset($_SESSION['userID'])) {
       include '../_.config/_s_db_.php';
       $userID = $_SESSION['userID'];
