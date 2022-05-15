@@ -14,7 +14,7 @@
   <body>
     <?php
     session_start();
-    echo $_SESSION['Hello'];
+    echo $_GET['Hello'];
      ?>
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
