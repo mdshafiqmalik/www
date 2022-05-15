@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <?php session_start();
-echo "$_SESSION['Hello']";
+echo $_SESSION['Hello'];
  ?>
 <html lang="en" dir="ltr">
   <head>
