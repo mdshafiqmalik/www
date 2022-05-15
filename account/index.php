@@ -1,9 +1,7 @@
 
 <!DOCTYPE html>
 
-<?php session_start();
-echo $_SESSION['Hello'];
- ?>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -14,6 +12,10 @@ echo $_SESSION['Hello'];
     <title></title>
   </head>
   <body>
+    <?php
+    session_start();
+    echo $_SESSION['Hello'];
+     ?>
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
