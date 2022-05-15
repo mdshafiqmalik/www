@@ -13,8 +13,7 @@
   </head>
   <body>
     <?php
-    session_start();
-    echo $_GET['Hello'];
+    echo "string";
      ?>
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
