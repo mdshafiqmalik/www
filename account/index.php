@@ -1,5 +1,9 @@
 
 <!DOCTYPE html>
+
+<?php session_start();
+echo "$_SESSION['Hello']";
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
