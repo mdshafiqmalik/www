@@ -13,7 +13,7 @@
   </head>
   <body>
     <?php
-    echo "string";
+    var_dump(session_start());
      ?>
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
