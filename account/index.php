@@ -25,7 +25,6 @@ session_start();
 
     <!-- LogedIn  Section -->
     <?php
-    var_dump(session_status());
     if (isset($_SESSION['userID'])) {
       include '../_.config/_s_db_.php';
       $userID = $_SESSION['userID'];
