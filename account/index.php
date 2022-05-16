@@ -21,20 +21,19 @@ session_start();
   </div>
   <div id="userDiv" class="cont">
     <div class="content">
-      <div class="backPhoto">
-        <img src="../uploads/posts/2022/7/67895436.jpg" alt="">
-      </div>
-      <div class="userPhoto">
-        <img src="../uploads/users/2022/7/25316532.jpg" alt="">
-      </div>
-      <div class="profileBody">
-        <div class="userBio">
-          <span id="userFullName">Shafiq Malik</span>
+      <div class="userSection">
+        <div class="userphoto">
+          <img src="../uploads/users/2022/7/25316532.jpg" alt="">
+        </div>
+        <div class="userDetails">
+          <span id="userFullName">Mohd Shafiq Malik</span>
+          <span id="userName">#MDSHAFIQ</span>
+          <span id="userWork">Software Developer at Fastreed</span>
         </div>
       </div>
-
     </div>
   </div>
+
 <!-- if (isset($_SESSION['userID'])) {
        include '../_.config/_s_db_.php';
        $userID = $_SESSION['userID'];
