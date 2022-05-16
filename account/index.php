@@ -19,26 +19,27 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
-    <?php
-    if (isset($_SESSION['userID'])) {
-      include '../_.config/_s_db_.php';
-      $userID = $_SESSION['userID'];
-      $sql = "SELECT userProfile from user_data where userID = '$userID'";
-      $user_data = mysqli_query($db,$sql);
-      $row = $user_data->fetch_assoc();
-      $userPicArray = unserialize($row['userProfile']);
-      echo '<img height="30px" width="30px" src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
-      ?>
-      <a href="../logout.php?redirect=/account">Logout</a>
-      <div class="content">
-        <div class="">
-        </div>
+    <!-- <a href="../logout.php?redirect=/account">Logout</a> -->
+    <div class="content">
+      <div class="backPhoto">
       </div>
-      <?php
-    }else {
-      include '../components/login.php';
-    }
- ?>
+      <div class="userPhoto">
+
+      </div>
+    </div>
+  </div>
+<!-- if (isset($_SESSION['userID'])) {
+       include '../_.config/_s_db_.php';
+       $userID = $_SESSION['userID'];
+       $sql = "SELECT userProfile from user_data where userID = '$userID'";
+       $user_data = mysqli_query($db,$sql);
+       $row = $user_data->fetch_assoc();
+       $userPicArray = unserialize($row['userProfile']);
+      echo '<img height="30px" width="30px" src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
+     }else {
+       include '../components/login.php';
+     }
+ ?> -->
 
     <!-- New Users -->
 <!-- <div class="content">
@@ -56,10 +57,6 @@ session_start();
     </div>
   </form>
 </div> -->
-
-
-  </div>
-
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   </body>
