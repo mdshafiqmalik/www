@@ -7,7 +7,7 @@ session_start();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <?php include '../components/rand.php' ?>
+    <?php include '../components/randVersion.php' ?>
     <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,6 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
-
-    <!-- Logged In -->
-
-
-    <!-- LogedIn  Section -->
     <?php
     if (isset($_SESSION['userID'])) {
       include '../_.config/_s_db_.php';
@@ -32,7 +27,7 @@ session_start();
       $user_data = mysqli_query($db,$sql);
       $row = $user_data->fetch_assoc();
       $userPicArray = unserialize($row['userProfile']);
-      echo '<img src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
+      echo '<img height="30px" width="30px" src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
       ?>
       <a href="../logout.php?redirect=/account">Logout</a>
       <div class="content">
@@ -42,7 +37,6 @@ session_start();
       <?php
     }else {
       include '../components/login.php';
-
     }
  ?>
 

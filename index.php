@@ -1,59 +1,21 @@
 <?php
 include 'account/session.php';
+include 'components/randVersion.php';
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php
-    include 'components/rand.php';
-    $style_css ="assets/css/style.css?v=$randVersion";
-    $root_css = "assets/css/root.css?v=$randVersion";
-    $fun_js = "assets/js/fun.js?v=$randVersion";
-     ?>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<?php echo($style_css); ?>">
-  <link rel="stylesheet" href="<?php echo($root_css); ?>">
-  <script src="<?php echo($fun_js); ?>" charset="utf-8"></script>
-  <title></title>
-
-  <style media="screen">
-  body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  #onLoad .logo{
-    /* font-size: 1.2em; */
-  }
-  #home{
-    filter: var(--svgblue);
-  }
-  </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $randVersion; ?>">
+      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $randVersion; ?>">
+      <script src="assets/js/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
+      <title>Fastreed : Read, Write and Learn</title>
   </head>
-  <body onload="onLoad()" >
-
-<!-- On Load -->
-   <div id="onLoad">
-     <div class="onloadLogo"> <img width="47px" height="47px"src="assets/pics/other/R_logo.svg" alt="">
-     </div>
-     <div class="nation">
-       <div class="lion">
-         <img height="37px" width="65px"src="assets/pics/other/lion.png" alt="">
-       </div>
-       <div class="mke">
-         Make In India
-       </div>
-     </div>
-    </div>
-
-
-    <!-- <div class="loader"><div id="loader"></div> </div> -->
+  <body>
     <div class="mainCont">
-    <?php
-    include 'components/header.php';
-    ?>
+      <!-- include Header -->
+    <?php include 'components/header.php';?>
       <!-- Search and Tag -->
-
       <div class="tagandSearch cont500 ">
         <div class="search">
           <div id="search">
@@ -76,24 +38,7 @@ include 'account/session.php';
           <span class="stags" id="trading" onclick="goTo('trading')">trading</span>
         </div>
       </div>
-
-      <?php
-      $source = "assets";
-      $svgFolder = $source."/svgs";
-      if (isset($_GET["tag"])) {
-        $tag = $_GET["tag"];
-        echo '
-        <script type="text/javascript">
-        document.getElementById("'.$tag.'").classList.add("tagActive");
-        document.getElementById("all").classList.remove("tagActive");
-        </script>
-         ';
-      }else {
-      }
-      ?>
-      <a href="account/?redirect=../">Login</a>
       <?php include 'posts.php'; ?>
-
     </div>
   </body>
 </html>

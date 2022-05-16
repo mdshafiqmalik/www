@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $redirectLink = $_GET['redirect'];
               header("Location: $redirectLink");
             }else {
-              header("location: /");
+              header("location: /account");
             }
           }else {
             header("Location: /account/?message=Password Incorrect");

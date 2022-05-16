@@ -1,4 +1,6 @@
-
+#home{
+  filter: var(--svgblue);
+}
 .cont500{
   max-width: 500px;
   width: 100vw;

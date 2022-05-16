@@ -1,6 +1,7 @@
 <?php
 include '_.config/_s_db_.php';
    session_start();
+   
    if (isset($_SESSION['userID'])) {
      $userID = $_SESSION['userID'];
      $sql = 'SELECT * from fast_users where userID = "$userID"';

@@ -4,7 +4,7 @@ $svgFolder = $source."/pics/svgs";
 
 $header = '<div class="header">
 <div class="">
-  <h1 class="logo">fastreed</h1>
+  <h1 class="logo">project</h1>
 </div>
   <div class="menuTop">
     <div class="menu"><img src="/'.$svgFolder.'/menu_NB.svg" alt=""> </div>
