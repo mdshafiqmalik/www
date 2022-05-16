@@ -28,7 +28,7 @@ session_start();
         <div class="userDetails">
           <span id="userFullName">Mohd Shafiq Malik</span>
           <span id="userName">#MDSHAFIQ</span>
-          <span id="userWork">Software Developer at Fastreed</span>
+          <span id="userWork">Software Developer at fastreed</span>
         </div>
       </div>
     </div>
