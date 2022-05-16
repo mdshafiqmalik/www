@@ -10,6 +10,7 @@ session_start();
     <?php include '../components/randVersion.php' ?>
     <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="src/logged.css?v=<?php echo($randVersion); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -19,13 +20,19 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
-    <!-- <a href="../logout.php?redirect=/account">Logout</a> -->
     <div class="content">
       <div class="backPhoto">
+        <img src="../uploads/posts/2022/7/67895436.jpg" alt="">
       </div>
       <div class="userPhoto">
-
+        <img src="../uploads/users/2022/7/25316532.jpg" alt="">
       </div>
+      <div class="profileBody">
+        <div class="userBio">
+          <span id="userFullName">Shafiq Malik</span>
+        </div>
+      </div>
+
     </div>
   </div>
 <!-- if (isset($_SESSION['userID'])) {

@@ -1,0 +1,41 @@
+/* Logged Users */
+.content{
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.backPhoto{
+  max-height: 100px;
+  height: 100%;
+  background-color: #956;
+  width: 100vw;
+  max-width: 500px;
+}
+.backPhoto img{
+  max-height: 100px;
+  height: 100%;
+  width: 100vw;
+  max-width: 500px;
+}
+.userPhoto{
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background-color: purple;
+  margin-top: -40px;
+  margin-left: 1em;
+  border: 5px solid white;
+}
+.userPhoto img{
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  border: 0;
+}
+.profileBody{
+  padding: 0 .8em;
+}
+#userFullName{
+  font-weight: bold;
+}
+
+/****************/

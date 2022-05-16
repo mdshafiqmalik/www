@@ -126,22 +126,3 @@
   margin-right: .6em;
 }
 /* ********* */
-
-
-/* Logged Users */
-.backPhoto{
-  min-height: 100px;
-  height: 100%;
-  background-color: #999;
-  width: 100vw;
-  max-width: 500px;
-}
-.userPhoto{
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
-  background-color: purple;
-  margin-top: -100px;
-  border: 5px solid white;
-}
-/****************/
